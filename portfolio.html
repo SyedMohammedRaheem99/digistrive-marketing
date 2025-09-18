@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio & Case Studies — DigiStrive Media</title>
-  <meta name="description" content="DigiStrive Media — real portfolio and case studies showing SEO, community growth, lead generation and web development wins.">
-  <meta name="keywords" content="digital marketing portfolio, case study, seo, ppc, web development, lead generation, case studies">
-  <link rel="icon" href="images/logo.png" type="image/png">
+  <meta name="description" content="DigiStrive Media — portfolio of SEO, web, social and paid case studies. See measurable outcomes and project examples." />
+  <meta name="keywords" content="digital marketing portfolio, case study, SEO, PPC, web development, lead generation" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
 
-  <!-- JSON-LD ItemList (for SEO) -->
+  <!-- JSON-LD for SEO -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -27,514 +27,530 @@
   }
   </script>
 
-  <!-- Inline minimal critical CSS to avoid dependency issues -->
+  <!-- Critical CSS (self-contained for easy paste) -->
   <style>
-    :root{--bg:#f6fbfd;--card:#fff;--accent:#0a84ff;--muted:#65707a;--radius:12px;--maxw:1200px}
+    :root{
+      --bg:#f5fbff; --card:#fff; --accent1:#0a84ff; --accent2:#00b5d8;
+      --muted:#6b7280; --radius:12px; --container:1200px; --shadow:0 10px 30px rgba(11,22,40,0.06);
+      --gap:18px;
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:#0b1720; -webkit-font-smoothing:antialiased}
-    a{color:var(--accent); text-decoration:none}
-    .container{max-width:var(--maxw); margin:0 auto; padding:24px}
-    header{background:#fff; box-shadow:0 6px 18px rgba(11,22,40,0.04); position:sticky; top:0; z-index:30}
-    .header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
-    .brand{display:flex; gap:12px; align-items:center}
-    .brand img{height:42px; width:42px; object-fit:cover; border-radius:8px}
-    nav ul{display:flex; gap:14px; list-style:none; margin:0; padding:0}
-    nav a{padding:8px 10px; border-radius:8px; font-weight:600; color:#0b1620}
-    nav a.active{background:linear-gradient(90deg,var(--accent),#00b5d8); color:#fff}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#071427;background:var(--bg);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent1);text-decoration:none}
+    .container{max-width:var(--container);margin:0 auto;padding:20px}
+    header{background:#fff;position:sticky;top:0;z-index:40;box-shadow:0 6px 18px rgba(11,22,40,0.03)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:44px;width:44px;border-radius:8px;object-fit:cover}
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:700;color:#0b1620}
+    nav a.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
 
     /* Hero */
-    .hero{background:linear-gradient(90deg,#125dff 0%, #00b5d8 100%); color:#fff; padding:48px 0; text-align:center}
-    .hero h1{margin:0;font-size:28px}
-    .hero p{margin:10px auto 18px; max-width:820px; color:rgba(255,255,255,0.95)}
+    .hero{background:linear-gradient(90deg,#0a84ff 0%, #00b5d8 100%);color:#fff;padding:48px 0;text-align:center}
+    .hero h1{font-size:28px;margin:0}
+    .hero p{max-width:900px;margin:10px auto 18px;color:rgba(255,255,255,0.92)}
 
     /* Filters */
-    .filters{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; padding:18px 0}
-    .chip{border:1px solid rgba(11,22,40,0.06); background:transparent; padding:8px 14px; border-radius:999px; cursor:pointer; font-weight:700}
-    .chip.active{background:var(--accent); color:#fff; border-color:transparent}
+    .ps-filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px 0}
+    .ps-chip{border:1px solid rgba(11,22,40,0.06);padding:8px 12px;border-radius:999px;background:transparent;font-weight:800;cursor:pointer}
+    .ps-chip[aria-selected="true"]{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(10,132,255,0.12)}
 
-    /* Featured case studies */
-    .case-grid{display:grid; gap:20px; grid-template-columns:1fr; padding:18px 0}
-    .case{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 10px 30px rgba(11,22,40,0.04); display:grid; gap:12px}
-    @media(min-width:900px){ .case-grid{grid-template-columns:repeat(2,1fr)} .case{grid-template-columns:1fr 380px; align-items:center} }
-    .case img{width:100%; height:220px; object-fit:cover; border-radius:8px}
-    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#0b3b6b; font-weight:800; margin-bottom:8px}
-    .case h3{margin:8px 0 6px}
-    .muted{color:var(--muted)}
+    /* Featured Case Studies grid */
+    .case-grid{display:grid;grid-template-columns:1fr;gap:var(--gap)}
+    @media(min-width:880px){ .case-grid{grid-template-columns:repeat(2,1fr)} }
+    .case-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr;gap:12px;align-items:start;overflow:hidden}
+    @media(min-width:900px){ .case-card{grid-template-columns:1fr 380px} }
+    .case-media{height:220px;border-radius:8px;overflow:hidden}
+    .case-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+    .case-card:hover .case-media img{transform:scale(1.03)}
+    .ps-badge{display:inline-block;background:#eef6ff;color:#023a7d;padding:6px 10px;border-radius:999px;font-weight:800;font-size:13px}
+    .case-title{margin:8px 0 6px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px;line-height:1.45}
 
-    .metrics{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
-    .metric{background:#f4fbff; padding:10px 12px; border-radius:10px; min-width:120px; text-align:center; font-weight:700}
+    .case-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .case-metric{background:#f2fbff;padding:8px 10px;border-radius:10px;font-weight:800;text-align:center;min-width:110px}
 
-    /* Portfolio grid */
-    .portfolio-grid{display:grid; gap:16px; grid-template-columns:repeat(1,1fr); padding:18px 0}
-    @media(min-width:700px){ .portfolio-grid{grid-template-columns:repeat(3,1fr)} }
-    .project{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 8px 26px rgba(11,22,40,0.04); display:flex; flex-direction:column}
-    .project img{width:100%; height:180px; object-fit:cover}
+    .case-ctas{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .btn{padding:10px 12px;border-radius:10px;font-weight:800;display:inline-block}
+    .btn-primary{background:#0a84ff;color:#fff}
+    .btn-secondary{background:#eef7ff;color:#063c6b}
+
+    /* Project grid (cards) */
+    .portfolio-grid{display:grid;gap:14px;grid-template-columns:1fr;margin-top:22px}
+    @media(min-width:720px){ .portfolio-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(min-width:1000px){ .portfolio-grid{grid-template-columns:repeat(3,1fr)} }
+    .project{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(11,22,40,0.04);transition:transform .28s ease,box-shadow .28s ease}
+    .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,22,40,0.08)}
+    .project img{width:100%;height:160px;object-fit:cover;display:block}
     .project .meta{padding:12px}
-    .tags{display:flex; gap:8px; margin-top:8px}
-    .tag{background:#f2f8ff; padding:6px 10px; border-radius:999px; font-weight:700; color:#0b3b6b; font-size:12px}
+    .project .project-title{font-weight:800;margin:0 0 6px}
+    .tag{display:inline-block;background:#f2f8ff;color:#023a7d;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
 
-    /* CTA & footer */
-    .cta{background:linear-gradient(90deg,#00b5d8,#0a84ff); color:#fff; padding:28px; border-radius:12px; text-align:center; margin-top:24px}
-    footer{padding:24px 0; color:var(--muted); text-align:center}
+    /* CTA section */
+    .cta{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:26px;border-radius:12px;margin:26px 0;text-align:center}
+    .cta .btn{background:#fff;color:var(--accent1)}
+    footer{padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
 
-    /* small helpers */
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-block; padding:10px 14px; border-radius:10px; font-weight:800}
-    .btn-primary{background:#fff; color:var(--accent)}
-    .btn-outline{background:transparent; border:1px solid rgba(11,22,40,0.06); color:#fff}
+    /* utility */
+    .small{font-size:13px;color:var(--muted)}
+    .grid-two{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:880px){ .grid-two{grid-template-columns:1fr} }
 
-    /* hide element utility */
-    .hidden{display:none!important}
+    /* accessible focus */
+    .ps-chip:focus,.btn:focus,a:focus{outline:3px solid rgba(10,132,255,0.14);outline-offset:3px}
+
+    /* small screens adjustments */
+    @media(max-width:520px){ .hero h1{font-size:20px} .case-media{height:180px} .project img{height:140px} }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <div class="header-inner container">
+      <div class="brand">
+        <a href="index.html"><img src="images/logo.png" alt="DigiStrive Media logo"></a>
+        <div>
+          <div style="font-weight:800">DigiStrive Media</div>
+          <div class="small">Digital Growth — SEO • Web • Social • Paid</div>
+        </div>
+      </div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a class="active" href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.php">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <div class="header-inner container">
-    <div class="brand">
-      <a href="index.html"><img src="images/logo.png" alt="DigiStrive Media logo"></a>
-      <div>
-        <div style="font-weight:800">DigiStrive Media</div>
-        <div style="font-size:12px;color:var(--muted)">Digital Growth — SEO • Web • Social • Paid</div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Our <strong style="font-weight:900">Success Stories</strong></h1>
+      <p>Case studies across industries — SEO wins, community growth, lead gen, and website transformations with measurable business results.</p>
+      <div style="margin-top:14px">
+        <a class="btn btn-primary" href="#portfolio-grid">See Projects</a>
+        <a class="btn" href="contact.php" style="margin-left:10px;background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff">Book a free audit</a>
       </div>
     </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a class="active" href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.php">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </section>
 
-<section class="hero">
+  <!-- Filters -->
   <div class="container">
-    <h1>Our <strong style="font-weight:900">Success Stories</strong></h1>
-    <p>Real case studies across industries — SEO wins, community building, lead generation, and website transformations that moved business metrics.</p>
-    <div style="margin-top:14px">
-      <a class="btn btn-primary" href="#portfolio-grid">See Projects</a>
-      <a class="btn btn-outline" href="contact.php" style="margin-left:8px">Book a free audit</a>
-    </div>
-  </div>
-</section>
-
-<!-- Filters -->
-<section>
-  <div class="container">
-    <div class="filters" role="tablist" aria-label="Filter projects">
-      <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button class="chip" data-filter="real-estate" role="tab">Real Estate</button>
-      <button class="chip" data-filter="ecommerce" role="tab">E-commerce</button>
-      <button class="chip" data-filter="renewable" role="tab">Renewable</button>
-      <button class="chip" data-filter="fnb" role="tab">F&B</button>
-      <button class="chip" data-filter="healthcare" role="tab">Healthcare</button>
-      <button class="chip" data-filter="education" role="tab">Education</button>
-      <button class="chip" data-filter="it" role="tab">IT / Services</button>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Case Studies -->
-<section class="container" aria-labelledby="featured-title">
-  <div id="featured-title" style="display:flex;justify-content:space-between;align-items:center">
-    <div>
-      <h2 style="margin:0">Featured Case Studies</h2>
-      <p class="muted" style="margin:6px 0 0">Deep dives into our most impactful client work. Each case includes challenge, approach, and measurable results.</p>
+    <div class="ps-filters" role="tablist" aria-label="Filter projects" tabindex="0">
+      <button class="ps-chip" data-filter="all" aria-selected="true">All</button>
+      <button class="ps-chip" data-filter="real-estate">Real Estate</button>
+      <button class="ps-chip" data-filter="ecommerce">E-commerce</button>
+      <button class="ps-chip" data-filter="renewable">Renewable</button>
+      <button class="ps-chip" data-filter="fnb">F&B</button>
+      <button class="ps-chip" data-filter="healthcare">Healthcare</button>
+      <button class="ps-chip" data-filter="education">Education</button>
+      <button class="ps-chip" data-filter="it">IT / Services</button>
     </div>
   </div>
 
-  <div class="case-grid" style="margin-top:18px">
-
-    <!-- TechSolutions — B2B SEO (A4Realty used as client example for real estate) -->
-    <article class="case" aria-labelledby="cs-a4-title">
+  <!-- Featured case studies -->
+  <main class="container" aria-labelledby="featured-title">
+    <div id="featured-title" style="display:flex;justify-content:space-between;align-items:center">
       <div>
-        <span class="badge">SEO & Content</span>
-        <h3 id="cs-a4-title">A4Realty — Real Estate Lead Growth</h3>
-        <p class="muted">A real-estate listings portal needed high-quality property inquiries and better local visibility in Bangalore. We redesigned conversion flows, implemented SEO and improved listing trust features.</p>
-
-        <h4 style="margin-top:12px">Challenge</h4>
-        <p class="muted">Low organic visibility for key neighbourhoods and weak lead capture UX.</p>
-
-        <h4>Approach</h4>
-        <ul class="muted">
-          <li>Technical SEO audit & core web vitals fixes</li>
-          <li>Listing schema + local landing pages (neighbourhood-level)</li>
-          <li>Improved inquiry forms and trust badges to increase lead confidence</li>
-        </ul>
-
-        <div class="metrics" aria-hidden="false">
-          <div class="metric">+200%<div style="font-size:12px;font-weight:600;color:var(--muted)">Organic traffic</div></div>
-          <div class="metric">120+<div style="font-size:12px;font-weight:600;color:var(--muted)">Leads / month</div></div>
-          <div class="metric">+30%<div style="font-size:12px;font-weight:600;color:var(--muted)">Lead->Viewing conversion</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://www.a4realty.in/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Request a Case Study</a>
-        </div>
+        <h2 style="margin:0">Featured Case Studies</h2>
+        <p class="small" style="margin:6px 0 0">Deep dives into our most impactful client work. Each case includes challenge, approach, and measurable results.</p>
       </div>
+    </div>
 
-      <div aria-hidden="false">
-        <img src="finalized-images/a4realty.png" alt="A4Realty screenshot (homepage hero)">
+    <section class="case-grid" style="margin-top:18px" id="ps-cases">
+      <!-- A4Realty -->
+      <article class="case-card" data-category="real-estate" aria-labelledby="a4-title">
+        <div>
+          <span class="ps-badge">SEO & Content</span>
+          <h3 id="a4-title" class="case-title">A4Realty — Real Estate Lead Growth</h3>
+          <p class="muted">We improved local search visibility, restructured listings and optimized lead flows to capture higher-quality buyer inquiries.</p>
+
+          <h4 style="margin-top:12px">Challenge</h4>
+          <p class="muted">Low organic visibility for neighbourhood searches, low trust signals & poor lead conversion UX.</p>
+
+          <h4>Solution</h4>
+          <ul class="muted">
+            <li>Technical SEO & Core Web Vitals improvements</li>
+            <li>Neighbourhood landing pages + schema for listings</li>
+            <li>Optimized inquiry forms and social proof to increase trust</li>
+          </ul>
+
+          <div class="case-meta">
+            <div class="case-metric">+200%<div class="small">Organic traffic</div></div>
+            <div class="case-metric">120+<div class="small">Leads / month</div></div>
+            <div class="case-metric">+30%<div class="small">Lead → Viewing conv.</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://www.a4realty.in/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Discuss Growth</a>
+          </div>
+        </div>
+
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/a4realty.png" alt="A4Realty - property listings screenshot" loading="lazy" />
+        </div>
+      </article>
+
+      <!-- Nalnad Coffee -->
+      <article class="case-card" data-category="ecommerce" aria-labelledby="nal-title">
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee - e-commerce screenshot" loading="lazy" />
+        </div>
+        <div>
+          <span class="ps-badge">E-commerce & Branding</span>
+          <h3 id="nal-title" class="case-title">Nalnad Coffee — Productized E-commerce</h3>
+          <p class="muted">Built a conversion-first store with improved product pages, checkout flow and retention automation.</p>
+
+          <h4>Approach</h4>
+          <ul class="muted">
+            <li>Product taxonomy & optimized PDPs</li>
+            <li>One-click checkout & Google Shopping feeds</li>
+            <li>Email automation for retention and cross-sell</li>
+          </ul>
+
+          <div class="case-meta">
+            <div class="case-metric">+150%<div class="small">Online orders</div></div>
+            <div class="case-metric">+40%<div class="small">Checkout conv.</div></div>
+            <div class="case-metric">+70%<div class="small">Returning customers</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Get a similar store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sunbee Synergy -->
+      <article class="case-card" data-category="renewable" aria-labelledby="sunbee-title">
+        <div>
+          <span class="ps-badge">B2B • Renewable</span>
+          <h3 id="sunbee-title" class="case-title">Sunbee Synergy — Renewable Energy B2B Growth</h3>
+          <p class="muted">We built a quote funnel, content hub and technical briefs to capture enterprise buyers and accelerate decision cycles.</p>
+
+          <h4>Approach</h4>
+          <ul class="muted">
+            <li>Services pages for high-intent search</li>
+            <li>ROI calculators and technical briefs</li>
+            <li>RFQ funnel with lead scoring</li>
+          </ul>
+
+          <div class="case-meta">
+            <div class="case-metric">+300%<div class="small">Enterprise inquiries</div></div>
+            <div class="case-metric">+120%<div class="small">Qualified leads</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Request Quote</a>
+          </div>
+        </div>
+
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy - renewable website" loading="lazy" />
+        </div>
+      </article>
+
+      <!-- Mastrolee (placeholder) -->
+      <article class="case-card" data-category="fnb" aria-labelledby="mastro-title">
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/mastrolee.png" alt="Mastrolee - restaurant social placeholder" loading="lazy" />
+        </div>
+        <div>
+          <span class="ps-badge">Social • F&B</span>
+          <h3 id="mastro-title" class="case-title">Mastrolee — Restaurant Social & Local (Placeholder)</h3>
+          <p class="muted">Local promotions, UGC and reservation optimization to drive bookings and engagement.</p>
+
+          <div class="case-meta">
+            <div class="case-metric">+175%<div class="small">Bookings</div></div>
+            <div class="case-metric">+50%<div class="small">Social engagement</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="#" title="Placeholder">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Discuss F&B growth</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tai Tai Creamery -->
+      <article class="case-card" data-category="fnb" aria-labelledby="tai-title">
+        <div>
+          <span class="ps-badge">F&B • Local</span>
+          <h3 id="tai-title" class="case-title">Tai Tai Creamery — Premium Dessert Launch</h3>
+          <p class="muted">Local SEO, influencer seeding and online ordering to support a strong market entry.</p>
+
+          <div class="case-meta">
+            <div class="case-metric">+80%<div class="small">Footfall</div></div>
+            <div class="case-metric">+200%<div class="small">Online orders</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Start similar campaign</a>
+          </div>
+        </div>
+
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery - dessert brand screenshot" loading="lazy" />
+        </div>
+      </article>
+
+      <!-- NuLife Behavioral Health -->
+      <article class="case-card" data-category="healthcare" aria-labelledby="nulifetitle">
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health - clinic screenshot" loading="lazy" />
+        </div>
+        <div>
+          <span class="ps-badge">Healthcare</span>
+          <h3 id="nulifetitle" class="case-title">NuLife Behavioral Health — Clinic Program Growth</h3>
+          <p class="muted">Program-level landing pages, local SEO and PPC campaigns to drive appointment requests.</p>
+
+          <div class="case-meta">
+            <div class="case-metric">+250%<div class="small">Consultation requests</div></div>
+            <div class="case-metric">5+<div class="small">Clinics</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Talk to an expert</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- MindForge Infotech -->
+      <article class="case-card" data-category="education" aria-labelledby="mind-title">
+        <div>
+          <span class="ps-badge">Education • IT</span>
+          <h3 id="mind-title" class="case-title">MindForge Infotech — Course & Recruitment Funnel</h3>
+          <p class="muted">Outcomes-first pages and conversion tracking to increase registrations and employer inquiries.</p>
+
+          <div class="case-meta">
+            <div class="case-metric">+300%<div class="small">Student registrations</div></div>
+            <div class="case-metric">More<div class="small">Employer inquiries</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Discuss funnels</a>
+          </div>
+        </div>
+
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech - training screenshot" loading="lazy" />
+        </div>
+      </article>
+
+      <!-- Ashwa Education Consultancy -->
+      <article class="case-card" data-category="education" aria-labelledby="ashwa-title">
+        <div class="case-media" aria-hidden="false">
+          <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy - screenshot" loading="lazy" />
+        </div>
+        <div>
+          <span class="ps-badge">Education Consultancy</span>
+          <h3 id="ashwa-title" class="case-title">Ashwa Education Consultancy — Student Lead Machine</h3>
+          <p class="muted">Conversion-optimized landing pages and targeted PPC to deliver qualified student leads.</p>
+
+          <div class="case-meta">
+            <div class="case-metric">+200<div class="small">Monthly inquiries</div></div>
+            <div class="case-metric">Higher<div class="small">Lead quality</div></div>
+          </div>
+
+          <div class="case-ctas">
+            <a class="btn btn-primary" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-secondary" href="contact.php">Get student leads</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Project Grid -->
+    <section id="portfolio-grid" style="margin-top:26px">
+      <h2 style="margin:0 0 6px">Project Portfolio</h2>
+      <p class="small" style="margin:0 0 12px">Quick links to the live projects we delivered. Click to view.</p>
+
+      <div class="portfolio-grid" id="ps-grid">
+        <!-- repeat cards for each project -->
+        <article class="project" data-category="real-estate">
+          <a href="https://www.a4realty.in/" target="_blank" rel="noopener">
+            <img src="finalized-images/a4realty.png" alt="A4Realty — property listings" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">A4Realty</div>
+              <div class="small">Premium property listings & lead generation</div>
+              <div style="margin-top:8px"><span class="tag">Real Estate</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="ecommerce">
+          <a href="https://nalnadcoffee.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee — e-commerce" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">Nalnad Coffee</div>
+              <div class="small">Specialty coffee e-commerce</div>
+              <div style="margin-top:8px"><span class="tag">E-commerce</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="renewable">
+          <a href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy — renewable" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">Sunbee Synergy</div>
+              <div class="small">Solar & wind energy solutions</div>
+              <div style="margin-top:8px"><span class="tag">Renewable</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="fnb">
+          <a href="#" title="Mastrolee placeholder">
+            <img src="finalized-images/mastrolee.png" alt="Mastrolee — restaurant" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">Mastrolee</div>
+              <div class="small">Restaurant / Social media growth (placeholder)</div>
+              <div style="margin-top:8px"><span class="tag">F&B</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="fnb">
+          <a href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">Tai Tai Creamery</div>
+              <div class="small">Dessert brand launch & local SEO</div>
+              <div style="margin-top:8px"><span class="tag">F&B</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="healthcare">
+          <a href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">NuLife Behavioral Health</div>
+              <div class="small">Clinic programs & appointment growth</div>
+              <div style="margin-top:8px"><span class="tag">Healthcare</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="education">
+          <a href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">MindForge Infotech</div>
+              <div class="small">IT training & course conversions</div>
+              <div style="margin-top:8px"><span class="tag">Education</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project" data-category="education">
+          <a href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">
+            <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy" loading="lazy" />
+            <div class="meta">
+              <div class="project-title">Ashwa Education Consultancy</div>
+              <div class="small">Student lead generation</div>
+              <div style="margin-top:8px"><span class="tag">Education</span></div>
+            </div>
+          </a>
+        </article>
       </div>
-    </article>
+    </section>
+  </main>
 
-    <!-- Nalnad Coffee -->
-    <article class="case" aria-labelledby="cs-nalnad">
-      <div aria-hidden="false">
-        <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee online store screenshot">
-      </div>
-      <div>
-        <span class="badge">E-commerce & Branding</span>
-        <h3 id="cs-nalnad">Nalnad Coffee — Productized E-commerce</h3>
-        <p class="muted">Premium shade-grown coffee brand required an e-commerce storefront and conversion-optimized product pages to sell regionally and internationally.</p>
+  <!-- CTA -->
+  <section class="container">
+    <div class="cta">
+      <h3 style="margin:0 0 8px">Ready to become our next success story?</h3>
+      <p style="margin:0 0 12px">Book a free 15-minute audit and we’ll map the top 3 growth opportunities for your business.</p>
+      <a class="btn btn-primary" href="contact.php">Start Your Project</a>
+      <a class="btn" href="about.html" style="margin-left:8px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.12)">Learn More</a>
+    </div>
+  </section>
 
-        <h4>Challenge</h4>
-        <p class="muted">Low online reach and non-optimized checkout flow leading to abandoned carts.</p>
+  <footer>
+    <div class="container">
+      <p class="small" style="margin:0">&copy; 2025 DigiStrive Media — SEO • Web • Social • Paid</p>
+    </div>
+  </footer>
 
-        <h4>Approach</h4>
-        <ul class="muted">
-          <li>Full product taxonomy, improved PDPs and one-click checkout</li>
-          <li>SEO product descriptions and targeted Google Shopping feeds</li>
-          <li>Retention via email automation and cross-sell flows</li>
-        </ul>
+  <!-- JS: filtering, keyboard nav, image fallback -->
+  <script>
+    (function(){
+      // chips and filtering
+      const chips = Array.from(document.querySelectorAll('.ps-chip'));
+      const cases = Array.from(document.querySelectorAll('.case-card'));
+      const projects = Array.from(document.querySelectorAll('.project'));
 
-        <div class="metrics">
-          <div class="metric">+150%<div style="font-size:12px;color:var(--muted)">Online orders</div></div>
-          <div class="metric">+40%<div style="font-size:12px;color:var(--muted)">Checkout conversion</div></div>
-          <div class="metric">+70%<div style="font-size:12px;color:var(--muted)">Returning customers</div></div>
-        </div>
+      function setFilter(category){
+        // chips
+        chips.forEach(c => {
+          const sel = c.getAttribute('data-filter') === category;
+          c.setAttribute('aria-selected', sel || category === 'all' && c.getAttribute('data-filter') === 'all');
+        });
+        // case cards
+        cases.forEach(card => {
+          if(category === 'all') card.style.display = '';
+          else card.style.display = card.dataset.category === category ? '' : 'none';
+        });
+        // grid cards
+        projects.forEach(p => {
+          if(category === 'all') p.style.display = '';
+          else p.style.display = (p.dataset.category === category) ? '' : 'none';
+        });
+      }
 
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Get a similar store</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Sunbee Synergy -->
-    <article class="case" aria-labelledby="cs-sunbee">
-      <div>
-        <span class="badge">B2B • Renewable</span>
-        <h3 id="cs-sunbee">Sunbee Synergy — Renewable Energy B2B Growth</h3>
-        <p class="muted">Sunbee needed to capture enterprise leads for solar & wind solutions — highlighting case studies, technology specs and an RFQ/quote funnel for operations teams.</p>
-
-        <h4>Approach</h4>
-        <ul class="muted">
-          <li>Services pages optimized for high-intent search queries</li>
-          <li>Content hub for technical briefs and ROI calculators</li>
-          <li>Quote funnel with product configurator and lead scoring</li>
-        </ul>
-
-        <div class="metrics">
-          <div class="metric">+300%<div style="font-size:12px;color:var(--muted)">Enterprise inquiries</div></div>
-          <div class="metric">+120%<div style="font-size:12px;color:var(--muted)">Qualified leads</div></div>
-          <div class="metric">Shorter sales cycles<div style="font-size:12px;color:var(--muted)">by 20%</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Request a quote form</a>
-        </div>
-      </div>
-      <div aria-hidden="false">
-        <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy website screenshot">
-      </div>
-    </article>
-
-    <!-- Mastrolee (placeholder) -->
-    <article class="case" aria-labelledby="cs-mast">
-      <div aria-hidden="false">
-        <img src="finalized-images/mastrolee.png" alt="Mastrolee placeholder screenshot">
-      </div>
-      <div>
-        <span class="badge">Social • Food</span>
-        <h3 id="cs-mast">Mastrolee — Restaurant Social & Local</h3>
-        <p class="muted">Placeholder project — replace with final content/screenshots when available. Typical deliverables: Instagram-first creative, local promos, reservation tracking.</p>
-
-        <h4>Typical approach</h4>
-        <ul class="muted">
-          <li>High-frequency local campaigns and UGC collection</li>
-          <li>Local SEO for discovery & reservation pages</li>
-          <li>Simple booking micro-conversion funnel</li>
-        </ul>
-
-        <div class="metrics">
-          <div class="metric">+175%<div style="font-size:12px;color:var(--muted)">Bookings</div></div>
-          <div class="metric">+50%<div style="font-size:12px;color:var(--muted)">Social engagement</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="#" title="Replace with live URL">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Discuss F&B growth</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Tai Tai Creamery -->
-    <article class="case" aria-labelledby="cs-tai">
-      <div>
-        <span class="badge">F&B • Local</span>
-        <h3 id="cs-tai">Tai Tai Creamery — Premium Dessert Launch</h3>
-        <p class="muted">Support for a new dessert brand: store pages, online ordering, local promotions and influencer seeding.</p>
-
-        <h4>Results</h4>
-        <div class="metrics">
-          <div class="metric">+80%<div style="font-size:12px;color:var(--muted)">Footfall</div></div>
-          <div class="metric">+200%<div style="font-size:12px;color:var(--muted)">Online order requests</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Start similar campaign</a>
-        </div>
-      </div>
-      <div aria-hidden="false">
-        <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery screenshot">
-      </div>
-    </article>
-
-    <!-- NuLife Behavioral Health -->
-    <article class="case" aria-labelledby="cs-nulifelbl">
-      <div>
-        <span class="badge">Healthcare</span>
-        <h3 id="cs-nulifelbl">NuLife Behavioral Health — Multi-location Clinic Growth</h3>
-        <p class="muted">A clinic network with multiple programs needed an organized site structure, program pages and appointment booking CTAs.</p>
-
-        <h4>Approach</h4>
-        <ul class="muted">
-          <li>Program-level landing pages + FAQ schema</li>
-          <li>Local SEO and Google Business profile optimization</li>
-          <li>PPC for urgent consultations and campaign tracking</li>
-        </ul>
-
-        <div class="metrics">
-          <div class="metric">+250%<div style="font-size:12px;color:var(--muted)">Consultation requests</div></div>
-          <div class="metric">5+<div style="font-size:12px;color:var(--muted)">Clinics represented</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Talk to an expert</a>
-        </div>
-      </div>
-      <div aria-hidden="false">
-        <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health screenshot">
-      </div>
-    </article>
-
-    <!-- MindForge Infotech -->
-    <article class="case" aria-labelledby="cs-mindforge">
-      <div aria-hidden="false">
-        <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech screenshot">
-      </div>
-      <div>
-        <span class="badge">Education • IT</span>
-        <h3 id="cs-mindforge">MindForge Infotech — Course & Recruitment Funnel</h3>
-        <p class="muted">Expanded reach by redesigning course pages, adding clear outcomes and implementing conversion tracking for admissions.</p>
-
-        <div class="metrics">
-          <div class="metric">+300%<div style="font-size:12px;color:var(--muted)">Student registrations</div></div>
-          <div class="metric">More employer inquiries<div style="font-size:12px;color:var(--muted)">via job-placement pages</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Discuss training funnels</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Ashwa Education Consultancy -->
-    <article class="case" aria-labelledby="cs-ashwa">
-      <div>
-        <span class="badge">Education Consultancy</span>
-        <h3 id="cs-ashwa">Ashwa Education Consultancy — Student Lead Machine</h3>
-        <p class="muted">Conversion-focused pages and targeted PPC helped the consultancy capture qualified student leads for admission help and visa guidance.</p>
-
-        <div class="metrics">
-          <div class="metric">+200<div style="font-size:12px;color:var(--muted)">Monthly inquiries</div></div>
-          <div class="metric">Higher lead quality<div style="font-size:12px;color:var(--muted)">through landing page testing</div></div>
-        </div>
-
-        <div style="margin-top:12px" class="row">
-          <a class="btn btn-primary" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View Project</a>
-          <a class="btn" href="contact.php" style="background:#eaf7ff;color:var(--accent);margin-left:8px">Get student leads</a>
-        </div>
-      </div>
-      <div aria-hidden="false">
-        <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy screenshot">
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- Portfolio grid (summary cards) -->
-<section id="portfolio-grid" class="container">
-  <h2 style="margin-top:6px">Project Portfolio</h2>
-  <p class="muted">Quick links to the live projects we delivered. Click to view.</p>
-
-  <div class="portfolio-grid" style="margin-top:12px">
-    <!-- A4Realty -->
-    <article class="project" data-category="real-estate">
-      <a href="https://www.a4realty.in/" target="_blank" rel="noopener">
-        <img src="finalized-images/a4realty.png" alt="A4Realty — property listings">
-        <div class="meta">
-          <h4 style="margin:0">A4Realty</h4>
-          <p class="muted" style="margin:6px 0 0">Premium property listings & lead generation</p>
-          <div class="tags"><span class="tag">Real Estate</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- Nalnad -->
-    <article class="project" data-category="ecommerce">
-      <a href="https://nalnadcoffee.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee — e-commerce">
-        <div class="meta">
-          <h4 style="margin:0">Nalnad Coffee</h4>
-          <p class="muted" style="margin:6px 0 0">Specialty coffee e-commerce</p>
-          <div class="tags"><span class="tag">E-commerce</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- Sunbee -->
-    <article class="project" data-category="renewable">
-      <a href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy — renewable energy">
-        <div class="meta">
-          <h4 style="margin:0">Sunbee Synergy</h4>
-          <p class="muted" style="margin:6px 0 0">Solar & wind energy solutions</p>
-          <div class="tags"><span class="tag">Renewable</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- Mastrolee -->
-    <article class="project" data-category="fnb">
-      <a href="#" title="Mastrolee placeholder">
-        <img src="finalized-images/mastrolee.png" alt="Mastrolee — placeholder">
-        <div class="meta">
-          <h4 style="margin:0">Mastrolee</h4>
-          <p class="muted" style="margin:6px 0 0">Restaurant / Social media growth (placeholder)</p>
-          <div class="tags"><span class="tag">F&B</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- Tai Tai -->
-    <article class="project" data-category="fnb">
-      <a href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery">
-        <div class="meta">
-          <h4 style="margin:0">Tai Tai Creamery</h4>
-          <p class="muted" style="margin:6px 0 0">Dessert brand launch & local SEO</p>
-          <div class="tags"><span class="tag">F&B</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- NuLife -->
-    <article class="project" data-category="healthcare">
-      <a href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health">
-        <div class="meta">
-          <h4 style="margin:0">NuLife Behavioral Health</h4>
-          <p class="muted" style="margin:6px 0 0">Clinic programs & appointment growth</p>
-          <div class="tags"><span class="tag">Healthcare</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- MindForge -->
-    <article class="project" data-category="education">
-      <a href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech">
-        <div class="meta">
-          <h4 style="margin:0">MindForge Infotech</h4>
-          <p class="muted" style="margin:6px 0 0">IT training & course conversions</p>
-          <div class="tags"><span class="tag">Education</span></div>
-        </div>
-      </a>
-    </article>
-
-    <!-- Ashwa -->
-    <article class="project" data-category="education">
-      <a href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">
-        <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy">
-        <div class="meta">
-          <h4 style="margin:0">Ashwa Education Consultancy</h4>
-          <p class="muted" style="margin:6px 0 0">Student lead generation</p>
-          <div class="tags"><span class="tag">Education</span></div>
-        </div>
-      </a>
-    </article>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="container">
-  <div class="cta">
-    <h3 style="margin:0 0 8px">Ready to become our next success story?</h3>
-    <p style="margin:0 0 12px">Book a free 15-minute audit and we’ll map the top 3 growth opportunities for your business.</p>
-    <a class="btn btn-primary" href="contact.php">Start Your Project</a>
-    <a class="btn" href="about.html" style="margin-left:8px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.14)">Learn More</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p class="muted" style="margin:0">&copy; 2025 DigiStrive Media — SEO • Web • Social • Paid</p>
-  </div>
-</footer>
-
-<!-- Inline JS: filtering, minor accessibility, fallback image handling -->
-<script>
-  (function(){
-    // Simple filters
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    const projects = Array.from(document.querySelectorAll('.project'));
-    chips.forEach(ch => ch.addEventListener('click', ()=>{
-      chips.forEach(c=>c.classList.remove('active'));
-      ch.classList.add('active');
-      const f = ch.getAttribute('data-filter');
-      projects.forEach(p => {
-        if(f==='all') p.style.display='';
-        else p.style.display = (p.getAttribute('data-category')===f) ? '' : 'none';
+      // attach listeners
+      chips.forEach(ch => {
+        ch.addEventListener('click', () => {
+          const f = ch.getAttribute('data-filter');
+          setFilter(f);
+        });
+        // keyboard enter/space
+        ch.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            ch.click();
+          }
+        });
       });
-      chips.forEach(c=> c.setAttribute('aria-selected', c.classList.contains('active')));
-    }));
 
-    // Basic fallback for images that may not exist (shows small inline placeholder)
-    const imgs = document.querySelectorAll('img');
-    imgs.forEach(img => {
-      img.onerror = function(){
-        // avoid infinite loop if placeholder fails
-        if(img.dataset.fallback) return;
-        img.dataset.fallback = '1';
-        img.style.objectFit = 'contain';
-        const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#eef4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#8b9aa8" font-family="Arial" font-size="18">Image not found</text></svg>';
-        img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-      };
-    });
+      // keyboard left/right navigation on filters
+      const filterContainer = document.querySelector('.ps-filters');
+      if(filterContainer){
+        filterContainer.addEventListener('keydown', (e) => {
+          const focusables = Array.from(filterContainer.querySelectorAll('.ps-chip'));
+          let idx = focusables.indexOf(document.activeElement);
+          if(e.key === 'ArrowLeft') { idx = Math.max(0, idx - 1); focusables[idx].focus(); }
+          if(e.key === 'ArrowRight') { idx = Math.min(focusables.length - 1, idx + 1); focusables[idx].focus(); }
+        });
+      }
 
-    // keyboard navigation helper for chips
-    const container = document.querySelector('[role="tablist"]');
-    container && container.addEventListener('keydown', (e)=>{
-      const keyLeft=37, keyRight=39;
-      const focusable = Array.from(container.querySelectorAll('.chip'));
-      let idx = focusable.indexOf(document.activeElement);
-      if(e.keyCode===keyLeft){ idx = Math.max(0, idx-1); focusable[idx].focus(); }
-      if(e.keyCode===keyRight){ idx = Math.min(focusable.length-1, idx+1); focusable[idx].focus(); }
-    });
+      // fallback for all images
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function(){
+          if(this.dataset.psFallback) return;
+          this.dataset.psFallback = '1';
+          this.style.objectFit = 'contain';
+          const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#eef4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#8b9aa8" font-family="Arial" font-size="18">Image not found</text></svg>';
+          this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+        });
+      });
 
-  })();
-</script>
+      // set initial filter (all)
+      setFilter('all');
+    })();
+  </script>
 </body>
 </html>
