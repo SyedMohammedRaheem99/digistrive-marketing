@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DigiStrive Media | Get Your Free Digital Marketing Consultation</title>
+    <meta name="description" content="Contact DigiStrive Media for digital marketing services in Bangalore. Get free consultation, quotes, and expert advice. Call +91 8147057346 or email info@digistrivemedia.com">
+    <meta name="keywords" content="contact digistrive media, digital marketing consultation bangalore, free quote, digital marketing agency contact">
+    <link rel="icon" type="image/x-icon" href="images/logo.jpeg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contact Methods */
+.contact-methods {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.contact-method {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 139, 139, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 139, 139, 0.05);
+    border-color: #008b8b;
+    box-shadow: 0 8px 30px rgba(0, 139, 139, 0.2);
+}
+
+.method-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #008b8b, #20b2aa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.contact-method h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-method p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-link {
+    color: #008b8b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #20b2aa;
+}
+
+.chat-btn {
+    background: linear-gradient(135deg, #008b8b, #20b2aa);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+    background: linear-gradient(135deg, #20b2aa, #008b8b);
+    transform: translateY(-2px);
+}
+
+.availability {
+    display: block;
+    color: #999;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Contact Forms */
+.contact-forms {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.forms-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.form-section {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 139, 139, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-header h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.form-header p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #008b8b;
+    background: rgba(0, 139, 139, 0.05);
+    box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.form-group select option {
+    background: #fff;
+    color: #333;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #008b8b;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #008b8b, #20b2aa);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #20b2aa, #008b8b);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 139, 139, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #008b8b;
+    border: 2px solid #008b8b;
+}
+
+.btn-secondary:hover {
+    background: #008b8b;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.submit-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.quick-quote {
+    background: rgba(0, 139, 139, 0.05);
+    border-color: rgba(0, 139, 139, 0.4);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid rgba(0, 139, 139, 0.2);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item:hover {
+    border-color: #008b8b;
+    box-shadow: 0 4px 20px rgba(0, 139, 139, 0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 139, 139, 0.05);
+}
+
+.faq-question h4 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.faq-question i {
+    color: #008b8b;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+
+.faq-answer p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+/* Office Location */
+.office-location {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.location-info h2 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.location-info > p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.office-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.office-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.office-detail i {
+    color: #008b8b;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.office-detail h4 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.office-detail p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.office-detail a {
+    color: #008b8b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.office-detail a:hover {
+    color: #20b2aa;
+}
+
+.map-container {
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 139, 139, 0.2);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 139, 139, 0.1), rgba(0, 139, 139, 0.05));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder-content {
+    text-align: center;
+    color: #333;
+}
+
+.map-placeholder-content i {
+    font-size: 3rem;
+    color: #008b8b;
+    margin-bottom: 1rem;
+}
+
+.map-placeholder-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.map-placeholder-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.map-note {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .contact-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forms-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        padding: 2rem;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-container {
+        padding: 1rem 15px;
+    }
+
+    .contact-hero {
+        padding: 100px 0 60px;
+    }
+
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contact-methods,
+    .contact-forms,
+    .faq-section,
+    .office-location,
+    .cta {
+        padding: 60px 0;
+    }
+
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .contact-method {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-hero-content,
+.contact-method,
+.form-section,
+.faq-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #008b8b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #20b2aa;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                <img src="images/logo.jpeg" alt="DigiStrive Media Logo" class="logo"></a><h2><span>DIGISTRIVE</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1>Get Your <span class="gradient-text">Free Consultation</span></h1>
+                <p class="contact-hero-subtitle">Ready to fuel your brand's growth? Let's discuss how we can help you achieve your digital marketing goals with precision and expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="contact-methods-grid">
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our digital marketing experts</p>
+                    <a href="tel:8147057346" class="contact-link">+91 8147057346</a>
+                    <span class="availability">Mon-Sat: 9:00 AM - 7:00 PM IST</span>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Send us your requirements and get a detailed proposal</p>
+                    <a href="mailto:info@digistrivemedia.com" class="contact-link">info@digistrivemedia.com</a>
+                    <span class="availability">Response within 24 hours</span>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Meet our team at our Bangalore office</p>
+                    <span class="contact-link">Bangalore, India</span>
+                    <span class="availability">By appointment only</span>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with our team for instant assistance</p>
+                    <button class="contact-link chat-btn" onclick="startLiveChat()">Start Chat</button>
+                    <span class="availability">24/7 Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Contact Forms Section 
+    <section class="contact-forms">
+        <div class="container">
+            <div class="forms-container">
+                 General Contact Form 
+                <div class="form-section">
+                    <div class="form-header">
+                        <h2>Get Started Today</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours with a customized proposal.</p>
+                    </div>
+                    
+                    <form class="contact-form" id="generalContactForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website">Current Website (if any)</label>
+                            <input type="url" id="website" name="website" placeholder="https://www.yourwebsite.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="services">Services Interested In *</label>
+                            <select id="services" name="services" required>
+                                <option value="">Select a service</option>
+                                <option value="seo">SEO Optimization</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="social-media">Social Media Marketing</option>
+                                <option value="ppc">PPC Advertising</option>
+                                <option value="lead-generation">Lead Generation</option>
+                                <option value="content-marketing">Content Marketing</option>
+                                <option value="complete-package">Complete Digital Marketing Package</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Monthly Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-25k">Under ₹25,000</option>
+                                <option value="25k-50k">₹25,000 - ₹50,000</option>
+                                <option value="50k-100k">₹50,000 - ₹1,00,000</option>
+                                <option value="100k-200k">₹1,00,000 - ₹2,00,000</option>
+                                <option value="200k-plus">₹2,00,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your business, goals, and what you're looking to achieve with digital marketing..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for digital marketing tips and updates
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Get Free Consultation</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                 Quick Quote Form 
+                <div class="form-section quick-quote">
+                    <div class="form-header">
+                        <h2>Quick Quote Request</h2>
+                        <p>Need a quick estimate? Fill this short form and get a ballpark quote within 2 hours.</p>
+                    </div>
+                    
+                    <form class="contact-form" id="quickQuoteForm">
+                        <div class="form-group">
+                            <label for="quickName">Name *</label>
+                            <input type="text" id="quickName" name="quickName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quickEmail">Email *</label>
+                            <input type="email" id="quickEmail" name="quickEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quickService">Service Needed *</label>
+                            <select id="quickService" name="quickService" required>
+                                <option value="">Select service</option>
+                                <option value="seo">SEO Package</option>
+                                <option value="website">Website Development</option>
+                                <option value="social-media">Social Media Management</option>
+                                <option value="ppc">PPC Campaign Setup</option>
+                                <option value="content">Content Marketing</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quickRequirement">Brief Requirement *</label>
+                            <textarea id="quickRequirement" name="quickRequirement" rows="3" placeholder="Brief description of what you need..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary submit-btn">
+                            <span>Get Quick Quote</span>
+                            <i class="fas fa-clock"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long does it take to see results from digital marketing?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Results vary by service: PPC ads can show immediate results, SEO typically takes 3-6 months, social media growth is usually visible in 1-3 months. We provide detailed timelines during our consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you work with businesses outside Bangalore?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! While we're based in Bangalore, we serve clients across India and internationally. Most of our work is done remotely with regular virtual meetings and detailed reporting.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What's included in your digital marketing packages?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our packages are customized based on your needs. Common inclusions are strategy development, implementation, ongoing optimization, monthly reporting, and dedicated account management. We'll create a custom package during consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you provide contracts? What are your terms?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer both short-term projects and ongoing retainer agreements. Most of our clients prefer 6-12 month contracts for better results, but we're flexible based on your requirements. No long-term commitments required to start.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do you measure and report on campaign performance?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use industry-standard tools like Google Analytics, Google Ads, social media insights, and custom dashboards. You'll receive detailed monthly reports with key metrics, insights, and recommendations for improvement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What makes DigiStrive Media different from other agencies?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our "Digital Precision" approach combines data-driven strategies with creative execution. We focus on measurable results, transparent reporting, and building long-term partnerships rather than just delivering services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map and Office Info -->
+    <section class="office-location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info">
+                    <h2>Visit Our Bangalore Office</h2>
+                    <p>Schedule a meeting with our team to discuss your digital marketing needs in person. We're located in the heart of Bangalore's tech corridor.</p>
+                    
+                    <div class="office-details">
+                        <div class="office-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>DigiStrive Media<br>Bangalore, Karnataka, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="office-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="office-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:8147057346">+91 8147057346</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="office-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@digistrivemedia.com">info@digistrivemedia.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="tel:8147057346" class="btn btn-primary">Schedule a Meeting</a>
+                </div>
+                
+                <div class="map-container">
+                    <div id="map" class="map-placeholder">
+                        <div class="map-placeholder-content">
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497700.1123005915!2d77.30127814132629!3d12.95379021332858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1751018533266!5m2!1sen!2sin" width="480" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <<!-- i class="fas fa-map-marked-alt"></i>
+                            <h3>Interactive Map</h3>
+                            <p>Bangalore, Karnataka, India</p>
+                            <p class="map-note">Exact address will be shared when you schedule a meeting</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Digital Growth Journey?</h2>
+                <p>Don't wait! The longer you delay, the more opportunities your competitors capture. Get started with a free consultation today.</p>
+                <div class="cta-buttons">
+                    <a href="#generalContactForm" class="btn btn-primary">Get Free Consultation</a>
+                    <a href="tel:8147057346" class="btn btn-secondary">Call Now: +91 8147057346</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpeg" alt="DigiStrive Media Logo" class="logo">
+                        <p>Fueling Brands with Digital Precision</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#seo">SEO Optimization</a></li>
+                        <li><a href="services.html#web-dev">Web Development</a></li>
+                        <li><a href="services.html#social-media">Social Media Marketing</a></li>
+                        <li><a href="services.html#ppc">PPC Advertising</a></li>
+                        <li><a href="services.html#lead-gen">Lead Generation</a></li>
+                        <li><a href="services.html#content">Content Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
+                        <p><i class="fas fa-phone"></i> +91 8147057346</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DigiStrive Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
