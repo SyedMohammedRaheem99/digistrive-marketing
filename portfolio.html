@@ -3,664 +3,755 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DigiStrive Media — Portfolio & Case Studies</title>
-  <meta name="description" content="DigiStrive Media — portfolio & case studies: SEO, paid, web and lead-generation wins with measurable results." />
-  <meta name="keywords" content="digital marketing portfolio, seo case study, ppc results, web development, client success stories" />
-  <link rel="icon" href="images/logo.png" type="image/png" />
-
-  <!-- Organization JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"DigiStrive Media",
-    "url":"https://digistrivemedia.com",
-    "logo":"https://digistrivemedia.com/images/logo.png",
-    "sameAs":["https://www.facebook.com/","https://www.instagram.com/"]
-  }
-  </script>
-
-  <!-- ItemList JSON-LD (case studies) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "name":"DigiStrive Media Case Studies",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"url":"https://www.a4realty.in/"},
-      {"@type":"ListItem","position":2,"url":"https://nalnadcoffee.com/"},
-      {"@type":"ListItem","position":3,"url":"https://www.sunbeesynergy.com/"},
-      {"@type":"ListItem","position":4,"url":"#mastrolee"},
-      {"@type":"ListItem","position":5,"url":"https://www.taitaicreamery.com/"},
-      {"@type":"ListItem","position":6,"url":"https://nulifebehavioralhealth.com/"},
-      {"@type":"ListItem","position":7,"url":"https://mindforgeinfotech.com/"},
-      {"@type":"ListItem","position":8,"url":"https://ashwaeducationconsultancy.com/"}
-    ]
-  }
-  </script>
-
+  <title>Portfolio & Case Studies — DigiStrive Media</title>
+  <meta name="description" content="DigiStrive Media — portfolio & case studies: SEO, web, paid and lead generation wins." />
+  <meta name="keywords" content="digital marketing portfolio, seo case study, web development case study, lead generation, digistrive" />
+  <link rel="icon" href="images/logo.png" />
+  <!-- Font icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Inline CSS (brand blue + green gradients, accessible contrasts, responsive) -->
   <style>
     :root{
-      --bg:#f7fafc; --card:#fff; --accent:#0077ff; --accent2:#00c2d1;
-      --muted:#555; --radius:14px; --maxw:1200px; --shadow:0 8px 30px rgba(0,0,0,0.06);
-      --gap:18px;
+      --bg:#0b1220;
+      --panel:#071026;
+      --card:#0f1724;
+      --muted:#98a6b6;
+      --text:#e6f0fa;
+      --blue-1:#004AAD; /* logo dark */
+      --blue-2:#00AEEF; /* logo bright */
+      --green-1:#43B02A;
+      --green-2:#87C94A;
+      --gradient-primary: linear-gradient(90deg,var(--blue-1),var(--blue-2));
+      --gradient-accent: linear-gradient(90deg,var(--green-1),var(--green-2));
+      --radius:16px;
+      --maxw:1200px;
+      --shadow: 0 12px 30px rgba(0,0,0,0.55);
+      --glass: rgba(255,255,255,0.03);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1720;-webkit-font-smoothing:antialiased;line-height:1.5}
-    a{color:var(--accent);text-decoration:none}
-    img{display:block;max-width:100%}
-
-    .container{max-width:var(--maxw);margin:0 auto;padding:22px}
-
-    /* skip link */
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;z-index:1000}
-
-    /* Header */
-    header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:60}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg) 0%, #071026 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      scroll-behavior:smooth;
+    }
+    a{color:inherit}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+    /* NAV */
+    .nav{
+      position:fixed;left:0;right:0;top:0;height:72px;
+      display:flex;align-items:center;z-index:1200;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(7,16,38,0.6), rgba(7,16,38,0.35));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .nav .inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:44px;width:44px;border-radius:8px;object-fit:cover}
-    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
-    nav a{display:inline-block;padding:8px 10px;border-radius:8px;font-weight:700;color:#0b1720}
-    nav a.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}
-
-    /* Hero (dominant CTA) */
-    .hero{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;padding:56px 20px;text-align:center}
-    .hero h1{font-size:30px;margin:0 0 10px}
-    .hero p{margin:0 auto 18px;max-width:820px;color:rgba(255,255,255,0.95);font-size:17px}
-    .hero .actions{display:inline-flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer}
-    .btn-primary{background:#fff;color:var(--accent);border:none}
-    .btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.16)}
-
-    /* Filters */
-    .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:22px 0}
-    .chip{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(11,22,40,0.06);font-weight:700;cursor:pointer}
-    .chip[aria-pressed="true"]{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent;box-shadow:0 8px 26px rgba(10,132,255,0.12)}
-
-    /* Case studies grid */
-    .case-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start}
-    .case{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s ease}
-    .case:focus-within,.case:hover{transform:translateY(-6px)}
-    .case .media{width:100%;aspect-ratio:16/9;overflow:hidden}
-    .case .media img{width:100%;height:100%;object-fit:cover;display:block}
-    .case-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
-    .badge{display:inline-block;background:#eef6ff;color:#023a7d;padding:6px 10px;border-radius:999px;font-weight:800;font-size:13px}
-    .case h3{margin:0;font-size:18px}
-    .muted{color:var(--muted)}
-    .metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .metric{background:#f1fbff;padding:8px 10px;border-radius:10px;font-weight:800;text-align:center;min-width:100px}
-
-    .case .cta-row{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-
-    /* Portfolio grid */
-    .portfolio-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:26px}
-    .project{background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;transition:transform .22s}
-    .project:hover{transform:translateY(-6px)}
-    .project img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
-    .meta{padding:12px}
-    .meta h4{margin:0;font-size:16px}
-    .tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
-    .tag{background:#f2f8ff;color:#023a7d;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
-
-    /* CTA block */
-    .cta{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#fff;padding:30px;border-radius:12px;text-align:center;margin-top:34px}
-    .cta h3{margin:0 0 8px}
-
-    footer{padding:22px 0;text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
-
-    /* Sticky mobile CTA */
-    @media(max-width:768px){
-      .sticky-cta{position:fixed;left:10px;right:10px;bottom:env(safe-area-inset-bottom,10px);z-index:1200;border-radius:12px;padding:12px;display:flex;justify-content:center;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,0.18);backdrop-filter:blur(6px)}
-      .sticky-cta a{color:#fff;font-weight:800;background:rgba(255,255,255,0.08);padding:10px 18px;border-radius:10px}
-      body{padding-bottom:80px} /* ensure content not hidden under sticky */
+    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .brand h1{font-size:18px;margin:0;font-weight:700;color:var(--text)}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    nav a.active, nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))}
+    /* HERO */
+    .hero{padding:120px 0 60px;position:relative;overflow:hidden}
+    .hero .panel{
+      background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.01));
+      border-radius:20px;padding:36px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:var(--shadow);
     }
-
-    /* small devices adjustments */
-    @media(max-width:520px){
-      .hero h1{font-size:22px}
-      .hero p{font-size:15px}
-    }
-
-    /* focus outlines for accessibility */
-    button:focus, a:focus, input:focus, textarea:focus{outline:3px solid rgba(10,132,255,0.14);outline-offset:3px}
+    .hero h2{font-size:34px;margin:0 0 12px;line-height:1.05;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;border:0}
+    .btn-primary{background:var(--gradient-primary);color:#fff;box-shadow:0 8px 24px rgba(0,120,255,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--text);padding:9px 14px}
+    .hero-stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;min-width:120px;text-align:center}
+    .stat .num{font-weight:800;color:var(--green-1);font-size:20px}
+    .stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;margin-top:6px}
+    /* FILTERS */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0;align-items:center}
+    .chip{background:var(--panel);border-radius:999px;padding:8px 14px;color:var(--muted);border:1px solid rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
+    .chip.active{background:var(--gradient-primary);color:white;box-shadow:0 8px 30px rgba(0,80,220,0.12)}
+    /* CASES grid */
+    .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    @media(max-width:920px){.cases-grid{grid-template-columns:1fr}}
+    .case{background:var(--card);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.03);display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start;overflow:hidden}
+    .case.reverse{grid-template-columns:420px 1fr}
+    @media(max-width:1100px){.case{grid-template-columns:1fr;}.case.reverse{grid-template-columns:1fr}}
+    .case-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--green-1),var(--green-2));color:#fff;font-weight:800;font-size:12px}
+    .case h3{font-size:20px;margin:10px 0 8px;color:var(--text)}
+    .case p{color:var(--muted);margin:0 0 12px}
+    .case .challenge, .case .solution{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border-left:4px solid rgba(255,255,255,0.03);color:var(--muted);margin-bottom:10px}
+    .case .solution ul{padding-left:18px;margin:0}
+    .case-img{width:100%;height:260px;object-fit:cover;border-radius:10px;display:block}
+    .case-results{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .metric{background:linear-gradient(90deg, rgba(67,176,42,0.08), rgba(135,201,74,0.06));padding:10px;border-radius:10px;min-width:110px;text-align:center;color:var(--text)}
+    .metric .big{font-weight:800;color:var(--green-1)}
+    .case-actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .small-btn{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;color:var(--text);border:1px solid rgba(255,255,255,0.02)}
+    /* PROJECT GRID */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+    @media(max-width:1100px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.projects-grid{grid-template-columns:1fr}}
+    .project-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;height:100%}
+    .project-media{height:180px;overflow:hidden;background:#0a1220}
+    .project-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-body{padding:16px;flex:1;display:flex;flex-direction:column}
+    .project-title{font-weight:800;color:var(--text);margin-bottom:6px}
+    .project-desc{color:var(--muted);font-size:14px;flex:1}
+    .project-footer{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .tag{background:linear-gradient(90deg,var(--green-1),var(--green-2));padding:6px 8px;border-radius:999px;color:white;font-weight:700;font-size:12px}
+    .project-cta{margin-left:auto;background:var(--gradient-primary);padding:8px 12px;border-radius:10px;color:#fff;font-weight:700;text-decoration:none}
+    /* CTA section */
+    .cta{margin:40px 0;padding:28px;border-radius:16px;background:linear-gradient(90deg, rgba(0,170,239,0.12), rgba(67,176,42,0.08));display:flex;align-items:center;gap:16px;justify-content:space-between}
+    @media(max-width:800px){.cta{flex-direction:column;align-items:center;text-align:center}}
+    /* bottom sticky CTA for mobile */
+    .sticky-cta{position:fixed;left:12px;right:12px;bottom:18px;z-index:1400;display:none;box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+    .sticky-cta .btn{padding:14px 18px;border-radius:14px;font-weight:800}
+    @media(max-width:768px){.sticky-cta{display:flex;justify-content:center}}
+    /* footer */
+    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:1600;padding:20px}
+    .modal{background:var(--card);border-radius:12px;padding:20px;max-width:640px;width:100%;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)}
+    .modal h3{margin:0 0 8px}
+    .form-row{display:flex;gap:10px;margin-bottom:10px}
+    .form-row input, .form-row textarea, .form-row select{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}
+    .form-row textarea{min-height:110px}
+    .close-btn{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
+    /* badges & small helpers */
+    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:0.06em}
+    /* small utilities */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <header>
-    <div class="header-inner container" role="banner">
-      <div class="brand" aria-hidden="false">
-        <a href="index.html"><img src="images/logo.png" alt="DigiStrive Media logo"></a>
+  <!-- NAV -->
+  <header class="nav" role="banner" aria-hidden="false">
+    <div class="inner">
+      <div class="brand">
+        <a href="index.html" aria-label="DigiStrive Home"><img src="images/logo.png" alt="DigiStrive Media logo"></a>
         <div>
-          <div style="font-weight:800">DigiStrive Media</div>
-          <div style="font-size:13px;color:var(--muted)">Digital Growth — SEO • Web • Paid • Social</div>
+          <h1>DigiStrive Media</h1>
+          <div style="font-size:12px;color:var(--muted)">SEO • Web • Social • Paid</div>
         </div>
       </div>
-
       <nav aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a class="active" href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+          <li><a href="contact.php" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" role="region" aria-label="Portfolio hero">
-    <div class="container">
-      <h1>Real digital growth — SEO, web & paid campaigns that drive leads</h1>
-      <p>Average 3× organic traffic growth in 6 months for our clients — measurable wins you can show to stakeholders.</p>
-      <div class="actions" style="margin-top:14px">
-        <button class="btn btn-primary" id="heroPrimaryBtn" aria-controls="contact-modal" aria-haspopup="dialog">Start Your Project</button>
-        <a class="btn btn-secondary" href="#portfolio-grid" id="heroSecondary">See Projects</a>
+  <main id="main" tabindex="-1" style="padding-top:90px">
+    <section class="hero">
+      <div class="container">
+        <div class="panel" role="region" aria-labelledby="hero-title">
+          <h2 id="hero-title">Real digital growth — <span style="background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent">SEO, Web & Paid</span> campaigns that drive leads</h2>
+          <p>Average client: 3x organic growth in 6 months. We focus on measurable outcomes — traffic, qualified leads and conversion lifts.</p>
+
+          <div class="cta-row">
+            <button class="btn btn-primary" id="openContact" aria-haspopup="dialog">Start your project</button>
+            <a class="btn btn-ghost" href="#portfolio-grid">See projects</a>
+          </div>
+
+          <div class="hero-stats" aria-hidden="false" role="status" aria-label="Key metrics">
+            <div class="stat"><div class="num">150+</div><div class="lbl">Projects</div></div>
+            <div class="stat"><div class="num">450%</div><div class="lbl">Avg ROI</div></div>
+            <div class="stat"><div class="num">98%</div><div class="lbl">Satisfaction</div></div>
+            <div class="stat"><div class="num">2.5M+</div><div class="lbl">Leads Generated</div></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <main id="main-content" class="container" role="main">
-    <!-- FILTERS -->
-    <div class="filters" role="tablist" aria-label="Filter projects">
-      <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" data-filter="real-estate" aria-pressed="false">Real Estate</button>
-      <button class="chip" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
-      <button class="chip" data-filter="renewable" aria-pressed="false">Renewable</button>
-      <button class="chip" data-filter="fnb" aria-pressed="false">F&B</button>
-      <button class="chip" data-filter="healthcare" aria-pressed="false">Healthcare</button>
-      <button class="chip" data-filter="education" aria-pressed="false">Education</button>
-      <button class="chip" data-filter="it" aria-pressed="false">IT / Services</button>
-    </div>
-
-    <!-- FEATURED CASE STUDIES -->
-    <h2 id="featured-title">Featured Case Studies</h2>
-    <p class="muted" style="margin-top:6px;margin-bottom:12px">Deep dives that show challenge → approach → measurable outcomes.</p>
-
-    <section class="case-grid" id="case-grid" aria-labelledby="featured-title">
-      <!-- A4Realty -->
-      <article class="case" data-category="real-estate" tabindex="0">
-        <div class="media"><img src="finalized-images/a4realty.png" alt="A4Realty homepage screenshot"></div>
-        <div class="case-body">
-          <span class="badge">SEO & Content</span>
-          <h3>A4Realty — Real Estate Lead Growth</h3>
-          <p class="muted">Local SEO, listing schema and better inquiry UX produced higher-quality leads for a property platform.</p>
-          <div class="metrics" aria-hidden="false">
-            <div class="metric">+200% <div style="font-size:12px;color:var(--muted)">Traffic (6m)</div></div>
-            <div class="metric">120+ <div style="font-size:12px;color:var(--muted)">Leads / month</div></div>
-            <div class="metric">+30% <div style="font-size:12px;color:var(--muted)">Lead→Viewing</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://www.a4realty.in/" data-project="A4Realty" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="A4Realty">Discuss Growth</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Nalnad Coffee -->
-      <article class="case" data-category="ecommerce" tabindex="0">
-        <div class="media"><img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee store screenshot"></div>
-        <div class="case-body">
-          <span class="badge">E-commerce</span>
-          <h3>Nalnad Coffee — Productized E-commerce</h3>
-          <p class="muted">Checkout optimization, product SEO and retention automations to scale online orders.</p>
-          <div class="metrics">
-            <div class="metric">+150% <div style="font-size:12px;color:var(--muted)">Orders (6m)</div></div>
-            <div class="metric">+40% <div style="font-size:12px;color:var(--muted)">Checkout conv.</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://nalnadcoffee.com/" data-project="Nalnad Coffee" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="Nalnad Coffee">Get a similar store</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Sunbee Synergy -->
-      <article class="case" data-category="renewable" tabindex="0">
-        <div class="media"><img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy screenshot"></div>
-        <div class="case-body">
-          <span class="badge">B2B • Renewable</span>
-          <h3>Sunbee Synergy — Enterprise Lead Growth</h3>
-          <p class="muted">Technical briefs, ROI calculators and RFQ funnel to attract enterprise buyers and shorten sales cycles.</p>
-          <div class="metrics">
-            <div class="metric">+300% <div style="font-size:12px;color:var(--muted)">Inquiries (12m)</div></div>
-            <div class="metric">+120% <div style="font-size:12px;color:var(--muted)">Qualified leads</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://www.sunbeesynergy.com/" data-project="Sunbee Synergy" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="Sunbee Synergy">Request Quote</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Mastrolee -->
-      <article class="case" data-category="fnb" tabindex="0" id="mastrolee">
-        <div class="media"><img src="finalized-images/mastrolee.png" alt="Mastrolee placeholder screenshot"></div>
-        <div class="case-body">
-          <span class="badge">F&B • Social</span>
-          <h3>Mastrolee — Restaurant Social Growth</h3>
-          <p class="muted">Local promos, UGC and reservation funnels to increase bookings and engagement.</p>
-          <div class="metrics">
-            <div class="metric">+175% <div style="font-size:12px;color:var(--muted)">Bookings</div></div>
-            <div class="metric">+50% <div style="font-size:12px;color:var(--muted)">Engagement</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="#" data-project="Mastrolee">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="Mastrolee">Discuss F&B growth</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Tai Tai Creamery -->
-      <article class="case" data-category="fnb" tabindex="0">
-        <div class="media"><img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery screenshot"></div>
-        <div class="case-body">
-          <span class="badge">F&B • Local</span>
-          <h3>Tai Tai Creamery — Dessert Launch</h3>
-          <p class="muted">Local SEO, influencer seeding and online ordering to boost footfall and orders.</p>
-          <div class="metrics">
-            <div class="metric">+80% <div style="font-size:12px;color:var(--muted)">Footfall</div></div>
-            <div class="metric">+200% <div style="font-size:12px;color:var(--muted)">Online orders</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://www.taitaicreamery.com/" data-project="Tai Tai Creamery" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="Tai Tai Creamery">Start similar campaign</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- NuLife Behavioral Health -->
-      <article class="case" data-category="healthcare" tabindex="0">
-        <div class="media"><img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health screenshot"></div>
-        <div class="case-body">
-          <span class="badge">Healthcare</span>
-          <h3>NuLife Behavioral Health — Multi-clinic Growth</h3>
-          <p class="muted">Program pages, local SEO & PPC to drive appointment requests across multiple clinics.</p>
-          <div class="metrics">
-            <div class="metric">+250% <div style="font-size:12px;color:var(--muted)">Consultation requests</div></div>
-            <div class="metric">5+ <div style="font-size:12px;color:var(--muted)">Clinics</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://nulifebehavioralhealth.com/" data-project="NuLife Behavioral Health" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="NuLife Behavioral Health">Talk to an expert</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- MindForge Infotech -->
-      <article class="case" data-category="education" tabindex="0">
-        <div class="media"><img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech screenshot"></div>
-        <div class="case-body">
-          <span class="badge">Education • IT</span>
-          <h3>MindForge Infotech — Course & Recruitment Funnel</h3>
-          <p class="muted">Outcomes-first pages, better tracking and clearer CTAs to increase registrations.</p>
-          <div class="metrics">
-            <div class="metric">+300% <div style="font-size:12px;color:var(--muted)">Registrations</div></div>
-            <div class="metric">More<div style="font-size:12px;color:var(--muted)">Employer inquiries</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://mindforgeinfotech.com/" data-project="MindForge Infotech" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="MindForge Infotech">Discuss funnels</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Ashwa Education Consultancy -->
-      <article class="case" data-category="education" tabindex="0">
-        <div class="media"><img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy screenshot"></div>
-        <div class="case-body">
-          <span class="badge">Education Consultancy</span>
-          <h3>Ashwa Education Consultancy — Student Lead Machine</h3>
-          <p class="muted">Conversion-optimized pages + targeted PPC to deliver qualified student leads.</p>
-          <div class="metrics">
-            <div class="metric">+200 <div style="font-size:12px;color:var(--muted)">Inquiries / month</div></div>
-            <div class="metric">↑ Quality<div style="font-size:12px;color:var(--muted)">Better conversions</div></div>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary view-project" href="https://ashwaeducationconsultancy.com/" data-project="Ashwa Education Consultancy" target="_blank" rel="noopener">View Project</a>
-            <button class="btn btn-secondary open-contact" data-source="Ashwa Education Consultancy">Get student leads</button>
-          </div>
-        </div>
-      </article>
     </section>
 
-    <!-- Portfolio Grid (summary) -->
-    <h2 id="portfolio-grid" style="margin-top:32px">Project Portfolio</h2>
-    <p class="muted">Quick links to the live projects we delivered — click to view.</p>
+    <!-- FILTERS -->
+    <section class="container">
+      <div class="filters" role="tablist" aria-label="Filter projects">
+        <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="real-estate" aria-pressed="false">Real Estate</button>
+        <button class="chip" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
+        <button class="chip" data-filter="renewable" aria-pressed="false">Renewable</button>
+        <button class="chip" data-filter="fnb" aria-pressed="false">F&B</button>
+        <button class="chip" data-filter="healthcare" aria-pressed="false">Healthcare</button>
+        <button class="chip" data-filter="education" aria-pressed="false">Education</button>
+        <button class="chip" data-filter="it" aria-pressed="false">IT / Services</button>
+      </div>
+    </section>
 
-    <section class="portfolio-grid" aria-labelledby="portfolio-grid">
-      <article class="project" data-category="real-estate">
-        <a href="https://www.a4realty.in/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/a4realty.png" alt="A4Realty — property listings">
-          <div class="meta"><h4>A4Realty</h4><p class="muted">Premium property listings & lead generation</p><div class="tags"><span class="tag">Real Estate</span></div></div>
-        </a>
-      </article>
+    <!-- FEATURED CASES -->
+    <section class="container" aria-labelledby="featured-heading">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px">
+        <div>
+          <h3 id="featured-heading" style="margin:0;font-size:20px">Featured Case Studies</h3>
+          <div class="kicker" style="margin-top:6px;color:var(--muted)">Deep dives: challenge, approach & results</div>
+        </div>
+      </div>
 
-      <article class="project" data-category="ecommerce">
-        <a href="https://nalnadcoffee.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee — e-commerce">
-          <div class="meta"><h4>Nalnad Coffee</h4><p class="muted">Specialty coffee e-commerce</p><div class="tags"><span class="tag">E-commerce</span></div></div>
-        </a>
-      </article>
+      <div class="cases-grid" style="margin-top:22px">
 
-      <article class="project" data-category="renewable">
-        <a href="https://www.sunbeesynergy.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy — renewable solutions">
-          <div class="meta"><h4>Sunbee Synergy</h4><p class="muted">Solar & wind energy solutions</p><div class="tags"><span class="tag">Renewable</span></div></div>
-        </a>
-      </article>
+        <!-- A4Realty -->
+        <article class="case" id="a4realty" role="article" aria-labelledby="a4-title">
+          <div>
+            <span class="case-badge">SEO · Lead Gen</span>
+            <h3 id="a4-title">A4Realty — 200% Organic Traffic Growth</h3>
+            <p class="case-description">Redesigned premium listing pages, local landing pages and conversion flows to increase high-intent leads in Bangalore.</p>
 
-      <article class="project" data-category="fnb">
-        <a href="#" class="project-link" rel="noopener">
-          <img src="finalized-images/mastrolee.png" alt="Mastrolee — restaurant growth">
-          <div class="meta"><h4>Mastrolee</h4><p class="muted">Restaurant social & booking campaigns</p><div class="tags"><span class="tag">F&B</span></div></div>
-        </a>
-      </article>
+            <div class="challenge"><strong>Challenge:</strong> Low local visibility and weak lead capture UX.</div>
+            <div class="solution"><strong>Solution:</strong>
+              <ul>
+                <li>Technical SEO & Core Web Vitals fixes</li>
+                <li>Neighborhood landing pages & schema</li>
+                <li>Improved enquiry forms & trust signals</li>
+              </ul>
+            </div>
 
-      <article class="project" data-category="fnb">
-        <a href="https://www.taitaicreamery.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery — dessert brand">
-          <div class="meta"><h4>Tai Tai Creamery</h4><p class="muted">Dessert brand launch & local SEO</p><div class="tags"><span class="tag">F&B</span></div></div>
-        </a>
-      </article>
+            <div class="case-results" aria-hidden="false">
+              <div class="metric"><div class="big">+200%</div><div style="font-size:12px;color:var(--muted)">Organic traffic</div></div>
+              <div class="metric"><div class="big">120+</div><div style="font-size:12px;color:var(--muted)">Leads / month</div></div>
+              <div class="metric"><div class="big">+30%</div><div style="font-size:12px;color:var(--muted)">Lead→Viewing</div></div>
+            </div>
 
-      <article class="project" data-category="healthcare">
-        <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health">
-          <div class="meta"><h4>NuLife Behavioral Health</h4><p class="muted">Clinic programs & appointment growth</p><div class="tags"><span class="tag">Healthcare</span></div></div>
-        </a>
-      </article>
+            <div class="case-actions">
+              <a class="small-btn" href="https://www.a4realty.in/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn" id="openCaseA4">Request Case Study</button>
+            </div>
+          </div>
 
-      <article class="project" data-category="education">
-        <a href="https://mindforgeinfotech.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech">
-          <div class="meta"><h4>MindForge Infotech</h4><p class="muted">Course funnels & registrations</p><div class="tags"><span class="tag">Education</span></div></div>
-        </a>
-      </article>
+          <div>
+            <img class="case-img" data-src="finalized-images/a4realty.png" alt="A4Realty screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+        </article>
 
-      <article class="project" data-category="education">
-        <a href="https://ashwaeducationconsultancy.com/" target="_blank" class="project-link" rel="noopener">
-          <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy">
-          <div class="meta"><h4>Ashwa Education Consultancy</h4><p class="muted">Student lead generation</p><div class="tags"><span class="tag">Education</span></div></div>
-        </a>
-      </article>
+        <!-- Nalnad Coffee -->
+        <article class="case reverse" id="nalnad" role="article" aria-labelledby="nal-title">
+          <div>
+            <img class="case-img" data-src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+          <div>
+            <span class="case-badge">E-commerce · Branding</span>
+            <h3 id="nal-title">Nalnad Coffee — Productized E-commerce</h3>
+            <p class="case-description">Product taxonomy, PDP optimizations and checkout improvements to reduce abandon rates and scale orders regionally.</p>
+
+            <div class="challenge"><strong>Challenge:</strong> Abandoned carts and low product findability.</div>
+            <div class="solution"><strong>Approach:</strong>
+              <ul>
+                <li>One-click checkout & better PDPs</li>
+                <li>Google Shopping feed & retention emails</li>
+                <li>SEO product descriptions & content</li>
+              </ul>
+            </div>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+150%</div><div style="font-size:12px;color:var(--muted)">Orders</div></div>
+              <div class="metric"><div class="big">+40%</div><div style="font-size:12px;color:var(--muted)">Checkout conv.</div></div>
+              <div class="metric"><div class="big">+70%</div><div style="font-size:12px;color:var(--muted)">Returning</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn" id="openCaseNal">Get a similar store</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sunbee -->
+        <article class="case" id="sunbee" role="article" aria-labelledby="sunbee-title">
+          <div>
+            <span class="case-badge">B2B · Renewable</span>
+            <h3 id="sunbee-title">Sunbee Synergy — 300% Enterprise Inquiries</h3>
+            <p class="case-description">B2B funnel, technical briefs, ROI calculators and quote funnel that convert enterprise buyers for solar solutions.</p>
+
+            <div class="solution"><strong>Approach:</strong>
+              <ul>
+                <li>Services pages for high-intent queries</li>
+                <li>Content hub: technical briefs + calculators</li>
+                <li>Quote configurator + lead scoring</li>
+              </ul>
+            </div>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+300%</div><div style="font-size:12px;color:var(--muted)">Enterprise inquiries</div></div>
+              <div class="metric"><div class="big">+120%</div><div style="font-size:12px;color:var(--muted)">Qualified leads</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn">Request Quote</button>
+            </div>
+          </div>
+
+          <div>
+            <img class="case-img" data-src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+        </article>
+
+        <!-- Mastrolee (placeholder) -->
+        <article class="case reverse" id="mastrolee" role="article" aria-labelledby="mast-title">
+          <div>
+            <img class="case-img" data-src="finalized-images/mastrolee.png" alt="Mastrolee screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+          <div>
+            <span class="case-badge">Social · F&B</span>
+            <h3 id="mast-title">Mastrolee — Restaurant Social & Local (Placeholder)</h3>
+            <p class="case-description">Local promotions, UGC, reservation funnels for restaurants — placeholder until final assets are provided.</p>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+175%</div><div style="font-size:12px;color:var(--muted)">Bookings</div></div>
+              <div class="metric"><div class="big">+50%</div><div style="font-size:12px;color:var(--muted)">Engagement</div></div>
+            </div>
+
+            <div class="case-actions">
+              <button class="small-btn">View Project</button>
+              <button class="small-btn">Discuss F&B growth</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tai Tai Creamery -->
+        <article class="case" id="tai" role="article" aria-labelledby="tai-title">
+          <div>
+            <span class="case-badge">F&B · Local</span>
+            <h3 id="tai-title">Tai Tai Creamery — Premium Dessert Launch</h3>
+            <p class="case-description">Store pages, local promos and influencer seeding to drive footfall and online orders for a dessert brand.</p>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+80%</div><div style="font-size:12px;color:var(--muted)">Footfall</div></div>
+              <div class="metric"><div class="big">+200%</div><div style="font-size:12px;color:var(--muted)">Online orders</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn">Start similar campaign</button>
+            </div>
+          </div>
+
+          <div>
+            <img class="case-img" data-src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+        </article>
+
+        <!-- NuLife Behavioral Health -->
+        <article class="case reverse" id="nulifelbl" role="article" aria-labelledby="nulifetitle">
+          <div>
+            <img class="case-img" data-src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+          <div>
+            <span class="case-badge">Healthcare · Multi-location</span>
+            <h3 id="nulifetitle">NuLife Behavioral Health — 250% Consultation Requests</h3>
+            <p class="case-description">Multi-location structure, appointment CTAs and patient-first content to increase appointment bookings and credibility.</p>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+250%</div><div style="font-size:12px;color:var(--muted)">Consult requests</div></div>
+              <div class="metric"><div class="big">5+</div><div style="font-size:12px;color:var(--muted)">Clinics</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn">Talk to an expert</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- MindForge -->
+        <article class="case" id="mindforge" role="article" aria-labelledby="mind-title">
+          <div>
+            <span class="case-badge">Education · IT</span>
+            <h3 id="mind-title">MindForge Infotech — 300% Student Registrations</h3>
+            <p class="case-description">Course redesign, tracking & conversion funnels to boost admissions and employer engagement for training programs.</p>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+300%</div><div style="font-size:12px;color:var(--muted)">Registrations</div></div>
+              <div class="metric"><div class="big">500+</div><div style="font-size:12px;color:var(--muted)">Monthly inquiries</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn">Discuss funnels</button>
+            </div>
+          </div>
+
+          <div>
+            <img class="case-img" data-src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+        </article>
+
+        <!-- Ashwa Education -->
+        <article class="case reverse" id="ashwa" role="article" aria-labelledby="ashwa-title">
+          <div>
+            <img class="case-img" data-src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
+          </div>
+          <div>
+            <span class="case-badge">Education Consultancy</span>
+            <h3 id="ashwa-title">Ashwa Education Consultancy — Student Lead Machine</h3>
+            <p class="case-description">Targeted PPC, conversion-optimized landing pages and lead nurturing to capture high-quality student inquiries.</p>
+
+            <div class="case-results">
+              <div class="metric"><div class="big">+200</div><div style="font-size:12px;color:var(--muted)">Monthly inquiries</div></div>
+              <div class="metric"><div class="big">+85%</div><div style="font-size:12px;color:var(--muted)">Conversion</div></div>
+            </div>
+
+            <div class="case-actions">
+              <a class="small-btn" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View Project</a>
+              <button class="small-btn">Get student leads</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECT PORTFOLIO (summary grid) -->
+    <section class="container" id="portfolio-grid" aria-labelledby="portfolio-heading">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h3 id="portfolio-heading" style="margin:0;font-size:20px">Project Portfolio</h3>
+          <div class="kicker" style="margin-top:6px;color:var(--muted)">Quick links to the live projects we delivered</div>
+        </div>
+      </div>
+
+      <div class="projects-grid" role="list" style="margin-top:18px">
+        <!-- A4Realty -->
+        <article class="project-card" data-category="real-estate seo" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/a4realty.png" alt="A4Realty" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">A4Realty</div>
+            <div class="project-desc">Premium property listings & lead generation</div>
+            <div class="project-footer"><span class="tag">Real Estate</span><a class="project-cta" href="https://www.a4realty.in/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- Nalnad -->
+        <article class="project-card" data-category="ecommerce" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">Nalnad Coffee</div>
+            <div class="project-desc">Specialty coffee e-commerce & retention</div>
+            <div class="project-footer"><span class="tag">E-commerce</span><a class="project-cta" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- Sunbee -->
+        <article class="project-card" data-category="renewable" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">Sunbee Synergy</div>
+            <div class="project-desc">Solar & wind energy solutions — B2B</div>
+            <div class="project-footer"><span class="tag">Renewable</span><a class="project-cta" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- Mastrolee -->
+        <article class="project-card" data-category="fnb" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/mastrolee.png" alt="Mastrolee" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">Mastrolee</div>
+            <div class="project-desc">Restaurant social & local (placeholder)</div>
+            <div class="project-footer"><span class="tag">F&B</span><a class="project-cta" href="#">View</a></div>
+          </div>
+        </article>
+
+        <!-- Tai Tai -->
+        <article class="project-card" data-category="fnb" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">Tai Tai Creamery</div>
+            <div class="project-desc">Premium dessert brand launch & local SEO</div>
+            <div class="project-footer"><span class="tag">F&B</span><a class="project-cta" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- NuLife -->
+        <article class="project-card" data-category="healthcare" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">NuLife Behavioral Health</div>
+            <div class="project-desc">Multi-clinic programs & appointment growth</div>
+            <div class="project-footer"><span class="tag">Healthcare</span><a class="project-cta" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- MindForge -->
+        <article class="project-card" data-category="education" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">MindForge Infotech</div>
+            <div class="project-desc">IT training & course conversions</div>
+            <div class="project-footer"><span class="tag">Education</span><a class="project-cta" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+
+        <!-- Ashwa -->
+        <article class="project-card" data-category="education" role="listitem">
+          <div class="project-media"><img data-src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
+          <div class="project-body">
+            <div class="project-title">Ashwa Education Consultancy</div>
+            <div class="project-desc">Student lead generation and admissions funnels</div>
+            <div class="project-footer"><span class="tag">Education</span><a class="project-cta" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- CTA -->
-    <div class="cta" role="region" aria-label="Contact CTA" style="margin-top:28px">
-      <h3>Ready to become our next success story?</h3>
-      <p class="muted" style="color:rgba(255,255,255,0.9)">Book a free 15-minute audit and we’ll map the top 3 growth opportunities for your business.</p>
-      <div style="margin-top:12px">
-        <button class="btn btn-primary open-contact">Start Your Project</button>
-        <a class="btn btn-secondary" href="about.html" style="margin-left:10px">Learn More</a>
+    <section class="container">
+      <div class="cta" role="region" aria-labelledby="cta-heading">
+        <div>
+          <h3 id="cta-heading" style="margin:0;font-size:22px">Ready to become our next success story?</h3>
+          <div style="color:var(--muted);margin-top:8px">Book a free 15-minute audit and we'll map the top 3 growth opportunities for your business.</div>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-primary" id="openContact2">Start Your Project</button>
+          <a class="btn btn-ghost" href="about.html">Learn More</a>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Client results -->
+    <section class="container" style="margin-top:28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div class="project-card" style="padding:18px">
+          <div style="font-weight:800;font-size:20px">150+</div>
+          <div style="color:var(--muted);margin-top:6px">Happy Clients</div>
+        </div>
+        <div class="project-card" style="padding:18px">
+          <div style="font-weight:800;font-size:20px">450%</div>
+          <div style="color:var(--muted);margin-top:6px">Average ROI</div>
+        </div>
+        <div class="project-card" style="padding:18px">
+          <div style="font-weight:800;font-size:20px">2.5M+</div>
+          <div style="color:var(--muted);margin-top:6px">Leads Generated</div>
+        </div>
+        <div class="project-card" style="padding:18px">
+          <div style="font-weight:800;font-size:20px">98%</div>
+          <div style="color:var(--muted);margin-top:6px">Success Rate</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container" style="margin-top:40px;padding-bottom:40px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <img src="images/logo1.jpeg" alt="DigiStrive logo" style="width:44px;height:44px;border-radius:8px;object-fit:cover">
+          <div>
+            <div style="font-weight:800">DigiStrive Media</div>
+            <div style="color:var(--muted);font-size:13px">Fueling brands with digital precision</div>
+          </div>
+        </div>
+        <div style="color:var(--muted);font-size:13px">&copy; 2025 DigiStrive Media — SEO • Web • Social • Paid</div>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    <div class="container">
-      <p style="margin:0;color:var(--muted)">&copy; 2025 DigiStrive Media — SEO • Web • Social • Paid</p>
-    </div>
-  </footer>
-
-  <!-- Sticky mobile CTA (opens modal) -->
-  <div class="sticky-cta" style="display:none" id="mobileSticky">
-    <a href="#" id="stickyBtn">📩 Start Your Project</a>
+  <!-- sticky mobile CTA -->
+  <div class="sticky-cta" role="region" aria-hidden="false">
+    <button class="btn btn-primary" id="stickyOpen" style="width:100%;border-radius:14px">Start a Project — Free 15 min audit</button>
   </div>
 
-  <!-- Contact Modal (accessible) -->
-  <div id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:1400;align-items:center;justify-content:center;padding:20px;">
-    <div style="position:absolute;inset:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(2px)" id="modal-backdrop"></div>
-    <div role="document" style="position:relative;max-width:640px;width:100%;background:#fff;border-radius:12px;box-shadow:0 20px 60px rgba(2,6,23,0.25);overflow:hidden">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #f1f3f5">
-        <h3 style="margin:0;font-size:18px">Start your project</h3>
-        <button id="modalClose" aria-label="Close contact form" style="background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+  <!-- modal (contact) -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" role="document">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h3 id="modalTitle">Start Your Project</h3>
+        <button class="close-btn" id="closeModal" aria-label="Close modal">&times;</button>
       </div>
-      <form id="leadForm" style="padding:18px 20px;display:grid;gap:12px">
-        <input type="hidden" name="source" id="leadSource" value="">
-        <label style="font-weight:700;font-size:13px">Your email <span style="color:#d00">*</span>
-          <input name="email" id="leadEmail" required type="email" placeholder="you@company.com" style="width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px"/>
-        </label>
-        <label style="font-weight:700;font-size:13px">Full name (optional)
-          <input name="name" id="leadName" type="text" placeholder="Full name" style="width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px"/>
-        </label>
-        <label style="font-weight:700;font-size:13px">Briefly describe your goal <span style="color:#d00">*</span>
-          <textarea name="goal" id="leadGoal" required rows="4" placeholder="e.g., want to increase monthly leads from 10 → 50" style="width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px"></textarea>
-        </label>
+      <p style="color:var(--muted)">Quick form — we'll respond within one business day. (This demo uses a mock submit.)</p>
 
-        <div style="display:flex;gap:10px;align-items:center">
-          <button class="btn btn-primary" type="submit" id="leadSubmit">Send request</button>
-          <button type="button" id="leadCancel" style="background:transparent;border:1px solid #e6e9ee;padding:10px;border-radius:8px;cursor:pointer">Cancel</button>
-          <div id="leadStatus" style="margin-left:auto;color:var(--muted);font-size:14px"></div>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name" />
+          <input type="email" name="email" placeholder="Email (required)" aria-label="Email" required />
         </div>
+        <div class="form-row">
+          <input type="text" name="company" placeholder="Company (optional)" />
+          <select name="service" aria-label="Service interest">
+            <option value="">Service of interest</option>
+            <option>SEO</option><option>Web development</option><option>Paid ads</option><option>Social media</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <textarea name="message" placeholder="Briefly describe your goal" required></textarea>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <button type="button" class="btn btn-ghost" id="cancelModal">Cancel</button>
+        </div>
+        <div id="formStatus" style="margin-top:10px;color:var(--muted)"></div>
       </form>
     </div>
   </div>
 
+  <!-- Inline JS: filters, lazy images, modal, mock submit, accessibility, analytics hooks -->
   <script>
-    (() => {
-      // Helpers: gtag wrapper
-      const sendEvent = (name, data={}) => {
-        console.log('event:', name, data);
-        if(window.gtag) try{ window.gtag('event', name, data);}catch(e){}
-      };
-
+    (function(){
       // Elements
-      const chips = Array.from(document.querySelectorAll('.chip'));
-      const cases = Array.from(document.querySelectorAll('.case'));
-      const projects = Array.from(document.querySelectorAll('.project'));
-      const viewLinks = Array.from(document.querySelectorAll('.view-project'));
-      const openContactBtns = Array.from(document.querySelectorAll('.open-contact'));
-      const heroPrimaryBtn = document.getElementById('heroPrimaryBtn');
-      const sticky = document.getElementById('mobileSticky');
-      const stickyBtn = document.getElementById('stickyBtn');
+      const chips = document.querySelectorAll('.chip');
+      const projectCards = document.querySelectorAll('.project-card');
+      const cases = document.querySelectorAll('.case');
+      const contactModal = document.getElementById('modalBackdrop');
+      const openContactButtons = [document.getElementById('openContact'), document.getElementById('openContact2'), document.getElementById('stickyOpen')];
+      const closeModal = document.getElementById('closeModal');
+      const cancelModal = document.getElementById('cancelModal');
+      const contactForm = document.getElementById('contactForm');
+      const formStatus = document.getElementById('formStatus');
 
-      // Update filter counts (append number to chip label if missing)
-      function updateFilterCounts(){
-        const categoryList = ['real-estate','ecommerce','renewable','fnb','healthcare','education','it'];
-        const allCount = cases.length + projects.length; // rough counts (used just for display)
-        // We'll count case studies + portfolio that match categories (case-insensitive)
-        chips.forEach(ch => {
-          const key = ch.dataset.filter;
-          if(key==='all') {
-            // keep label as All
-            ch.textContent = 'All';
-            return;
-          }
-          const countCases = Array.from(document.querySelectorAll('[data-category="'+key+'"]')).length;
-          ch.textContent = ch.textContent.split(' (')[0] + ' (' + countCases + ')';
-        });
-      }
+      // Accessibility: skip to main
+      const skip = document.createElement('a');
+      skip.href="#main";
+      skip.className="sr-only";
+      skip.textContent="Skip to content";
+      document.body.prepend(skip);
 
-      // Filtering function
-      function applyFilter(filterKey){
-        // update chip aria-pressed
-        chips.forEach(ch => {
-          const pressed = ch.dataset.filter === filterKey;
-          ch.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-        });
-
-        // show/hide the case cards & project cards
-        const allItems = Array.from(document.querySelectorAll('[data-category]'));
-        allItems.forEach(el => {
-          if(filterKey === 'all') el.style.display = '';
-          else el.style.display = (el.dataset.category === filterKey) ? '' : 'none';
-        });
-      }
-
-      // wire up chips
-      chips.forEach((ch, index) => {
-        ch.addEventListener('click', () => {
-          const key = ch.dataset.filter;
-          applyFilter(key);
-          sendEvent('filter_select', {filter: key});
-        });
-        // keyboard navigation
-        ch.addEventListener('keydown', (e) => {
-          if(e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
-            const dir = e.key === 'ArrowLeft' ? -1 : 1;
-            const next = chips[(index + dir + chips.length) % chips.length];
-            next.focus();
-          }
-          if(e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            ch.click();
-          }
-        });
-      });
-
-      // open contact modal logic
-      const modal = document.getElementById('contact-modal');
-      const modalBackdrop = document.getElementById('modal-backdrop');
-      const modalClose = document.getElementById('modalClose');
-      const leadForm = document.getElementById('leadForm');
-      const leadStatus = document.getElementById('leadStatus');
-      const leadSource = document.getElementById('leadSource');
-
-      function openModal(source){
-        leadStatus.textContent = '';
-        leadForm.reset();
-        leadSource.value = source || '';
-        modal.style.display = 'flex';
-        modal.setAttribute('aria-hidden','false');
-        // focus first input
-        setTimeout(()=>document.getElementById('leadEmail').focus(),120);
-        sendEvent('modal_open', {source});
-      }
-      function closeModal(){
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden','true');
-        sendEvent('modal_close', {});
-      }
-
-      // open via hero
-      heroPrimaryBtn && heroPrimaryBtn.addEventListener('click', () => {
-        openModal('hero');
-        sendEvent('cta_hero_click', {label:'Start Your Project (hero)'});
-      });
-
-      // open via sticky
-      stickyBtn && stickyBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal('sticky');
-        sendEvent('cta_sticky_click', {});
-      });
-
-      // open via .open-contact (buttons in cards)
-      openContactBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const src = btn.dataset.source || 'card';
-          openModal(src);
-          sendEvent('cta_card_click', {source: src});
-        });
-      });
-
-      // view project event
-      viewLinks.forEach(a => {
-        a.addEventListener('click', () => {
-          const project = a.dataset.project || a.getAttribute('href') || 'project';
-          sendEvent('project_view', {project});
-        });
-      });
-
-      // modal close events
-      modalClose.addEventListener('click', closeModal);
-      modalBackdrop.addEventListener('click', closeModal);
-      document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
-
-      // form submit
-      leadForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        leadStatus.textContent = 'Sending...';
-        const email = document.getElementById('leadEmail').value.trim();
-        const name = document.getElementById('leadName').value.trim();
-        const goal = document.getElementById('leadGoal').value.trim();
-        const source = leadSource.value || 'portfolio';
-
-        // basic email validation
-        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!emailRe.test(email)){
-          leadStatus.textContent = 'Please enter a valid email.';
-          return;
-        }
-        try {
-          const payload = { email, name, goal, source, url: window.location.href, sentAt: new Date().toISOString()};
-          // POST to /api/leads (mock okay if not present)
-          const res = await fetch('/api/leads', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(payload)
+      // FILTERS
+      chips.forEach(ch=>{
+        ch.addEventListener('click', ()=>{
+          chips.forEach(c=>{c.classList.remove('active');c.setAttribute('aria-pressed','false')});
+          ch.classList.add('active');
+          ch.setAttribute('aria-pressed','true');
+          const f = ch.getAttribute('data-filter');
+          // filter project cards (projects grid)
+          document.querySelectorAll('.project-card').forEach(card=>{
+            const cats = (card.getAttribute('data-category')||'').split(' ');
+            if(f==='all' || cats.includes(f)){
+              card.style.display='flex';
+            } else {
+              card.style.display='none';
+            }
           });
-          if(res.ok){
-            leadStatus.textContent = 'Thanks — we received your request. We will contact you soon.';
-            sendEvent('lead_submitted', {source});
-            // close modal after a short delay
-            setTimeout(()=>closeModal(),1200);
-          } else {
-            // non-200 response — still inform user
-            const errText = await res.text().catch(()=>res.statusText || 'Error');
-            leadStatus.textContent = 'Request saved locally (server returned error).';
-            console.warn('Lead post error:', res.status, errText);
-            sendEvent('lead_submitted', {source, success:false});
-          }
-        } catch(err){
-          console.warn('Lead submit failed', err);
-          leadStatus.textContent = 'Network error — saved locally. We will retry.';
-          sendEvent('lead_submitted', {source, success:false});
-        }
-      });
-
-      // cancel button
-      document.getElementById('leadCancel').addEventListener('click', closeModal);
-
-      // image fallback (replace broken images with inline SVG)
-      const imgs = document.querySelectorAll('img');
-      imgs.forEach(img => {
-        img.addEventListener('error', function(){
-          if(this.dataset.fallback) return;
-          this.dataset.fallback = '1';
-          this.style.objectFit = 'contain';
-          const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#eef4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#8b9aa8" font-family="Arial" font-size="18">Image not found</text></svg>';
-          this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+          // also filter featured cases (if you want)
+          document.querySelectorAll('.case').forEach(c=>{
+            const id = c.id || '';
+            // map some ids to categories (simple)
+            const map = {
+              'a4realty':'real-estate', 'nalnad':'ecommerce','sunbee':'renewable','mastrolee':'fnb','tai':'fnb','nulifelbl':'healthcare','mindforge':'education','ashwa':'education'
+            };
+            const match = map[id] || '';
+            if(f==='all' || match===f) c.style.display='';
+            else c.style.display='none';
+          });
         });
       });
 
-      // show sticky CTA only on mobile
-      function checkSticky(){
-        const w = window.innerWidth || document.documentElement.clientWidth;
-        if(w <= 768){
-          sticky.style.display = 'block';
-        } else {
-          sticky.style.display = 'none';
-        }
+      // LAZY LOAD IMAGES + fallback
+      document.querySelectorAll('img[data-src]').forEach(img=>{
+        img.loading = 'lazy';
+      });
+
+      if('IntersectionObserver' in window){
+        const imgObserver = new IntersectionObserver((entries, obs)=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const img = entry.target;
+              const src = img.getAttribute('data-src');
+              if(src) img.src = src;
+              img.removeAttribute('data-src');
+              obs.unobserve(img);
+              img.onerror = function(){
+                if(!img.dataset.fallback){
+                  img.dataset.fallback = '1';
+                  img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#08121a"/><text x="50%" y="50%" fill="#5f6f85" font-family="Arial" font-size="16" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>');
+                }
+              };
+            }
+          });
+        }, {rootMargin: '200px 0px'});
+        document.querySelectorAll('img[data-src]').forEach(i=>imgObserver.observe(i));
+      } else {
+        // fallback: load all
+        document.querySelectorAll('img[data-src]').forEach(img => { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); });
       }
-      window.addEventListener('resize', checkSticky);
-      checkSticky();
 
-      // initial filter counts and ensure 'all' active
-      updateFilterCounts();
-      applyFilter('all');
+      // ANIMATIONS for cards: simple reveal
+      const revealObserver = new IntersectionObserver((entries, obs)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            obs.unobserve(entry.target);
+          } else {
+            entry.target.style.opacity = 0;
+            entry.target.style.transform = 'translateY(30px)';
+          }
+        })
+      }, {threshold:0.12});
+      document.querySelectorAll('.project-card, .case').forEach(el => revealObserver.observe(el));
 
-      // attach project card clicks to log project_view
-      document.querySelectorAll('.project-link').forEach(a => {
-        a.addEventListener('click', () => {
-          const title = a.querySelector('.meta h4')?.textContent || a.href;
-          sendEvent('project_view', {project: title});
-        });
+      // MODAL open/close
+      function openModal(){ contactModal.style.display='flex'; contactModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; document.getElementById('modalTitle').focus(); }
+      function closeModalFn(){ contactModal.style.display='none'; contactModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+      openContactButtons.forEach(btn => { if(btn) btn.addEventListener('click', openModal); });
+      if(closeModal) closeModal.addEventListener('click', closeModalFn);
+      if(cancelModal) cancelModal.addEventListener('click', closeModalFn);
+      contactModal.addEventListener('click', (e)=>{ if(e.target===contactModal) closeModalFn(); });
+
+      // keyboard: ESC to close modal
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModalFn(); });
+
+      // mock submit: validate email and show success
+      contactForm && contactForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        formStatus.style.color = 'var(--muted)';
+        const form = new FormData(contactForm);
+        const email = (form.get('email')||'').trim();
+        const message = (form.get('message')||'').trim();
+        if(!email || !/^\S+@\S+\.\S+$/.test(email)){ formStatus.textContent = 'Please enter a valid email.'; formStatus.style.color = 'var(--error-color)'; return; }
+        if(!message){ formStatus.textContent = 'Please add a short message describing your goal.'; formStatus.style.color = 'var(--error-color)'; return; }
+        // show sending
+        formStatus.textContent = 'Sending...';
+        // Mock network call (replace with real /api/leads endpoint in production)
+        setTimeout(()=>{
+          formStatus.style.color = 'var(--green-1)';
+          formStatus.textContent = 'Thanks — we received your request. We will contact you within 1 business day.';
+          // analytics stub
+          if(window.gtag) gtag('event','lead_submitted',{method:'portfolio-form'});
+          // reset
+          contactForm.reset();
+          setTimeout(closeModalFn, 1400);
+        },900);
       });
 
-      // Accessibility: focus visible handling for keyboard users only (improves outline)
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Tab') document.body.classList.add('user-is-tabbing');
-      });
+      // sticky CTA behavior: hide when keyboard open (mobile), don't overlap
+      function updateStickyVisibility(){
+        const w = window.innerWidth;
+        if(w <= 768) document.querySelector('.sticky-cta').style.display = 'flex';
+        else document.querySelector('.sticky-cta').style.display = 'none';
+      }
+      window.addEventListener('resize', updateStickyVisibility);
+      updateStickyVisibility();
+      // make sticky button open modal
+      document.getElementById('stickyOpen').addEventListener('click', openModal);
 
-      // make chips tabbable and keyboard accessible
-      document.querySelectorAll('.chip').forEach(ch=>ch.setAttribute('tabindex','0'));
+      // analytics event hooks for hero CTA(s)
+      document.getElementById('openContact') && document.getElementById('openContact').addEventListener('click', ()=>{ if(window.gtag) gtag('event','cta_hero_click'); });
+      document.getElementById('openContact2') && document.getElementById('openContact2').addEventListener('click', ()=>{ if(window.gtag) gtag('event','cta_cta_click'); });
+
+      // Add simple project card keyboard accessibility
+      document.querySelectorAll('.project-card .project-cta').forEach(btn=>{ btn.setAttribute('tabindex', '0'); });
+
+      // ensure nav links highlight for current page
+      document.querySelectorAll('.nav-link').forEach(a => { if(a.href && a.href.includes('portfolio')) a.classList.add('active'); });
+
+      // small helper: click handlers for "view project" in featured (example)
+      document.getElementById('openCaseA4') && document.getElementById('openCaseA4').addEventListener('click', ()=>{
+        // open contact modal and prefill brief
+        openModal();
+        document.querySelector('textarea[name=message]').value = 'Interested in a case study / similar project for Real Estate lead generation.';
+      });
+      document.getElementById('openCaseNal') && document.getElementById('openCaseNal').addEventListener('click', ()=>{
+        openModal();
+        document.querySelector('textarea[name=message]').value = 'Interested in e-commerce store build and productized checkout.';
+      });
 
     })();
   </script>
