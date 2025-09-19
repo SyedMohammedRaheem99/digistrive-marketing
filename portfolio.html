@@ -1,759 +1,2584 @@
-<!doctype html>
+/* Real Projects Portfolio */
+        .real-projects {
+            padding: 6rem 0;
+            background: var(--bg-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            position: relative;
+            filter: opacity(1);
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .project-category {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.9) 0%, rgba(50, 205, 50, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 1.2rem;
+            background: rgba(32, 178, 170, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(32, 178, 170, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .metric-item:hover {
+            background: rgba(32, 178, 170, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .metric-value {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(32, 178, 170, 0.3);
+        }
+
+        .project-cta i {
+            transition: transform 0.3s ease;
+        }
+
+        .project-cta:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Client Results Section */
+        .client-results {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .result-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .result-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .result-stat {
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .result-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 0;
+            background: var(--bg-white);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .industry-item {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .industry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .industry-item i {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .industry-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .industry-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(32, 178, 170, 0.08) 0%, transparent 50%),
+                var(--bg-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(32, 178, 170, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(32, 178, 170, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(32, 178, 170, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--bg-white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-section p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            color: var(--text-light);
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio & Case Studies — DigiStrive Media</title>
-  <meta name="description" content="DigiStrive Media — portfolio & case studies: SEO, web, paid and lead generation wins." />
-  <meta name="keywords" content="digital marketing portfolio, seo case study, web development case study, lead generation, digistrive" />
-  <link rel="icon" href="images/logo.png" />
-  <!-- Font icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <!-- Inline CSS (brand blue + green gradients, accessible contrasts, responsive) -->
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#071026;
-      --card:#0f1724;
-      --muted:#98a6b6;
-      --text:#e6f0fa;
-      --blue-1:#004AAD; /* logo dark */
-      --blue-2:#00AEEF; /* logo bright */
-      --green-1:#43B02A;
-      --green-2:#87C94A;
-      --gradient-primary: linear-gradient(90deg,var(--blue-1),var(--blue-2));
-      --gradient-accent: linear-gradient(90deg,var(--green-1),var(--green-2));
-      --radius:16px;
-      --maxw:1200px;
-      --shadow: 0 12px 30px rgba(0,0,0,0.55);
-      --glass: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--text);
-      background:linear-gradient(180deg,var(--bg) 0%, #071026 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      scroll-behavior:smooth;
-    }
-    a{color:inherit}
-    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
-    /* NAV */
-    .nav{
-      position:fixed;left:0;right:0;top:0;height:72px;
-      display:flex;align-items:center;z-index:1200;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(7,16,38,0.6), rgba(7,16,38,0.35));
-      border-bottom:1px solid rgba(255,255,255,0.03);
-    }
-    .nav .inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-    .brand h1{font-size:18px;margin:0;font-weight:700;color:var(--text)}
-    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav a.active, nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))}
-    /* HERO */
-    .hero{padding:120px 0 60px;position:relative;overflow:hidden}
-    .hero .panel{
-      background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.01));
-      border-radius:20px;padding:36px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow:var(--shadow);
-    }
-    .hero h2{font-size:34px;margin:0 0 12px;line-height:1.05;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .hero p{color:var(--muted);margin:0 0 18px}
-    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;border:0}
-    .btn-primary{background:var(--gradient-primary);color:#fff;box-shadow:0 8px 24px rgba(0,120,255,0.12)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--text);padding:9px 14px}
-    .hero-stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;min-width:120px;text-align:center}
-    .stat .num{font-weight:800;color:var(--green-1);font-size:20px}
-    .stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;margin-top:6px}
-    /* FILTERS */
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0;align-items:center}
-    .chip{background:var(--panel);border-radius:999px;padding:8px 14px;color:var(--muted);border:1px solid rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
-    .chip.active{background:var(--gradient-primary);color:white;box-shadow:0 8px 30px rgba(0,80,220,0.12)}
-    /* CASES grid */
-    .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    @media(max-width:920px){.cases-grid{grid-template-columns:1fr}}
-    .case{background:var(--card);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.03);display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start;overflow:hidden}
-    .case.reverse{grid-template-columns:420px 1fr}
-    @media(max-width:1100px){.case{grid-template-columns:1fr;}.case.reverse{grid-template-columns:1fr}}
-    .case-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--green-1),var(--green-2));color:#fff;font-weight:800;font-size:12px}
-    .case h3{font-size:20px;margin:10px 0 8px;color:var(--text)}
-    .case p{color:var(--muted);margin:0 0 12px}
-    .case .challenge, .case .solution{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border-left:4px solid rgba(255,255,255,0.03);color:var(--muted);margin-bottom:10px}
-    .case .solution ul{padding-left:18px;margin:0}
-    .case-img{width:100%;height:260px;object-fit:cover;border-radius:10px;display:block}
-    .case-results{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .metric{background:linear-gradient(90deg, rgba(67,176,42,0.08), rgba(135,201,74,0.06));padding:10px;border-radius:10px;min-width:110px;text-align:center;color:var(--text)}
-    .metric .big{font-weight:800;color:var(--green-1)}
-    .case-actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .small-btn{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;color:var(--text);border:1px solid rgba(255,255,255,0.02)}
-    /* PROJECT GRID */
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-    @media(max-width:1100px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:700px){.projects-grid{grid-template-columns:1fr}}
-    .project-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;height:100%}
-    .project-media{height:180px;overflow:hidden;background:#0a1220}
-    .project-media img{width:100%;height:100%;object-fit:cover;display:block}
-    .project-body{padding:16px;flex:1;display:flex;flex-direction:column}
-    .project-title{font-weight:800;color:var(--text);margin-bottom:6px}
-    .project-desc{color:var(--muted);font-size:14px;flex:1}
-    .project-footer{display:flex;gap:12px;align-items:center;margin-top:12px}
-    .tag{background:linear-gradient(90deg,var(--green-1),var(--green-2));padding:6px 8px;border-radius:999px;color:white;font-weight:700;font-size:12px}
-    .project-cta{margin-left:auto;background:var(--gradient-primary);padding:8px 12px;border-radius:10px;color:#fff;font-weight:700;text-decoration:none}
-    /* CTA section */
-    .cta{margin:40px 0;padding:28px;border-radius:16px;background:linear-gradient(90deg, rgba(0,170,239,0.12), rgba(67,176,42,0.08));display:flex;align-items:center;gap:16px;justify-content:space-between}
-    @media(max-width:800px){.cta{flex-direction:column;align-items:center;text-align:center}}
-    /* bottom sticky CTA for mobile */
-    .sticky-cta{position:fixed;left:12px;right:12px;bottom:18px;z-index:1400;display:none;box-shadow:0 12px 30px rgba(0,0,0,0.6)}
-    .sticky-cta .btn{padding:14px 18px;border-radius:14px;font-weight:800}
-    @media(max-width:768px){.sticky-cta{display:flex;justify-content:center}}
-    /* footer */
-    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
-    /* modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:1600;padding:20px}
-    .modal{background:var(--card);border-radius:12px;padding:20px;max-width:640px;width:100%;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)}
-    .modal h3{margin:0 0 8px}
-    .form-row{display:flex;gap:10px;margin-bottom:10px}
-    .form-row input, .form-row textarea, .form-row select{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}
-    .form-row textarea{min-height:110px}
-    .close-btn{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
-    /* badges & small helpers */
-    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:0.06em}
-    /* small utilities */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Case Studies - DigiStrive Media | Award-Winning Digital Marketing Projects</title>
+    <meta name="description" content="Explore DigiStrive Media's award-winning portfolio of digital marketing projects, case studies, and transformative client results in Bangalore and across India.">
+    <meta name="keywords" content="digital marketing portfolio, case studies, successful projects, client results, bangalore digital agency, award-winning campaigns">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #20B2AA;
+            --primary-dark: #1a9994;
+            --primary-light: #5CBDB8;
+            --secondary-color: #87CEEB;
+            --accent-color: #32CD32;
+            --success-color: #32CD32;
+            --warning-color: #FFD700;
+            --error-color: #FF6B6B;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+            --border-light: #f1f5f9;
+            --gradient-primary: linear-gradient(135deg, #20B2AA 0%, #32CD32 100%);
+            --gradient-secondary: linear-gradient(135deg, #87CEEB 0%, #20B2AA 100%);
+            --gradient-accent: linear-gradient(135deg, #32CD32 0%, #20B2AA 100%);
+            --gradient-success: linear-gradient(135deg, #32CD32 0%, #20B2AA 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(32, 178, 170, 0.1) 0%, rgba(50, 205, 50, 0.1) 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 30px rgba(32, 178, 170, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.3));
+        }
+
+        .nav-logo h2 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .portfolio-hero {
+            padding: 180px 0 120px;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(32, 178, 170, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(135, 206, 235, 0.06) 0%, transparent 50%),
+                var(--bg-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(32, 178, 170, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .portfolio-hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .portfolio-hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .portfolio-hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Enhanced Stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+
+        /* Filter Section */
+        .portfolio-filter {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            color: var(--text-gray);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .filter-btn:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .filter-btn:hover::before,
+        .filter-btn.active::before {
+            left: 0;
+        }
+
+        .filter-btn.active {
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Featured Case Studies */
+        .featured-cases {
+            padding: 6rem 0;
+            background: var(--bg-darker);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .featured-case {
+            margin-bottom: 6rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 3.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-2xl);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .case-study-content:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .case-study-content.reverse {
+            direction: rtl;
+        }
+
+        .case-study-content.reverse > * {
+            direction: ltr;
+        }
+
+        .case-badge {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .case-study h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .case-description {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .case-challenge,
+        .case-solution {
+            margin-bottom: 2rem;
+            padding: 1.8rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 16px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .case-challenge h4,
+        .case-solution h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .case-challenge i {
+            color: var(--error-color);
+            font-size: 1.2rem;
+        }
+
+        .case-solution i {
+            color: var(--success-color);
+            font-size: 1.2rem;
+        }
+
+        .case-solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .case-solution li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .case-solution li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .case-results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .case-result {
+            text-align: center;
+            padding: 1.8rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .case-result:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .result-number {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-success);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .case-study-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .case-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-study-content:hover .case-img {
+            transform: scale(1.05);
+        }
+
+        /* Real Projects Portfolio */
+        .real-projects {
+            padding: 6rem 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            position: relative;
+            filter: opacity(1);
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .project-header {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-category {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(245, 158, 11, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: white;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .overlay-content {
+            transform: translateY(0);
+        }
+
+        .overlay-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .overlay-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 1.2rem;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .metric-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .metric-value {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: var(--gradient-success);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .project-cta i {
+            transition: transform 0.3s ease;
+        }
+
+        .project-cta:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Client Results Section */
+        .client-results {
+            padding: 6rem 0;
+            background: var(--bg-darker);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .result-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .result-stat {
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .result-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 0;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .industry-item {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .industry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .industry-item i {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .industry-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .industry-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                var(--bg-darker);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(148, 163, 184, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-darker);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            color: var(--text-gray);
+            text-decoration: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8); }
+        }
+
+        /* Loading Animations */
+        .loading {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .loading:nth-child(1) { animation-delay: 0.1s; }
+        .loading:nth-child(2) { animation-delay: 0.2s; }
+        .loading:nth-child(3) { animation-delay: 0.3s; }
+        .loading:nth-child(4) { animation-delay: 0.4s; }
+        .loading:nth-child(5) { animation-delay: 0.5s; }
+        .loading:nth-child(6) { animation-delay: 0.6s; }
+        .loading:nth-child(7) { animation-delay: 0.7s; }
+        .loading:nth-child(8) { animation-delay: 0.8s; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .case-results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .portfolio-hero {
+                padding: 140px 0 80px;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .case-study-content {
+                padding: 2rem;
+            }
+
+            .case-results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-buttons {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .portfolio-hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+    </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="nav" role="banner" aria-hidden="false">
-    <div class="inner">
-      <div class="brand">
-        <a href="index.html" aria-label="DigiStrive Home"><img src="images/logo.png" alt="DigiStrive Media logo"></a>
-        <div>
-          <h1>DigiStrive Media</h1>
-          <div style="font-size:12px;color:var(--muted)">SEO • Web • Social • Paid</div>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="DigiStrive Media Logo" class="logo">
+                <h2><span>DigiStrive Media</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.php" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://digistrivemedia.com/blog" class="nav-link">Blog</a>
+                </li>
+            </ul>
         </div>
-      </div>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
-          <li><a href="contact.php" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </nav>
 
-  <main id="main" tabindex="-1" style="padding-top:90px">
-    <section class="hero">
-      <div class="container">
-        <div class="panel" role="region" aria-labelledby="hero-title">
-          <h2 id="hero-title">Real digital growth — <span style="background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent">SEO, Web & Paid</span> campaigns that drive leads</h2>
-          <p>Average client: 3x organic growth in 6 months. We focus on measurable outcomes — traffic, qualified leads and conversion lifts.</p>
-
-          <div class="cta-row">
-            <button class="btn btn-primary" id="openContact" aria-haspopup="dialog">Start your project</button>
-            <a class="btn btn-ghost" href="#portfolio-grid">See projects</a>
-          </div>
-
-          <div class="hero-stats" aria-hidden="false" role="status" aria-label="Key metrics">
-            <div class="stat"><div class="num">150+</div><div class="lbl">Projects</div></div>
-            <div class="stat"><div class="num">450%</div><div class="lbl">Avg ROI</div></div>
-            <div class="stat"><div class="num">98%</div><div class="lbl">Satisfaction</div></div>
-            <div class="stat"><div class="num">2.5M+</div><div class="lbl">Leads Generated</div></div>
-          </div>
+    <!-- Enhanced Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1>Our <span class="gradient-text">Success Stories</span></h1>
+                <p class="portfolio-hero-subtitle">Witness how we've transformed businesses across industries with data-driven strategies, cutting-edge technology, and creative excellence that delivers extraordinary results.</p>
+                
+                <!-- Enhanced Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">450%</span>
+                        <span class="stat-label">Average ROI</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-label">Leads Generated</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- FILTERS -->
-    <section class="container">
-      <div class="filters" role="tablist" aria-label="Filter projects">
-        <button class="chip active" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="real-estate" aria-pressed="false">Real Estate</button>
-        <button class="chip" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
-        <button class="chip" data-filter="renewable" aria-pressed="false">Renewable</button>
-        <button class="chip" data-filter="fnb" aria-pressed="false">F&B</button>
-        <button class="chip" data-filter="healthcare" aria-pressed="false">Healthcare</button>
-        <button class="chip" data-filter="education" aria-pressed="false">Education</button>
-        <button class="chip" data-filter="it" aria-pressed="false">IT / Services</button>
-      </div>
+    <!-- Enhanced Filter -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+                <button class="filter-btn" data-filter="web-development">Web Development</button>
+                <button class="filter-btn" data-filter="lead-generation">Lead Generation</button>
+                <button class="filter-btn" data-filter="social-media">Social Media</button>
+                <button class="filter-btn" data-filter="ppc">PPC</button>
+            </div>
+        </div>
     </section>
 
-    <!-- FEATURED CASES -->
-    <section class="container" aria-labelledby="featured-heading">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px">
-        <div>
-          <h3 id="featured-heading" style="margin:0;font-size:20px">Featured Case Studies</h3>
-          <div class="kicker" style="margin-top:6px;color:var(--muted)">Deep dives: challenge, approach & results</div>
+    <!-- Featured Case Studies -->
+    <section class="featured-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Case Studies</h2>
+                <p class="section-subtitle">In-depth analysis of our most successful digital marketing campaigns and transformations</p>
+            </div>
+            
+            <!-- Case Study 1: A4 Realty -->
+            <div class="featured-case">
+                <div class="case-study-content">
+                    <div class="case-study-text">
+                        <div class="case-badge">
+                            <span>Real Estate · Lead Generation</span>
+                        </div>
+                        <h3>A4 Realty: 200% Organic Traffic Growth in Competitive Property Market</h3>
+                        <p class="case-description">A4 Realty faced low visibility in Bangalore's competitive property market and lacked digital presence for their verified premium listings. They needed a comprehensive digital strategy to establish trust and generate quality leads.</p>
+                        
+                        <div class="case-challenge">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+                            <p>Low visibility in competitive property market, lack of digital presence for verified listings, and difficulty establishing trust with potential buyers in the premium segment.</p>
+                        </div>
+                        
+                        <div class="case-solution">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <ul>
+                                <li>Comprehensive SEO optimization targeting local property keywords</li>
+                                <li>Clean, professional website showcasing premium verified properties</li>
+                                <li>Advanced inquiry forms and lead capture systems</li>
+                                <li>Local targeting and Google My Business optimization</li>
+                                <li>Trust-building elements including client testimonials and certifications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-results-grid">
+                            <div class="case-result">
+                                <span class="result-number">200%</span>
+                                <span class="result-label">Organic Traffic Increase</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">120+</span>
+                                <span class="result-label">Monthly Property Leads</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">85%</span>
+                                <span class="result-label">Trust Score Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-image">
+                        <img src="finalized-images/a4realty.png" alt="A4 Realty Website Analytics Dashboard" class="case-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: NuLife Behavioral Health -->
+            <div class="featured-case">
+                <div class="case-study-content reverse">
+                    <div class="case-study-image">
+                        <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health Multi-location Website" class="case-img">
+                    </div>
+                    <div class="case-study-text">
+                        <div class="case-badge">
+                            <span>Healthcare · Multi-location</span>
+                        </div>
+                        <h3>NuLife Behavioral Health: 250% Increase in Consultation Requests</h3>
+                        <p class="case-description">NuLife Behavioral Health required a comprehensive digital presence for their multiple clinic locations and specialized behavioral health programs, with focus on credibility and patient engagement.</p>
+                        
+                        <div class="case-challenge">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+                            <p>Multiple clinic locations without unified digital presence, complex service offerings requiring clear explanation, and need for enhanced credibility in healthcare space.</p>
+                        </div>
+                        
+                        <div class="case-solution">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <ul>
+                                <li>Multi-location website with individual clinic pages and programs</li>
+                                <li>Comprehensive FAQs and educational content for patients</li>
+                                <li>Advanced contact CTAs and appointment booking systems</li>
+                                <li>Healthcare-focused SEO and local search optimization</li>
+                                <li>Professional design emphasizing trust and accessibility</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-results-grid">
+                            <div class="case-result">
+                                <span class="result-number">250%</span>
+                                <span class="result-label">Consultation Requests</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">5+</span>
+                                <span class="result-label">Clinics Digitally Unified</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">90%</span>
+                                <span class="result-label">Healthcare Credibility Score</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3: MindForge Infotech -->
+            <div class="featured-case">
+                <div class="case-study-content">
+                    <div class="case-study-text">
+                        <div class="case-badge">
+                            <span>IT Education · Lead Generation</span>
+                        </div>
+                        <h3>MindForge Infotech: 300% Increase in Student Registrations</h3>
+                        <p class="case-description">MindForge Infotech needed a powerful platform to showcase their multiple IT training courses and attract job-seeking students in the competitive education technology market.</p>
+                        
+                        <div class="case-challenge">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+                            <p>Competitive IT training market, need to showcase multiple course offerings effectively, and difficulty reaching job-seeking students across various skill levels.</p>
+                        </div>
+                        
+                        <div class="case-solution">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <ul>
+                                <li>Comprehensive course catalog with detailed program information</li>
+                                <li>SEO-optimized pages targeting IT career keywords</li>
+                                <li>Advanced admission forms and student inquiry management</li>
+                                <li>Job placement assistance showcasing and success stories</li>
+                                <li>Mobile-responsive design for student accessibility</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-results-grid">
+                            <div class="case-result">
+                                <span class="result-number">300%</span>
+                                <span class="result-label">Student Registrations</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">500+</span>
+                                <span class="result-label">Monthly Course Inquiries</span>
+                            </div>
+                            <div class="case-result">
+                                <span class="result-number">75%</span>
+                                <span class="result-label">Job Seeker Conversion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-image">
+                        <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech Course Platform" class="case-img">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="cases-grid" style="margin-top:22px">
-
-        <!-- A4Realty -->
-        <article class="case" id="a4realty" role="article" aria-labelledby="a4-title">
-          <div>
-            <span class="case-badge">SEO · Lead Gen</span>
-            <h3 id="a4-title">A4Realty — 200% Organic Traffic Growth</h3>
-            <p class="case-description">Redesigned premium listing pages, local landing pages and conversion flows to increase high-intent leads in Bangalore.</p>
-
-            <div class="challenge"><strong>Challenge:</strong> Low local visibility and weak lead capture UX.</div>
-            <div class="solution"><strong>Solution:</strong>
-              <ul>
-                <li>Technical SEO & Core Web Vitals fixes</li>
-                <li>Neighborhood landing pages & schema</li>
-                <li>Improved enquiry forms & trust signals</li>
-              </ul>
-            </div>
-
-            <div class="case-results" aria-hidden="false">
-              <div class="metric"><div class="big">+200%</div><div style="font-size:12px;color:var(--muted)">Organic traffic</div></div>
-              <div class="metric"><div class="big">120+</div><div style="font-size:12px;color:var(--muted)">Leads / month</div></div>
-              <div class="metric"><div class="big">+30%</div><div style="font-size:12px;color:var(--muted)">Lead→Viewing</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://www.a4realty.in/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn" id="openCaseA4">Request Case Study</button>
-            </div>
-          </div>
-
-          <div>
-            <img class="case-img" data-src="finalized-images/a4realty.png" alt="A4Realty screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-        </article>
-
-        <!-- Nalnad Coffee -->
-        <article class="case reverse" id="nalnad" role="article" aria-labelledby="nal-title">
-          <div>
-            <img class="case-img" data-src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-          <div>
-            <span class="case-badge">E-commerce · Branding</span>
-            <h3 id="nal-title">Nalnad Coffee — Productized E-commerce</h3>
-            <p class="case-description">Product taxonomy, PDP optimizations and checkout improvements to reduce abandon rates and scale orders regionally.</p>
-
-            <div class="challenge"><strong>Challenge:</strong> Abandoned carts and low product findability.</div>
-            <div class="solution"><strong>Approach:</strong>
-              <ul>
-                <li>One-click checkout & better PDPs</li>
-                <li>Google Shopping feed & retention emails</li>
-                <li>SEO product descriptions & content</li>
-              </ul>
-            </div>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+150%</div><div style="font-size:12px;color:var(--muted)">Orders</div></div>
-              <div class="metric"><div class="big">+40%</div><div style="font-size:12px;color:var(--muted)">Checkout conv.</div></div>
-              <div class="metric"><div class="big">+70%</div><div style="font-size:12px;color:var(--muted)">Returning</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn" id="openCaseNal">Get a similar store</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Sunbee -->
-        <article class="case" id="sunbee" role="article" aria-labelledby="sunbee-title">
-          <div>
-            <span class="case-badge">B2B · Renewable</span>
-            <h3 id="sunbee-title">Sunbee Synergy — 300% Enterprise Inquiries</h3>
-            <p class="case-description">B2B funnel, technical briefs, ROI calculators and quote funnel that convert enterprise buyers for solar solutions.</p>
-
-            <div class="solution"><strong>Approach:</strong>
-              <ul>
-                <li>Services pages for high-intent queries</li>
-                <li>Content hub: technical briefs + calculators</li>
-                <li>Quote configurator + lead scoring</li>
-              </ul>
-            </div>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+300%</div><div style="font-size:12px;color:var(--muted)">Enterprise inquiries</div></div>
-              <div class="metric"><div class="big">+120%</div><div style="font-size:12px;color:var(--muted)">Qualified leads</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn">Request Quote</button>
-            </div>
-          </div>
-
-          <div>
-            <img class="case-img" data-src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-        </article>
-
-        <!-- Mastrolee (placeholder) -->
-        <article class="case reverse" id="mastrolee" role="article" aria-labelledby="mast-title">
-          <div>
-            <img class="case-img" data-src="finalized-images/mastrolee.png" alt="Mastrolee screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-          <div>
-            <span class="case-badge">Social · F&B</span>
-            <h3 id="mast-title">Mastrolee — Restaurant Social & Local (Placeholder)</h3>
-            <p class="case-description">Local promotions, UGC, reservation funnels for restaurants — placeholder until final assets are provided.</p>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+175%</div><div style="font-size:12px;color:var(--muted)">Bookings</div></div>
-              <div class="metric"><div class="big">+50%</div><div style="font-size:12px;color:var(--muted)">Engagement</div></div>
-            </div>
-
-            <div class="case-actions">
-              <button class="small-btn">View Project</button>
-              <button class="small-btn">Discuss F&B growth</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tai Tai Creamery -->
-        <article class="case" id="tai" role="article" aria-labelledby="tai-title">
-          <div>
-            <span class="case-badge">F&B · Local</span>
-            <h3 id="tai-title">Tai Tai Creamery — Premium Dessert Launch</h3>
-            <p class="case-description">Store pages, local promos and influencer seeding to drive footfall and online orders for a dessert brand.</p>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+80%</div><div style="font-size:12px;color:var(--muted)">Footfall</div></div>
-              <div class="metric"><div class="big">+200%</div><div style="font-size:12px;color:var(--muted)">Online orders</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn">Start similar campaign</button>
-            </div>
-          </div>
-
-          <div>
-            <img class="case-img" data-src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-        </article>
-
-        <!-- NuLife Behavioral Health -->
-        <article class="case reverse" id="nulifelbl" role="article" aria-labelledby="nulifetitle">
-          <div>
-            <img class="case-img" data-src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-          <div>
-            <span class="case-badge">Healthcare · Multi-location</span>
-            <h3 id="nulifetitle">NuLife Behavioral Health — 250% Consultation Requests</h3>
-            <p class="case-description">Multi-location structure, appointment CTAs and patient-first content to increase appointment bookings and credibility.</p>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+250%</div><div style="font-size:12px;color:var(--muted)">Consult requests</div></div>
-              <div class="metric"><div class="big">5+</div><div style="font-size:12px;color:var(--muted)">Clinics</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn">Talk to an expert</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- MindForge -->
-        <article class="case" id="mindforge" role="article" aria-labelledby="mind-title">
-          <div>
-            <span class="case-badge">Education · IT</span>
-            <h3 id="mind-title">MindForge Infotech — 300% Student Registrations</h3>
-            <p class="case-description">Course redesign, tracking & conversion funnels to boost admissions and employer engagement for training programs.</p>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+300%</div><div style="font-size:12px;color:var(--muted)">Registrations</div></div>
-              <div class="metric"><div class="big">500+</div><div style="font-size:12px;color:var(--muted)">Monthly inquiries</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn">Discuss funnels</button>
-            </div>
-          </div>
-
-          <div>
-            <img class="case-img" data-src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-        </article>
-
-        <!-- Ashwa Education -->
-        <article class="case reverse" id="ashwa" role="article" aria-labelledby="ashwa-title">
-          <div>
-            <img class="case-img" data-src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy screenshot" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230E1220'/></svg>">
-          </div>
-          <div>
-            <span class="case-badge">Education Consultancy</span>
-            <h3 id="ashwa-title">Ashwa Education Consultancy — Student Lead Machine</h3>
-            <p class="case-description">Targeted PPC, conversion-optimized landing pages and lead nurturing to capture high-quality student inquiries.</p>
-
-            <div class="case-results">
-              <div class="metric"><div class="big">+200</div><div style="font-size:12px;color:var(--muted)">Monthly inquiries</div></div>
-              <div class="metric"><div class="big">+85%</div><div style="font-size:12px;color:var(--muted)">Conversion</div></div>
-            </div>
-
-            <div class="case-actions">
-              <a class="small-btn" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View Project</a>
-              <button class="small-btn">Get student leads</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
     </section>
 
-    <!-- PROJECT PORTFOLIO (summary grid) -->
-    <section class="container" id="portfolio-grid" aria-labelledby="portfolio-heading">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <h3 id="portfolio-heading" style="margin:0;font-size:20px">Project Portfolio</h3>
-          <div class="kicker" style="margin-top:6px;color:var(--muted)">Quick links to the live projects we delivered</div>
+    <!-- Real Projects Portfolio -->
+    <section class="real-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Project Portfolio</h2>
+                <p class="section-subtitle">Explore our comprehensive collection of successful digital marketing projects across diverse industries</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- A4 Realty -->
+                <div class="project-card loading" data-category="seo lead-generation">
+                    <div class="project-header">
+                        <img src="finalized-images/a4realty.png" alt="A4 Realty Website" class="project-image">
+                        <div class="project-category">Real Estate</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-home overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">A4 Realty - Premium Property Platform</h3>
+                        <p class="project-description">Comprehensive digital transformation for a premium real estate company, focusing on verified listings and lead generation in Bangalore's competitive market.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">200%</span>
+                                <span class="metric-label">Traffic Growth</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">120+</span>
+                                <span class="metric-label">Monthly Leads</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="projects-grid" role="list" style="margin-top:18px">
-        <!-- A4Realty -->
-        <article class="project-card" data-category="real-estate seo" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/a4realty.png" alt="A4Realty" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">A4Realty</div>
-            <div class="project-desc">Premium property listings & lead generation</div>
-            <div class="project-footer"><span class="tag">Real Estate</span><a class="project-cta" href="https://www.a4realty.in/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- Nalnad -->
-        <article class="project-card" data-category="ecommerce" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">Nalnad Coffee</div>
-            <div class="project-desc">Specialty coffee e-commerce & retention</div>
-            <div class="project-footer"><span class="tag">E-commerce</span><a class="project-cta" href="https://nalnadcoffee.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- Sunbee -->
-        <article class="project-card" data-category="renewable" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">Sunbee Synergy</div>
-            <div class="project-desc">Solar & wind energy solutions — B2B</div>
-            <div class="project-footer"><span class="tag">Renewable</span><a class="project-cta" href="https://www.sunbeesynergy.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- Mastrolee -->
-        <article class="project-card" data-category="fnb" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/mastrolee.png" alt="Mastrolee" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">Mastrolee</div>
-            <div class="project-desc">Restaurant social & local (placeholder)</div>
-            <div class="project-footer"><span class="tag">F&B</span><a class="project-cta" href="#">View</a></div>
-          </div>
-        </article>
-
-        <!-- Tai Tai -->
-        <article class="project-card" data-category="fnb" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">Tai Tai Creamery</div>
-            <div class="project-desc">Premium dessert brand launch & local SEO</div>
-            <div class="project-footer"><span class="tag">F&B</span><a class="project-cta" href="https://www.taitaicreamery.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- NuLife -->
-        <article class="project-card" data-category="healthcare" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">NuLife Behavioral Health</div>
-            <div class="project-desc">Multi-clinic programs & appointment growth</div>
-            <div class="project-footer"><span class="tag">Healthcare</span><a class="project-cta" href="https://nulifebehavioralhealth.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- MindForge -->
-        <article class="project-card" data-category="education" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">MindForge Infotech</div>
-            <div class="project-desc">IT training & course conversions</div>
-            <div class="project-footer"><span class="tag">Education</span><a class="project-cta" href="https://mindforgeinfotech.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-
-        <!-- Ashwa -->
-        <article class="project-card" data-category="education" role="listitem">
-          <div class="project-media"><img data-src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='350'><rect width='100%' height='100%' fill='%230E1220'/></svg>"></div>
-          <div class="project-body">
-            <div class="project-title">Ashwa Education Consultancy</div>
-            <div class="project-desc">Student lead generation and admissions funnels</div>
-            <div class="project-footer"><span class="tag">Education</span><a class="project-cta" href="https://ashwaeducationconsultancy.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </article>
-      </div>
     </section>
 
-    <!-- CTA -->
-    <section class="container">
-      <div class="cta" role="region" aria-labelledby="cta-heading">
-        <div>
-          <h3 id="cta-heading" style="margin:0;font-size:22px">Ready to become our next success story?</h3>
-          <div style="color:var(--muted);margin-top:8px">Book a free 15-minute audit and we'll map the top 3 growth opportunities for your business.</div>
+    <!-- Client Results Overview -->
+    <section class="client-results">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Aggregate Client Results</h2>
+                <p class="section-subtitle">Comprehensive performance metrics showcasing our impact across all client campaigns and industries</p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="result-stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <p>Businesses we've successfully transformed through strategic digital marketing initiatives across diverse industries.</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="result-stat">
+                        <span class="stat-number">450%</span>
+                        <span class="stat-label">Average ROI</span>
+                    </div>
+                    <p>Return on investment achieved across all campaigns, demonstrating exceptional value delivery and business growth.</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="result-stat">
+                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-label">Leads Generated</span>
+                    </div>
+                    <p>High-quality, verified leads delivered to our clients, driving sustainable business growth and revenue increase.</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="result-stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <p>Client satisfaction and project success rate, reflecting our commitment to excellence and results-driven approach.</p>
+                </div>
+            </div>
         </div>
-        <div style="display:flex;gap:10px">
-          <button class="btn btn-primary" id="openContact2">Start Your Project</button>
-          <a class="btn btn-ghost" href="about.html">Learn More</a>
-        </div>
-      </div>
     </section>
 
-    <!-- Client results -->
-    <section class="container" style="margin-top:28px">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
-        <div class="project-card" style="padding:18px">
-          <div style="font-weight:800;font-size:20px">150+</div>
-          <div style="color:var(--muted);margin-top:6px">Happy Clients</div>
+    <!-- Industries We Serve -->
+    <section class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industries We Transform</h2>
+                <p class="section-subtitle">Our expertise spans across diverse industry verticals, delivering tailored solutions for unique business challenges</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Technology & IT</h4>
+                    <p>Software, SaaS, IT Services, Training Platforms</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-stethoscope"></i>
+                    <h4>Healthcare</h4>
+                    <p>Hospitals, Clinics, Behavioral Health, Medical Devices</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Education</h4>
+                    <p>Schools, Universities, E-learning, Consultancies</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4>E-commerce</h4>
+                    <p>Online Retail, Specialty Products, Marketplaces</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-home"></i>
+                    <h4>Real Estate</h4>
+                    <p>Property Sales, Rentals, Construction, Housing</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Food & Beverage</h4>
+                    <p>Restaurants, Cafes, Premium Brands, Food Delivery</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-solar-panel"></i>
+                    <h4>Renewable Energy</h4>
+                    <p>Solar, Wind, Clean Tech, Sustainability Solutions</p>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Professional Services</h4>
+                    <p>Legal, Consulting, Finance, Corporate Services</p>
+                </div>
+            </div>
         </div>
-        <div class="project-card" style="padding:18px">
-          <div style="font-weight:800;font-size:20px">450%</div>
-          <div style="color:var(--muted);margin-top:6px">Average ROI</div>
-        </div>
-        <div class="project-card" style="padding:18px">
-          <div style="font-weight:800;font-size:20px">2.5M+</div>
-          <div style="color:var(--muted);margin-top:6px">Leads Generated</div>
-        </div>
-        <div class="project-card" style="padding:18px">
-          <div style="font-weight:800;font-size:20px">98%</div>
-          <div style="color:var(--muted);margin-top:6px">Success Rate</div>
-        </div>
-      </div>
     </section>
 
-    <footer class="container" style="margin-top:40px;padding-bottom:40px">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
-        <div style="display:flex;gap:12px;align-items:center">
-          <img src="images/logo1.jpeg" alt="DigiStrive logo" style="width:44px;height:44px;border-radius:8px;object-fit:cover">
-          <div>
-            <div style="font-weight:800">DigiStrive Media</div>
-            <div style="color:var(--muted);font-size:13px">Fueling brands with digital precision</div>
-          </div>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Become Our Next Success Story?</h2>
+                <p>Join 150+ successful businesses who have transformed their digital presence with our proven strategies. Let's discuss how we can deliver similar extraordinary results for your business.</p>
+                <div class="cta-buttons">
+                    <a href="contact.php" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
         </div>
-        <div style="color:var(--muted);font-size:13px">&copy; 2025 DigiStrive Media — SEO • Web • Social • Paid</div>
-      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo1.jpeg" alt="DigiStrive Media Logo" class="logo">
+                        <h3>DigiStrive Media</h3>
+                    </div>
+                    <p>Transform your business with data-driven digital marketing strategies that deliver measurable results and sustainable growth across all industries.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579805919375" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/DigistriveMedia" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/digistrive_media/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#seo">SEO Optimization</a></li>
+                        <li><a href="services.html#web-dev">Web Development</a></li>
+                        <li><a href="services.html#social-media">Social Media Marketing</a></li>
+                        <li><a href="services.html#ppc">PPC Advertising</a></li>
+                        <li><a href="services.html#lead-gen">Lead Generation</a></li>
+                        <li><a href="services.html#content">Content Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="https://digistrivemedia.com/blog">Blog</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
+                        <p><i class="fas fa-phone"></i> +91 8147057346</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka, India</p>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DigiStrive Media. All rights reserved. | Crafted with ❤️ in Bangalore</p>
+            </div>
+        </div>
     </footer>
-  </main>
 
-  <!-- sticky mobile CTA -->
-  <div class="sticky-cta" role="region" aria-hidden="false">
-    <button class="btn btn-primary" id="stickyOpen" style="width:100%;border-radius:14px">Start a Project — Free 15 min audit</button>
-  </div>
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        // Enhanced Portfolio Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
 
-  <!-- modal (contact) -->
-  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal" role="document">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <h3 id="modalTitle">Start Your Project</h3>
-        <button class="close-btn" id="closeModal" aria-label="Close modal">&times;</button>
-      </div>
-      <p style="color:var(--muted)">Quick form — we'll respond within one business day. (This demo uses a mock submit.)</p>
-
-      <form id="contactForm" novalidate>
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Your name" aria-label="Your name" />
-          <input type="email" name="email" placeholder="Email (required)" aria-label="Email" required />
-        </div>
-        <div class="form-row">
-          <input type="text" name="company" placeholder="Company (optional)" />
-          <select name="service" aria-label="Service interest">
-            <option value="">Service of interest</option>
-            <option>SEO</option><option>Web development</option><option>Paid ads</option><option>Social media</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <textarea name="message" placeholder="Briefly describe your goal" required></textarea>
-        </div>
-        <div style="display:flex;gap:8px;align-items:center">
-          <button class="btn btn-primary" type="submit">Send request</button>
-          <button type="button" class="btn btn-ghost" id="cancelModal">Cancel</button>
-        </div>
-        <div id="formStatus" style="margin-top:10px;color:var(--muted)"></div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Inline JS: filters, lazy images, modal, mock submit, accessibility, analytics hooks -->
-  <script>
-    (function(){
-      // Elements
-      const chips = document.querySelectorAll('.chip');
-      const projectCards = document.querySelectorAll('.project-card');
-      const cases = document.querySelectorAll('.case');
-      const contactModal = document.getElementById('modalBackdrop');
-      const openContactButtons = [document.getElementById('openContact'), document.getElementById('openContact2'), document.getElementById('stickyOpen')];
-      const closeModal = document.getElementById('closeModal');
-      const cancelModal = document.getElementById('cancelModal');
-      const contactForm = document.getElementById('contactForm');
-      const formStatus = document.getElementById('formStatus');
-
-      // Accessibility: skip to main
-      const skip = document.createElement('a');
-      skip.href="#main";
-      skip.className="sr-only";
-      skip.textContent="Skip to content";
-      document.body.prepend(skip);
-
-      // FILTERS
-      chips.forEach(ch=>{
-        ch.addEventListener('click', ()=>{
-          chips.forEach(c=>{c.classList.remove('active');c.setAttribute('aria-pressed','false')});
-          ch.classList.add('active');
-          ch.setAttribute('aria-pressed','true');
-          const f = ch.getAttribute('data-filter');
-          // filter project cards (projects grid)
-          document.querySelectorAll('.project-card').forEach(card=>{
-            const cats = (card.getAttribute('data-category')||'').split(' ');
-            if(f==='all' || cats.includes(f)){
-              card.style.display='flex';
-            } else {
-              card.style.display='none';
-            }
-          });
-          // also filter featured cases (if you want)
-          document.querySelectorAll('.case').forEach(c=>{
-            const id = c.id || '';
-            // map some ids to categories (simple)
-            const map = {
-              'a4realty':'real-estate', 'nalnad':'ecommerce','sunbee':'renewable','mastrolee':'fnb','tai':'fnb','nulifelbl':'healthcare','mindforge':'education','ashwa':'education'
+            // Add smooth loading animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
-            const match = map[id] || '';
-            if(f==='all' || match===f) c.style.display='';
-            else c.style.display='none';
-          });
-        });
-      });
 
-      // LAZY LOAD IMAGES + fallback
-      document.querySelectorAll('img[data-src]').forEach(img=>{
-        img.loading = 'lazy';
-      });
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-      if('IntersectionObserver' in window){
-        const imgObserver = new IntersectionObserver((entries, obs)=>{
-          entries.forEach(entry=>{
-            if(entry.isIntersecting){
-              const img = entry.target;
-              const src = img.getAttribute('data-src');
-              if(src) img.src = src;
-              img.removeAttribute('data-src');
-              obs.unobserve(img);
-              img.onerror = function(){
-                if(!img.dataset.fallback){
-                  img.dataset.fallback = '1';
-                  img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#08121a"/><text x="50%" y="50%" fill="#5f6f85" font-family="Arial" font-size="16" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>');
+            // Observe all project cards and animate them
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Enhanced filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter projects with smooth animation
+                    projectCards.forEach((card, index) => {
+                        const cardCategories = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+                            setTimeout(() => {
+                                card.style.display = 'block';
+                                card.classList.remove('hidden');
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            }, index * 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(50px)';
+                            setTimeout(() => {
+                                card.classList.add('hidden');
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar background change on scroll
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
                 }
-              };
+            });
+
+            // Enhanced stats animation
+            const statsSection = document.querySelector('.hero-stats');
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statNumbers.forEach(stat => {
+                            const finalValue = stat.textContent;
+                            const isPercentage = finalValue.includes('%');
+                            const isPlus = finalValue.includes('+');
+                            const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+                            
+                            let currentValue = 0;
+                            const increment = numericValue / 50;
+                            const timer = setInterval(() => {
+                                currentValue += increment;
+                                if (currentValue >= numericValue) {
+                                    clearInterval(timer);
+                                    currentValue = numericValue;
+                                }
+                                
+                                let displayValue = Math.floor(currentValue);
+                                if (isPercentage) displayValue += '%';
+                                if (isPlus) displayValue += '+';
+                                if (finalValue.includes('M')) displayValue = (displayValue / 1000000).toFixed(1) + 'M+';
+                                if (finalValue.includes('K')) displayValue = (displayValue / 1000).toFixed(0) + 'K+';
+                                
+                                stat.textContent = displayValue;
+                            }, 50);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (statsSection) {
+                statsObserver.observe(statsSection);
             }
-          });
-        }, {rootMargin: '200px 0px'});
-        document.querySelectorAll('img[data-src]').forEach(i=>imgObserver.observe(i));
-      } else {
-        // fallback: load all
-        document.querySelectorAll('img[data-src]').forEach(img => { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); });
-      }
 
-      // ANIMATIONS for cards: simple reveal
-      const revealObserver = new IntersectionObserver((entries, obs)=>{
-        entries.forEach((entry)=>{
-          if(entry.isIntersecting){
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            obs.unobserve(entry.target);
-          } else {
-            entry.target.style.opacity = 0;
-            entry.target.style.transform = 'translateY(30px)';
-          }
-        })
-      }, {threshold:0.12});
-      document.querySelectorAll('.project-card, .case').forEach(el => revealObserver.observe(el));
+            // Add hover effects for project cards
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
 
-      // MODAL open/close
-      function openModal(){ contactModal.style.display='flex'; contactModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; document.getElementById('modalTitle').focus(); }
-      function closeModalFn(){ contactModal.style.display='none'; contactModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-      openContactButtons.forEach(btn => { if(btn) btn.addEventListener('click', openModal); });
-      if(closeModal) closeModal.addEventListener('click', closeModalFn);
-      if(cancelModal) cancelModal.addEventListener('click', closeModalFn);
-      contactModal.addEventListener('click', (e)=>{ if(e.target===contactModal) closeModalFn(); });
+            // Add parallax effect to hero section
+            const hero = document.querySelector('.portfolio-hero');
+            if (hero) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const parallax = hero.querySelector('.portfolio-hero-content');
+                    const speed = scrolled * 0.5;
+                    
+                    if (scrolled < hero.offsetHeight) {
+                        parallax.style.transform = `translateY(${speed}px)`;
+                    }
+                });
+            }
 
-      // keyboard: ESC to close modal
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModalFn(); });
+            // Add typing effect to hero title
+            const heroTitle = document.querySelector('.portfolio-hero h1');
+            if (heroTitle) {
+                const text = heroTitle.innerHTML;
+                heroTitle.innerHTML = '';
+                let i = 0;
+                
+                function typeWriter() {
+                    if (i < text.length) {
+                        heroTitle.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    }
+                }
+                
+                setTimeout(typeWriter, 500);
+            }
 
-      // mock submit: validate email and show success
-      contactForm && contactForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        formStatus.style.color = 'var(--muted)';
-        const form = new FormData(contactForm);
-        const email = (form.get('email')||'').trim();
-        const message = (form.get('message')||'').trim();
-        if(!email || !/^\S+@\S+\.\S+$/.test(email)){ formStatus.textContent = 'Please enter a valid email.'; formStatus.style.color = 'var(--error-color)'; return; }
-        if(!message){ formStatus.textContent = 'Please add a short message describing your goal.'; formStatus.style.color = 'var(--error-color)'; return; }
-        // show sending
-        formStatus.textContent = 'Sending...';
-        // Mock network call (replace with real /api/leads endpoint in production)
-        setTimeout(()=>{
-          formStatus.style.color = 'var(--green-1)';
-          formStatus.textContent = 'Thanks — we received your request. We will contact you within 1 business day.';
-          // analytics stub
-          if(window.gtag) gtag('event','lead_submitted',{method:'portfolio-form'});
-          // reset
-          contactForm.reset();
-          setTimeout(closeModalFn, 1400);
-        },900);
-      });
+            // Enhanced loading animations for sections
+            const sections = document.querySelectorAll('section');
+            const sectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('loaded');
+                        const elements = entry.target.querySelectorAll('.loading');
+                        elements.forEach((el, index) => {
+                            setTimeout(() => {
+                                el.style.opacity = '1';
+                                el.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
 
-      // sticky CTA behavior: hide when keyboard open (mobile), don't overlap
-      function updateStickyVisibility(){
-        const w = window.innerWidth;
-        if(w <= 768) document.querySelector('.sticky-cta').style.display = 'flex';
-        else document.querySelector('.sticky-cta').style.display = 'none';
-      }
-      window.addEventListener('resize', updateStickyVisibility);
-      updateStickyVisibility();
-      // make sticky button open modal
-      document.getElementById('stickyOpen').addEventListener('click', openModal);
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
 
-      // analytics event hooks for hero CTA(s)
-      document.getElementById('openContact') && document.getElementById('openContact').addEventListener('click', ()=>{ if(window.gtag) gtag('event','cta_hero_click'); });
-      document.getElementById('openContact2') && document.getElementById('openContact2').addEventListener('click', ()=>{ if(window.gtag) gtag('event','cta_cta_click'); });
-
-      // Add simple project card keyboard accessibility
-      document.querySelectorAll('.project-card .project-cta').forEach(btn=>{ btn.setAttribute('tabindex', '0'); });
-
-      // ensure nav links highlight for current page
-      document.querySelectorAll('.nav-link').forEach(a => { if(a.href && a.href.includes('portfolio')) a.classList.add('active'); });
-
-      // small helper: click handlers for "view project" in featured (example)
-      document.getElementById('openCaseA4') && document.getElementById('openCaseA4').addEventListener('click', ()=>{
-        // open contact modal and prefill brief
-        openModal();
-        document.querySelector('textarea[name=message]').value = 'Interested in a case study / similar project for Real Estate lead generation.';
-      });
-      document.getElementById('openCaseNal') && document.getElementById('openCaseNal').addEventListener('click', ()=>{
-        openModal();
-        document.querySelector('textarea[name=message]').value = 'Interested in e-commerce store build and productized checkout.';
-      });
-
-    })();
-  </script>
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
-</html>
+</html><i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nalnad Coffee -->
+                <div class="project-card loading" data-category="web-development">
+                    <div class="project-header">
+                        <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee E-commerce Site" class="project-image">
+                        <div class="project-category">E-commerce</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-coffee overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Nalnad Coffee - Premium Coffee E-commerce</h3>
+                        <p class="project-description">Modern e-commerce platform for premium shade-grown coffee, featuring product catalog, streamlined checkout, and SEO-driven content strategy.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">150%</span>
+                                <span class="metric-label">Online Orders</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">80%</span>
+                                <span class="metric-label">Market Expansion</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sunbee Synergy -->
+                <div class="project-card loading" data-category="web-development lead-generation">
+                    <div class="project-header">
+                        <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy Renewable Energy Website" class="project-image">
+                        <div class="project-category">Renewable Energy</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-solar-panel overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sunbee Synergy - Clean Energy Solutions</h3>
+                        <p class="project-description">Corporate website showcasing solar and wind energy solutions for industrial clients, with advanced quote request systems and B2B optimization.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">300%</span>
+                                <span class="metric-label">B2B Inquiries</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">95%</span>
+                                <span class="metric-label">Industry Trust Score</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mastrolee -->
+                <div class="project-card loading" data-category="web-development">
+                    <div class="project-header">
+                        <img src="finalized-images/mastrolee.png" alt="Mastrolee Corporate Website" class="project-image">
+                        <div class="project-category">Corporate Services</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-building overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mastrolee - Professional Services Platform</h3>
+                        <p class="project-description">Modern corporate website design emphasizing professionalism and service excellence, with optimized user experience and lead capture capabilities.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">180%</span>
+                                <span class="metric-label">Professional Inquiries</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">70%</span>
+                                <span class="metric-label">Client Engagement</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tai Tai Creamery -->
+                <div class="project-card loading" data-category="web-development social-media">
+                    <div class="project-header">
+                        <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery Website" class="project-image">
+                        <div class="project-category">Food & Beverage</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-ice-cream overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Tai Tai Creamery - Premium Dessert Brand</h3>
+                        <p class="project-description">Stylish website for premium dessert brand with menu showcases, online ordering options, and local SEO integration for multiple store locations.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">200%</span>
+                                <span class="metric-label">Online Orders</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">80%</span>
+                                <span class="metric-label">Store Footfall Increase</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NuLife Behavioral Health -->
+                <div class="project-card loading" data-category="web-development seo">
+                    <div class="project-header">
+                        <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health Website" class="project-image">
+                        <div class="project-category">Healthcare</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-heart overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NuLife Behavioral Health - Multi-clinic Platform</h3>
+                        <p class="project-description">Comprehensive healthcare website serving multiple clinic locations with specialized behavioral health programs, enhanced credibility features, and patient-focused design.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">250%</span>
+                                <span class="metric-label">Consultation Requests</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">5+</span>
+                                <span class="metric-label">Unified Clinics</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MindForge Infotech -->
+                <div class="project-card loading" data-category="web-development seo lead-generation">
+                    <div class="project-header">
+                        <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech Training Platform" class="project-image">
+                        <div class="project-category">IT Education</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-code overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MindForge Infotech - IT Training Platform</h3>
+                        <p class="project-description">Comprehensive course catalog platform for IT training programs, featuring detailed course information, admission systems, and job placement assistance showcase.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">300%</span>
+                                <span class="metric-label">Student Registrations</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">500+</span>
+                                <span class="metric-label">Monthly Inquiries</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ashwa Education Consultancy -->
+                <div class="project-card loading" data-category="web-development lead-generation">
+                    <div class="project-header">
+                        <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy Website" class="project-image">
+                        <div class="project-category">Education Consultancy</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-graduation-cap overlay-icon"></i>
+                                <div class="overlay-text">View Project Details</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ashwa Education Consultancy - Student Success Platform</h3>
+                        <p class="project-description">Informative consultancy website guiding students through admission processes, featuring service details, contact forms, and comprehensive lead management systems.</p>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">200+</span>
+                                <span class="metric-label">Monthly Student Inquiries</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Conversion Rate</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-cta">
+                            View Case Study
