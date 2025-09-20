@@ -1,122 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio & Case Studies - DigiStrive Media</title>
-  <link rel="icon" type="image/x-icon" href="images/logo.png">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio & Case Studies - DigiStrive Media | Award-Winning Projects</title>
+  <meta name="description" content="Explore DigiStrive Media's portfolio, case studies and client results." />
+  <link rel="icon" href="images/logo.png" type="image/x-icon" />
 
-    :root {
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ========== VARIABLES ========== */
+    :root{
       --primary-color: #20B2AA;
       --primary-dark: #1a9994;
-      --secondary-color: #32CD32;
+      --primary-light: #5CBDB8;
+      --accent-color: #32CD32;
       --bg-light: #f8fafc;
       --bg-white: #ffffff;
+      --bg-card: #ffffff;
       --text-dark: #1e293b;
       --text-gray: #64748b;
+      --text-light: #94a3b8;
       --border-color: #e2e8f0;
-      --gradient-primary: linear-gradient(135deg, #20B2AA, #32CD32);
+      --gradient-primary: linear-gradient(135deg,#20B2AA 0%, #32CD32 100%);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.08);
+      --shadow-xl: 0 20px 25px rgba(0,0,0,0.12);
+      --shadow-glow: 0 0 30px rgba(32,178,170,0.25);
     }
 
-    body {
+    /* ========== RESET & BASE ========== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
       font-family: 'Inter', sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
+    a{color:inherit}
+    img{display:block;max-width:100%}
 
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+    /* ========== NAV ========== */
+    .navbar{
+      position:fixed;top:0;left:0;right:0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--border-color);
+      z-index:1200;
+      transition: all .25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-container{
+      max-width:1400px;margin:0 auto;padding:0 2rem;height:80px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-logo{display:flex;align-items:center;gap:1rem}
+    .nav-logo .logo{width:46px;height:46px;border-radius:10px;object-fit:cover}
+    .nav-logo h2{font-family:'Sora';font-weight:700;font-size:1.25rem;
+      background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-menu{display:flex;gap:2rem;list-style:none}
+    .nav-link{color:var(--text-gray);text-decoration:none;font-weight:500;padding:0.4rem 0;position:relative}
+    .nav-link:hover,.nav-link.active{color:var(--primary-color)}
+    .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--gradient-primary);transition:width .2s}
+    .nav-link:hover::after,.nav-link.active::after{width:100%}
 
-    /* Navbar */
-    .navbar {
-      position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 1000; height: 80px;
-      display: flex; align-items: center;
-      justify-content: center;
-    }
-    .nav-container {
-      display: flex; justify-content: space-between; align-items: center;
-      width: 100%; max-width: 1400px;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 1rem; }
-    .nav-logo img { width: 45px; height: 45px; border-radius: 10px; }
-    .nav-logo h2 {
-      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.5rem;
-      background: var(--gradient-primary); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .nav-menu { list-style: none; display: flex; gap: 2rem; }
-    .nav-link {
-      text-decoration: none; color: var(--text-gray); font-weight: 500;
-      transition: all 0.3s;
-    }
-    .nav-link:hover, .nav-link.active { color: var(--primary-color); }
+    /* ========== CONTAINER ========== */
+    .container{max-width:1400px;margin:0 auto;padding:0 2rem}
 
-    /* Hero Section */
-    .portfolio-hero {
-      padding: 140px 0 100px; background: var(--bg-white); text-align: center;
+    /* ========== HERO ========== */
+    .portfolio-hero{
+      padding:160px 0 90px;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(32,178,170,0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(50,205,50,0.04) 0%, transparent 40%),
+        var(--bg-white);
+      position:relative;overflow:hidden;
     }
-    .portfolio-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-family: 'Sora', sans-serif; font-weight: 800;
+    .portfolio-hero::before{
+      content:'';position:absolute;inset:0;
+      background-image: radial-gradient(circle at 25px 25px, rgba(32,178,170,0.06) 2px, transparent 2px);
+      background-size:50px 50px;opacity:0.25;pointer-events:none;
     }
-    .gradient-text { background: var(--gradient-primary);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .portfolio-hero-subtitle {
-      font-size: 1.2rem; color: var(--text-gray);
-      margin-top: 1rem; max-width: 800px; margin-inline: auto;
-    }
+    .portfolio-hero-content{text-align:center;max-width:900px;margin:0 auto;position:relative}
+    .portfolio-hero h1{font-family:'Sora';font-size:clamp(2.6rem,7vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:1rem}
+    .gradient-text{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .portfolio-hero-subtitle{color:var(--text-gray);font-size:1.05rem;margin-bottom:2rem;max-width:720px;margin-left:auto;margin-right:auto}
 
-    /* Stats */
-    .hero-stats {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 2rem; margin-top: 3rem; padding: 2rem;
-      background: var(--bg-white); border: 1px solid var(--border-color);
-      border-radius: 15px;
+    /* ========== HERO STATS ========== */
+    .hero-stats{
+      margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;
+      padding:1.6rem;background:var(--bg-card);border-radius:14px;border:1px solid var(--border-color);
+      box-shadow:var(--shadow-xl);
     }
-    .stat-item { text-align: center; }
-    .stat-number {
-      font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800;
-      background: var(--gradient-primary); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .stat-label { font-size: 0.9rem; color: var(--text-gray); }
+    .stat-item{text-align:center;padding:0.6rem}
+    .stat-number{font-family:'Sora';font-weight:800;font-size:2rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .stat-label{color:var(--text-gray);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
 
-    /* Filter */
-    .portfolio-filter { text-align: center; padding: 3rem 0; }
-    .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-    .filter-btn {
-      background: var(--bg-white); border: 1px solid var(--border-color);
-      padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 500; cursor: pointer;
-      transition: 0.3s; color: var(--text-gray);
+    /* ========== FILTER ========== */
+    .portfolio-filter{padding:3rem 0 1.5rem;text-align:center;background:transparent}
+    .filter-buttons{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+    .filter-btn{
+      background:var(--bg-white);color:var(--text-gray);border:1px solid var(--border-color);
+      padding:.6rem 1.2rem;border-radius:999px;font-weight:600;cursor:pointer;transition:all .2s;
     }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--primary-color); color: #fff; border-color: var(--primary-color);
-    }
+    .filter-btn:hover{transform:translateY(-3px)}
+    .filter-btn.active{background:var(--primary-color);color:#fff;border-color:var(--primary-dark)}
 
-    /* Section headers */
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-title {
-      font-size: clamp(2rem,5vw,3rem); font-family: 'Sora',sans-serif;
-      font-weight: 700; margin-bottom: 1rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    /* ========== FEATURED CASE STUDIES ========== */
+    .featured-cases{padding:3.5rem 0 2rem;background:var(--bg-white)}
+    .section-header{text-align:center;margin-bottom:2.5rem}
+    .section-title{font-family:'Sora';font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .section-subtitle{color:var(--text-gray);max-width:700px;margin:0 auto;margin-top:.5rem}
+    .case-study{margin-bottom:2.25rem}
+    .case-study-content{
+      display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center;background:var(--bg-card);
+      border-radius:14px;padding:1.6rem;border:1px solid var(--border-color);box-shadow:var(--shadow-lg);
+      transition:all .25s ease;overflow:hidden;
     }
-    .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+    .case-study-content.reverse{direction:rtl}
+    .case-study-content.reverse>*{direction:ltr}
+    .case-badge{display:inline-block;background:var(--primary-color);color:#fff;padding:.45rem .9rem;border-radius:24px;font-weight:700;font-size:.8rem;text-transform:uppercase}
+    .case-study h3{font-family:'Sora';font-size:1.4rem;color:var(--text-dark);margin:0 0 .6rem}
+    .case-description{color:var(--text-gray);line-height:1.6;margin-bottom:1rem}
+    .case-challenge,.case-solution{background:var(--bg-light);padding:1rem;border-radius:10px;border-left:4px solid var(--primary-color);margin-bottom:.9rem}
+    .case-challenge h4,.case-solution h4{font-weight:700;font-size:1rem;display:flex;gap:.5rem;align-items:center}
+    .case-results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:.75rem}
+    .case-result{background:linear-gradient(135deg, rgba(32,178,170,0.04), rgba(50,205,50,0.04));padding:.9rem;border-radius:10px;text-align:center;border:1px solid rgba(32,178,170,0.08)}
+    .result-number{font-family:'Sora';font-weight:800;font-size:1.4rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .result-label{color:var(--text-gray);font-size:.8rem}
+
+    .case-study-image{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md)}
+    .case-img{width:100%;height:300px;object-fit:cover;transition:transform .4s ease}
+    .case-study-content:hover .case-img{transform:scale(1.03)}
+    .case-study-content:hover{transform:translateY(-6px);box-shadow:var(--shadow-glow)}
+
+    /* ========== REAL PROJECTS GRID (the 8 project cards) ========== */
+    .real-projects{padding:3.5rem 0;background:var(--bg-light)}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1.25rem}
+    .project-card{background:var(--bg-white);border-radius:12px;border:1px solid var(--border-color);overflow:hidden;transition:all .25s ease;position:relative}
+    .project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--primary-color)}
+    .project-header{position:relative;height:200px;overflow:hidden}
+    .project-image{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .project-card:hover .project-image{transform:scale(1.05)}
+    .project-category{position:absolute;top:12px;left:12px;background:var(--primary-color);color:#fff;padding:.35rem .75rem;border-radius:999px;font-weight:700;font-size:.72rem;text-transform:uppercase}
+    .project-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(32,178,170,0.85), rgba(50,205,50,0.85));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+    .project-card:hover .project-overlay{opacity:0.9}
+    .overlay-content{text-align:center;color:#fff}
+    .overlay-icon{font-size:2rem;margin-bottom:.4rem}
+    .project-content{padding:1.15rem}
+    .project-title{font-family:'Sora';font-size:1.05rem;font-weight:700;margin-bottom:.55rem;color:var(--text-dark)}
+    .project-description{color:var(--text-gray);font-size:.92rem;margin-bottom:.9rem}
+    .project-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:.9rem}
+    .metric-item{background:rgba(32,178,170,0.05);padding:.6rem;border-radius:8px;text-align:center;border:1px solid rgba(32,178,170,0.06)}
+    .metric-value{font-family:'Sora';font-weight:700;font-size:1.05rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .metric-label{font-size:.72rem;color:var(--text-gray);text-transform:uppercase}
+    .project-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--primary-color);color:#fff;padding:.55rem .95rem;border-radius:999px;text-decoration:none;font-weight:700;transition:all .2s}
+    .project-cta:hover{background:var(--primary-dark);transform:translateY(-3px);box-shadow:0 10px 22px rgba(32,178,170,0.18)}
+
+    /* ========== CLIENT RESULTS & INDUSTRIES ========== */
+    .client-results{padding:3.5rem 0;background:var(--bg-white)}
+    .results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem}
+    .result-card{padding:1.25rem;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-white);text-align:center}
+    .result-icon{width:56px;height:56px;border-radius:999px;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;background:var(--primary-color);color:#fff}
+    .result-stat .stat-number{font-family:'Sora';font-weight:800;font-size:1.6rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .result-stat .stat-label{font-size:.95rem;color:var(--text-dark);font-weight:700;margin-bottom:.5rem}
+
+    .industries{padding:3.5rem 0;background:var(--bg-light)}
+    .industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.25rem}
+    .industry-item{background:var(--bg-white);padding:1rem;border-radius:10px;border:1px solid var(--border-color);text-align:center;cursor:pointer;transition:all .2s}
+    .industry-item i{font-size:1.6rem;margin-bottom:.6rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* ========== CTA ========== */
+    .cta{padding:3.5rem 0;background:var(--bg-white);text-align:center}
+    .cta-content{max-width:800px;margin:0 auto}
+    .cta-content h2{font-family:'Sora';font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:1rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .cta-buttons{display:flex;gap:1rem;justify-content:center;margin-top:1rem}
+    .btn{padding:.9rem 1.6rem;border-radius:999px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem}
+    .btn-primary{background:var(--primary-color);color:#fff}
+    .btn-secondary{background:transparent;color:var(--primary-color);border:2px solid var(--primary-color)}
+
+    /* ========== FOOTER ========== */
+    .footer{background:var(--text-dark);color:var(--bg-white);padding:2.5rem 0}
+    .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;padding:0 2rem}
+    .footer-logo{display:flex;align-items:center;gap:.75rem}
+    .footer-logo img{width:44px;height:44px;border-radius:8px;object-fit:cover}
+    .footer-section h3{color:#fff;margin-bottom:.6rem;font-family:'Sora';font-size:1rem}
+    .footer-section a{color:var(--text-light);text-decoration:none}
+    .social-links{display:flex;gap:.6rem}
+    .social-link{width:36px;height:36px;border-radius:999px;background:var(--primary-color);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none}
+    .contact-info p{color:var(--text-light);font-size:.95rem;display:flex;gap:.6rem;align-items:center}
+
+    .footer-bottom{text-align:center;color:var(--text-light);padding-top:1rem;font-size:.9rem}
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp {
+      from {opacity:0;transform:translateY(20px)}
+      to {opacity:1;transform:translateY(0)}
+    }
+    .loading{opacity:0;animation:fadeInUp .6s ease forwards}
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width:1024px){
+      .nav-container{padding:0 1.25rem}
+      .portfolio-hero{padding:120px 0 70px}
+      .case-img{height:240px}
+    }
+    @media (max-width:768px){
+      .nav-menu{display:none}
+      .case-study-content{grid-template-columns:1fr;gap:1rem}
+      .projects-grid{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+      .portfolio-hero{padding:110px 0 60px}
+    }
+    @media (max-width:480px){
+      .portfolio-hero{padding:90px 0 50px}
+      .stat-number{font-size:1.6rem}
+      .case-img{height:200px}
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- NAV -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <img src="images/logo.png" alt="Logo">
+        <img src="images/logo.png" alt="DigiStrive Media" class="logo">
         <h2>DigiStrive Media</h2>
       </div>
       <ul class="nav-menu">
@@ -130,23 +245,34 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="portfolio-hero">
-    <div class="container">
+    <div class="container portfolio-hero-content">
       <h1>Our <span class="gradient-text">Success Stories</span></h1>
-      <p class="portfolio-hero-subtitle">
-        Witness how we've transformed businesses across industries with data-driven strategies, technology, and creativity.
-      </p>
+      <p class="portfolio-hero-subtitle">Witness how we've transformed businesses across industries with data-driven strategies, modern design and measurable results.</p>
+
       <div class="hero-stats">
-        <div class="stat-item"><span class="stat-number">150+</span><span class="stat-label">Projects Completed</span></div>
-        <div class="stat-item"><span class="stat-number">450%</span><span class="stat-label">Average ROI</span></div>
-        <div class="stat-item"><span class="stat-number">98%</span><span class="stat-label">Client Satisfaction</span></div>
-        <div class="stat-item"><span class="stat-number">2.5M+</span><span class="stat-label">Leads Generated</span></div>
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">450%</span>
+          <span class="stat-label">Average ROI</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2.5M+</span>
+          <span class="stat-label">Leads Generated</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Filters -->
+  <!-- FILTER (keeps category UX) -->
   <section class="portfolio-filter">
     <div class="container">
       <div class="filter-buttons">
@@ -160,387 +286,583 @@
     </div>
   </section>
 
-  <!-- Case Studies -->
+  <!-- FEATURED CASE STUDIES (kept intact) -->
   <section class="featured-cases">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Featured Case Studies</h2>
-        <p class="section-subtitle">In-depth analysis of our most successful digital marketing campaigns</p>
+        <p class="section-subtitle">In-depth analysis of a few of our most impactful projects.</p>
       </div>
-      <!-- Case Study 1: A4 Realty -->
-      <div class="case-study">
+
+      <!-- Case Study: A4 Realty -->
+      <div class="case-study loading">
         <div class="case-study-content">
           <div class="case-study-text">
-            <div class="case-badge">Real Estate · SEO · Lead Generation</div>
+            <div class="case-badge">Real Estate · Lead Generation</div>
             <h3>A4 Realty: 200% Organic Traffic Growth</h3>
-            <p class="case-description">A4 Realty faced low visibility in Bangalore's premium property market. We built a strong SEO-first digital strategy to generate qualified leads.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">200%</span><span class="result-label">Traffic Growth</span></div>
-              <div class="case-result"><span class="result-number">120+</span><span class="result-label">Monthly Leads</span></div>
-              <div class="case-result"><span class="result-number">85%</span><span class="result-label">Trust Score</span></div>
+            <p class="case-description">A4 Realty lacked visibility in a competitive market. We implemented local SEO, site re-architecture and conversion-focused UX to increase qualified leads.</p>
+
+            <div class="case-challenge">
+              <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+              <p>Poor search visibility, lack of trust signals for premium listings and low lead capture efficiency.</p>
             </div>
-            <a href="https://www.a4realty.in/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
+
+            <div class="case-solution">
+              <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+              <ul>
+                <li>Targeted local SEO & on-page optimization</li>
+                <li>Premium listing templates and trust badges</li>
+                <li>Improved lead capture flows and forms</li>
+              </ul>
+            </div>
+
+            <div class="case-results-grid">
+              <div class="case-result">
+                <span class="result-number">200%</span>
+                <span class="result-label">Organic Traffic ↑</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">120+</span>
+                <span class="result-label">Monthly Leads</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">85%</span>
+                <span class="result-label">Trust Score ↑</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <a href="https://www.a4realty.in/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
+
           <div class="case-study-image">
-            <img src="finalized-images/a4realty.png" alt="A4 Realty Website" class="case-img">
+            <img src="finalized-images/a4realty.png" alt="A4 Realty" class="case-img" loading="lazy">
           </div>
         </div>
       </div>
 
-      <!-- Case Study 2: Nalnad Coffee -->
-      <div class="case-study">
+      <!-- Case Study: NuLife Behavioral Health -->
+      <div class="case-study loading">
         <div class="case-study-content reverse">
           <div class="case-study-image">
-            <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee Website" class="case-img">
+            <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health" class="case-img" loading="lazy">
           </div>
           <div class="case-study-text">
-            <div class="case-badge">E-commerce · Web Development</div>
-            <h3>Nalnad Coffee: 150% Growth in Sales</h3>
-            <p class="case-description">We designed a modern e-commerce store for Nalnad Coffee, helping them expand beyond their regional market and streamline ordering.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">150%</span><span class="result-label">Online Orders</span></div>
-              <div class="case-result"><span class="result-number">80%</span><span class="result-label">Market Expansion</span></div>
-              <div class="case-result"><span class="result-number">95%</span><span class="result-label">Customer Satisfaction</span></div>
+            <div class="case-badge">Healthcare · Multi-location</div>
+            <h3>NuLife Behavioral Health: 250% Consultation Requests</h3>
+            <p class="case-description">Multi-location clinics needed a unified digital presence with patient-focused content and booking flows to build credibility and bookings.</p>
+
+            <div class="case-challenge">
+              <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+              <p>Fragmented online presence across locations and low patient outreach.</p>
             </div>
-            <a href="https://nalnadcoffee.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
+
+            <div class="case-solution">
+              <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+              <ul>
+                <li>Multi-location structure with local pages</li>
+                <li>Patient education content and appointment flows</li>
+                <li>Local SEO and trust-building UX</li>
+              </ul>
+            </div>
+
+            <div class="case-results-grid">
+              <div class="case-result">
+                <span class="result-number">250%</span>
+                <span class="result-label">Consultation Requests ↑</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">5+</span>
+                <span class="result-label">Clinics Unified</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">90%</span>
+                <span class="result-label">Credibility Score</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Case Study 3: Sunbee Synergy -->
-      <div class="case-study">
+      <!-- Case Study: MindForge Infotech -->
+      <div class="case-study loading">
         <div class="case-study-content">
           <div class="case-study-text">
-            <div class="case-badge">Renewable Energy · Web Development</div>
-            <h3>Sunbee Synergy: 300% Increase in B2B Inquiries</h3>
-            <p class="case-description">We built a corporate website for Sunbee Synergy to showcase solar & wind solutions, generating qualified B2B leads.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">300%</span><span class="result-label">B2B Inquiries</span></div>
-              <div class="case-result"><span class="result-number">95%</span><span class="result-label">Industry Trust</span></div>
-              <div class="case-result"><span class="result-number">60%</span><span class="result-label">Lead Conversion</span></div>
+            <div class="case-badge">IT Education · Lead Gen</div>
+            <h3>MindForge Infotech: 300% Student Registrations</h3>
+            <p class="case-description">To attract job-seeking students, we redesigned the course catalog, improved SEO and added conversion paths for admissions.</p>
+
+            <div class="case-challenge">
+              <h4><i class="fas fa-exclamation-triangle"></i> Challenge</h4>
+              <p>High competition for students and difficulty presenting course ROI.</p>
             </div>
-            <a href="https://www.sunbeesynergy.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
+
+            <div class="case-solution">
+              <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+              <ul>
+                <li>Course catalog with outcomes & placements</li>
+                <li>Admission funnels and SEO targeting</li>
+                <li>Student success stories & mobile UX</li>
+              </ul>
+            </div>
+
+            <div class="case-results-grid">
+              <div class="case-result">
+                <span class="result-number">300%</span>
+                <span class="result-label">Registrations ↑</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">500+</span>
+                <span class="result-label">Monthly Inquiries</span>
+              </div>
+              <div class="case-result">
+                <span class="result-number">75%</span>
+                <span class="result-label">Conversion</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <a href="https://mindforgeinfotech.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
+
           <div class="case-study-image">
-            <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy Website" class="case-img">
+            <img src="finalized-images/mindforge-infotech.png" alt="MindForge" class="case-img" loading="lazy">
           </div>
         </div>
       </div>
 
-      <!-- Case Study 4: NuLife Behavioral Health -->
-      <div class="case-study">
-        <div class="case-study-content reverse">
-          <div class="case-study-image">
-            <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Website" class="case-img">
-          </div>
-          <div class="case-study-text">
-            <div class="case-badge">Healthcare · Web Development · SEO</div>
-            <h3>NuLife: 250% Increase in Consultations</h3>
-            <p class="case-description">NuLife required a digital platform for multiple clinics. We created a HIPAA-compliant website with optimized SEO & appointment systems.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">250%</span><span class="result-label">Consultations</span></div>
-              <div class="case-result"><span class="result-number">5+</span><span class="result-label">Clinics Unified</span></div>
-              <div class="case-result"><span class="result-number">90%</span><span class="result-label">Credibility Score</span></div>
-            </div>
-            <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- ====== REAL PROJECTS (8 projects, kept intact) ====== -->
+  <section class="real-projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Complete Project Portfolio</h2>
+        <p class="section-subtitle">Explore our client projects across SEO, Web Development, Lead Generation, Social Media and PPC.</p>
       </div>
 
-      <!-- Case Study 5: MindForge Infotech -->
-      <div class="case-study">
-        <div class="case-study-content">
-          <div class="case-study-text">
-            <div class="case-badge">IT Education · Web Development</div>
-            <h3>MindForge: 300% Increase in Student Registrations</h3>
-            <p class="case-description">We built an advanced IT training platform with course catalog, inquiry system, and placement showcase.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">300%</span><span class="result-label">Student Registrations</span></div>
-              <div class="case-result"><span class="result-number">500+</span><span class="result-label">Monthly Inquiries</span></div>
-              <div class="case-result"><span class="result-number">75%</span><span class="result-label">Job Conversion</span></div>
+      <div class="projects-grid">
+        <!-- A4 Realty -->
+        <article class="project-card loading" data-category="seo lead-generation">
+          <div class="project-header">
+            <img src="finalized-images/a4realty.png" alt="A4 Realty" class="project-image" loading="lazy">
+            <div class="project-category">Real Estate</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-home overlay-icon"></i><div class="overlay-text">View Project</div></div>
             </div>
-            <a href="https://mindforgeinfotech.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
           </div>
-          <div class="case-study-image">
-            <img src="finalized-images/mindforge-infotech.png" alt="MindForge Website" class="case-img">
+          <div class="project-content">
+            <h4 class="project-title">A4 Realty - Premium Property Platform</h4>
+            <p class="project-description">Premium property listings and lead generation focus for Bangalore market.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">200%</span><span class="metric-label">Traffic</span></div>
+              <div class="metric-item"><span class="metric-value">120+</span><span class="metric-label">Leads / Mo</span></div>
+            </div>
+            <a href="https://www.a4realty.in/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
           </div>
-        </div>
+        </article>
+
+        <!-- Nalnad Coffee -->
+        <article class="project-card loading" data-category="web-development">
+          <div class="project-header">
+            <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee" class="project-image" loading="lazy">
+            <div class="project-category">E-commerce</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-coffee overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">Nalnad Coffee - Premium E-commerce</h4>
+            <p class="project-description">Modern store UX, product pages and SEO-driven product content.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">150%</span><span class="metric-label">Orders</span></div>
+              <div class="metric-item"><span class="metric-value">80%</span><span class="metric-label">Market Reach</span></div>
+            </div>
+            <a href="https://nalnadcoffee.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- Sunbee Synergy -->
+        <article class="project-card loading" data-category="web-development lead-generation">
+          <div class="project-header">
+            <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy" class="project-image" loading="lazy">
+            <div class="project-category">Renewable Energy</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-solar-panel overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">Sunbee Synergy - Clean Energy Solutions</h4>
+            <p class="project-description">B2B lead capture and quote systems for solar & wind projects.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">300%</span><span class="metric-label">B2B Inquiries</span></div>
+              <div class="metric-item"><span class="metric-value">95%</span><span class="metric-label">Trust</span></div>
+            </div>
+            <a href="https://www.sunbeesynergy.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- Mastrolee -->
+        <article class="project-card loading" data-category="web-development">
+          <div class="project-header">
+            <img src="finalized-images/mastrolee.png" alt="Mastrolee" class="project-image" loading="lazy">
+            <div class="project-category">Corporate Services</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-building overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">Mastrolee - Professional Services</h4>
+            <p class="project-description">Corporate site focusing on professionalism and lead capture.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">180%</span><span class="metric-label">Inquiries</span></div>
+              <div class="metric-item"><span class="metric-value">70%</span><span class="metric-label">Engagement</span></div>
+            </div>
+            <a href="https://mastrolee.in/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- Tai Tai Creamery -->
+        <article class="project-card loading" data-category="web-development social-media">
+          <div class="project-header">
+            <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery" class="project-image" loading="lazy">
+            <div class="project-category">Food & Beverage</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-ice-cream overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">Tai Tai Creamery - Premium Desserts</h4>
+            <p class="project-description">Local SEO, menu showcase and ordering UX for dessert outlets.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">200%</span><span class="metric-label">Orders</span></div>
+              <div class="metric-item"><span class="metric-value">80%</span><span class="metric-label">Footfall</span></div>
+            </div>
+            <a href="https://www.taitaicreamery.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- NuLife (also in featured) -->
+        <article class="project-card loading" data-category="web-development seo">
+          <div class="project-header">
+            <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife" class="project-image" loading="lazy">
+            <div class="project-category">Healthcare</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-heart overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">NuLife - Multi-clinic Platform</h4>
+            <p class="project-description">Unified digital presence for multi-location clinics.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">250%</span><span class="metric-label">Consultations</span></div>
+              <div class="metric-item"><span class="metric-value">5+</span><span class="metric-label">Clinics</span></div>
+            </div>
+            <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- MindForge (also in featured) -->
+        <article class="project-card loading" data-category="web-development seo lead-generation">
+          <div class="project-header">
+            <img src="finalized-images/mindforge-infotech.png" alt="MindForge" class="project-image" loading="lazy">
+            <div class="project-category">IT Education</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-code overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">MindForge - IT Training Platform</h4>
+            <p class="project-description">Course catalog, admissions & job placement showcase.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">300%</span><span class="metric-label">Registrations</span></div>
+              <div class="metric-item"><span class="metric-value">500+</span><span class="metric-label">Inquiries</span></div>
+            </div>
+            <a href="https://mindforgeinfotech.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <!-- Ashwa Education Consultancy -->
+        <article class="project-card loading" data-category="web-development lead-generation">
+          <div class="project-header">
+            <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education" class="project-image" loading="lazy">
+            <div class="project-category">Education</div>
+            <div class="project-overlay">
+              <div class="overlay-content"><i class="fas fa-graduation-cap overlay-icon"></i><div class="overlay-text">View Project</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">Ashwa Education - Student Success</h4>
+            <p class="project-description">Guiding students through admissions and increasing inquiry conversions.</p>
+            <div class="project-metrics">
+              <div class="metric-item"><span class="metric-value">200+</span><span class="metric-label">Inquiries</span></div>
+              <div class="metric-item"><span class="metric-value">85%</span><span class="metric-label">Conversion</span></div>
+            </div>
+            <a href="https://ashwaeducationconsultancy.com/" target="_blank" class="project-cta">View Live Project <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+      </div><!-- /.projects-grid -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- AGGREGATE CLIENT RESULTS (kept as-is) -->
+  <section class="client-results">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Aggregate Client Results</h2>
+        <p class="section-subtitle">Comprehensive performance metrics showcasing our impact across client campaigns.</p>
       </div>
 
-      <!-- Case Study 6: Tai Tai Creamery -->
-      <div class="case-study">
-        <div class="case-study-content reverse">
-          <div class="case-study-image">
-            <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery Website" class="case-img">
+      <div class="results-grid">
+        <div class="result-card loading">
+          <div class="result-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="result-stat">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Happy Clients</span>
           </div>
-          <div class="case-study-text">
-            <div class="case-badge">Food & Beverage · Social Media</div>
-            <h3>Tai Tai Creamery: 200% Boost in Online Orders</h3>
-            <p class="case-description">We created a stylish F&B website with integrated online ordering and social media-driven branding.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">200%</span><span class="result-label">Orders Growth</span></div>
-              <div class="case-result"><span class="result-number">80%</span><span class="result-label">Footfall Increase</span></div>
-              <div class="case-result"><span class="result-number">85%</span><span class="result-label">Brand Recall</span></div>
-            </div>
-            <a href="https://www.taitaicreamery.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
+          <p>Businesses transformed through strategic digital initiatives.</p>
         </div>
-      </div>
 
-      <!-- Case Study 7: Mastrolee -->
-      <div class="case-study">
-        <div class="case-study-content">
-          <div class="case-study-text">
-            <div class="case-badge">Corporate Services · Web Development</div>
-            <h3>Mastrolee: 180% Boost in Client Inquiries</h3>
-            <p class="case-description">We delivered a professional website for Mastrolee with advanced inquiry systems and strong SEO positioning.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">180%</span><span class="result-label">Inquiries</span></div>
-              <div class="case-result"><span class="result-number">70%</span><span class="result-label">Engagement</span></div>
-              <div class="case-result"><span class="result-number">90%</span><span class="result-label">Credibility</span></div>
-            </div>
-            <a href="https://mastrolee.in/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
+        <div class="result-card loading">
+          <div class="result-icon"><i class="fas fa-rocket"></i></div>
+          <div class="result-stat">
+            <span class="stat-number">450%</span>
+            <span class="stat-label">Average ROI</span>
           </div>
-          <div class="case-study-image">
-            <img src="finalized-images/mastrolee.png" alt="Mastrolee Website" class="case-img">
-          </div>
+          <p>Return on investment achieved across campaigns.</p>
         </div>
-      </div>
 
-      <!-- Case Study 8: Ashwa Education -->
-      <div class="case-study">
-        <div class="case-study-content reverse">
-          <div class="case-study-image">
-            <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Website" class="case-img">
+        <div class="result-card loading">
+          <div class="result-icon"><i class="fas fa-users"></i></div>
+          <div class="result-stat">
+            <span class="stat-number">2.5M+</span>
+            <span class="stat-label">Leads Generated</span>
           </div>
-          <div class="case-study-text">
-            <div class="case-badge">Education · Lead Generation</div>
-            <h3>Ashwa Education: 200+ Student Inquiries Monthly</h3>
-            <p class="case-description">We built a consultancy website for Ashwa Education with lead capture and student success stories.</p>
-            <div class="case-results-grid">
-              <div class="case-result"><span class="result-number">200+</span><span class="result-label">Student Inquiries</span></div>
-              <div class="case-result"><span class="result-number">85%</span><span class="result-label">Conversion</span></div>
-              <div class="case-result"><span class="result-number">95%</span><span class="result-label">Satisfaction</span></div>
-            </div>
-            <a href="https://ashwaeducationconsultancy.com/" target="_blank" class="project-cta">
-              View Live Project <i class="fas fa-external-link-alt"></i>
-            </a>
+          <p>High-quality leads delivered to clients.</p>
+        </div>
+
+        <div class="result-card loading">
+          <div class="result-icon"><i class="fas fa-trophy"></i></div>
+          <div class="result-stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Success Rate</span>
           </div>
+          <p>Client satisfaction and project success rate.</p>
         </div>
       </div>
     </div>
   </section>
-    <!-- Aggregate Client Results -->
-    <section class="client-results">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Aggregate Client Results</h2>
-          <p class="section-subtitle">Comprehensive performance metrics showcasing our impact across all client campaigns</p>
+
+  <!-- INDUSTRIES -->
+  <section class="industries">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Industries We Transform</h2>
+        <p class="section-subtitle">Our expertise spans across many verticals to deliver targeted solutions.</p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="industry-item"><i class="fas fa-laptop-code"></i><h4>Technology & IT</h4><p>Software, SaaS, IT Services</p></div>
+        <div class="industry-item"><i class="fas fa-stethoscope"></i><h4>Healthcare</h4><p>Hospitals, Clinics, Behavioral Health</p></div>
+        <div class="industry-item"><i class="fas fa-graduation-cap"></i><h4>Education</h4><p>Schools, E-learning, Institutes</p></div>
+        <div class="industry-item"><i class="fas fa-shopping-cart"></i><h4>E-commerce</h4><p>Retail & Marketplaces</p></div>
+        <div class="industry-item"><i class="fas fa-home"></i><h4>Real Estate</h4><p>Sales, Rentals & Developers</p></div>
+        <div class="industry-item"><i class="fas fa-utensils"></i><h4>Food & Beverage</h4><p>Restaurants & Brands</p></div>
+        <div class="industry-item"><i class="fas fa-solar-panel"></i><h4>Renewable Energy</h4><p>Solar & Clean Tech</p></div>
+        <div class="industry-item"><i class="fas fa-briefcase"></i><h4>Professional Services</h4><p>Legal, Finance & Consulting</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-content">
+      <h2>Ready to Become Our Next Success Story?</h2>
+      <p>Join 150+ businesses who transformed their digital presence. Let’s design a growth plan that fits your goals.</p>
+      <div class="cta-buttons">
+        <a href="contact.php" class="btn btn-primary"><i class="fas fa-rocket"></i> Start Your Project</a>
+        <a href="about.html" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (clean single footer, moved company info here) -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo1.jpeg" alt="DigiStrive Media">
+          <div>
+            <h3>DigiStrive Media</h3>
+            <p style="color:var(--text-light);font-size:.95rem;margin-top:.25rem;">Data-driven digital marketing & web experiences.</p>
+          </div>
         </div>
-        
-        <div class="results-grid">
-          <div class="result-card">
-            <div class="result-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="result-stat">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">Happy Clients</span>
-            </div>
-            <p>Businesses we've successfully transformed with our strategic digital marketing initiatives.</p>
-          </div>
 
-          <div class="result-card">
-            <div class="result-icon"><i class="fas fa-rocket"></i></div>
-            <div class="result-stat">
-              <span class="stat-number">450%</span>
-              <span class="stat-label">Average ROI</span>
-            </div>
-            <p>Exceptional ROI delivered across industries with measurable business growth.</p>
-          </div>
-
-          <div class="result-card">
-            <div class="result-icon"><i class="fas fa-users"></i></div>
-            <div class="result-stat">
-              <span class="stat-number">2.5M+</span>
-              <span class="stat-label">Leads Generated</span>
-            </div>
-            <p>High-quality verified leads driving long-term business sustainability.</p>
-          </div>
-
-          <div class="result-card">
-            <div class="result-icon"><i class="fas fa-trophy"></i></div>
-            <div class="result-stat">
-              <span class="stat-number">98%</span>
-              <span class="stat-label">Success Rate</span>
-            </div>
-            <p>Consistent client satisfaction and successful campaigns across domains.</p>
+        <div style="margin-top:.75rem;">
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61579805919375" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/DigistriveMedia" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/digistrive_media/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Industries -->
-    <section class="industries">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Industries We Transform</h2>
-          <p class="section-subtitle">Our expertise spans diverse industries, delivering tailored digital solutions</p>
-        </div>
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul style="list-style:none;padding:0">
+          <li><a href="services.html#seo">SEO Optimization</a></li>
+          <li><a href="services.html#web-dev">Web Development</a></li>
+          <li><a href="services.html#social-media">Social Media</a></li>
+          <li><a href="services.html#ppc">PPC Advertising</a></li>
+          <li><a href="services.html#lead-gen">Lead Generation</a></li>
+          <li><a href="services.html#content">Content Marketing</a></li>
+        </ul>
+      </div>
 
-        <div class="industries-grid">
-          <div class="industry-item"><i class="fas fa-laptop-code"></i><h4>Technology & IT</h4><p>Software, SaaS, Training</p></div>
-          <div class="industry-item"><i class="fas fa-stethoscope"></i><h4>Healthcare</h4><p>Hospitals, Clinics, HealthTech</p></div>
-          <div class="industry-item"><i class="fas fa-graduation-cap"></i><h4>Education</h4><p>Schools, Universities, Consultancy</p></div>
-          <div class="industry-item"><i class="fas fa-shopping-cart"></i><h4>E-commerce</h4><p>Retail, Specialty Products</p></div>
-          <div class="industry-item"><i class="fas fa-home"></i><h4>Real Estate</h4><p>Property, Construction, Rentals</p></div>
-          <div class="industry-item"><i class="fas fa-utensils"></i><h4>Food & Beverage</h4><p>Restaurants, Cafes, Premium Brands</p></div>
-          <div class="industry-item"><i class="fas fa-solar-panel"></i><h4>Renewable Energy</h4><p>Solar, Wind, Clean Tech</p></div>
-          <div class="industry-item"><i class="fas fa-briefcase"></i><h4>Professional Services</h4><p>Legal, Consulting, Corporate</p></div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul style="list-style:none;padding:0">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.php">Contact</a></li>
+          <li><a href="https://digistrivemedia.com/blog">Blog</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Get In Touch</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
+          <p><i class="fas fa-phone"></i> +91 8147057346</p>
+          <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka, India</p>
+          <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM IST</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to Become Our Next Success Story?</h2>
-          <p>Join 150+ businesses who have transformed with DigiStrive Media. Let’s build your growth story today.</p>
-          <div class="cta-buttons">
-            <a href="contact.php" class="btn btn-primary"><i class="fas fa-rocket"></i> Start Your Project</a>
-            <a href="about.html" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Learn More About Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DigiStrive Media. All rights reserved. | Crafted with ❤️ in Bangalore</p>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <div class="footer-logo">
-              <img src="images/logo.png" alt="DigiStrive Logo" class="logo">
-              <h3>DigiStrive Media</h3>
-            </div>
-            <p>Transforming businesses with data-driven strategies & creative excellence.</p>
-            <div class="social-links">
-              <a href="https://www.facebook.com/profile.php?id=61579805919375" class="social-link"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://x.com/DigistriveMedia" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/digistrive_media/" class="social-link"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-
-          <div class="footer-section">
-            <h3>Our Services</h3>
-            <ul>
-              <li><a href="services.html#seo">SEO Optimization</a></li>
-              <li><a href="services.html#web-dev">Web Development</a></li>
-              <li><a href="services.html#social-media">Social Media Marketing</a></li>
-              <li><a href="services.html#ppc">PPC Advertising</a></li>
-              <li><a href="services.html#lead-gen">Lead Generation</a></li>
-              <li><a href="services.html#content">Content Marketing</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="contact.php">Contact</a></li>
-              <li><a href="https://digistrivemedia.com/blog">Blog</a></li>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#terms">Terms of Service</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h3>Get In Touch</h3>
-            <div class="contact-info">
-              <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
-              <p><i class="fas fa-phone"></i> +91 8147057346</p>
-              <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
-              <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM IST</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 DigiStrive Media. All rights reserved. | Crafted with ❤️ in Bangalore</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    (function(){
+      // Wait until DOM loaded
       document.addEventListener('DOMContentLoaded', function() {
-        // Filter
+        // NAVBAR scroll behavior
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 90) {
+            navbar.style.boxShadow = '0 6px 24px rgba(0,0,0,0.08)';
+            navbar.style.background = 'rgba(255,255,255,0.98)';
+          } else {
+            navbar.style.boxShadow = '';
+            navbar.style.background = 'rgba(255,255,255,0.95)';
+          }
+        });
+
+        // FILTER
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
-        filterButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const filterValue = button.dataset.filter;
-            projectCards.forEach(card => {
-              const categories = card.dataset.category;
-              if (filterValue === 'all' || categories.includes(filterValue)) {
+
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const value = this.getAttribute('data-filter');
+
+            projectCards.forEach((card, i) => {
+              const cats = (card.getAttribute('data-category') || '').toLowerCase();
+              if (value === 'all' || cats.includes(value)) {
                 card.style.display = 'block';
+                // animate in
+                setTimeout(()=>{ card.style.opacity='1'; card.style.transform='translateY(0)'; }, 40 + i*30);
+                card.classList.remove('hidden');
               } else {
-                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(()=>{ card.classList.add('hidden'); card.style.display='none'; }, 300);
               }
             });
           });
         });
 
-        // Stats animation
-        const statsSection = document.querySelector('.hero-stats');
-        const statNumbers = document.querySelectorAll('.stat-number');
-        const statsObserver = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              statNumbers.forEach(stat => {
-                const finalValue = stat.textContent;
-                const isPercentage = finalValue.includes('%');
-                const isPlus = finalValue.includes('+');
-                const isMillion = finalValue.includes('M');
-                let numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
-                if (isMillion) numericValue = numericValue * 100;
-                let currentValue = 0;
-                const increment = numericValue / 50;
-                const timer = setInterval(() => {
-                  currentValue += increment;
-                  if (currentValue >= numericValue) {
-                    clearInterval(timer);
-                    currentValue = numericValue;
-                  }
-                  let displayValue = Math.floor(currentValue);
-                  if (isMillion) displayValue = (displayValue/100).toFixed(1)+'M+';
-                  else if (isPercentage) displayValue += '%';
-                  else if (isPlus) displayValue += '+';
-                  stat.textContent = displayValue;
-                }, 50);
-              });
-              statsObserver.unobserve(entry.target);
+        // Intersection observer for loading animation
+        const ioOptions = {threshold:0.12, rootMargin: '0px 0px -40px 0px'};
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('loaded');
+              e.target.style.opacity = '1';
+              e.target.style.transform = 'translateY(0)';
+              io.unobserve(e.target);
             }
           });
-        }, { threshold: 0.5 });
-        if (statsSection) statsObserver.observe(statsSection);
-      });
-    </script>
-  </body>
+        }, ioOptions);
+
+        document.querySelectorAll('.loading').forEach((el, idx) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'all .6s ease ' + (idx * 0.05) + 's';
+          io.observe(el);
+        });
+
+        // Stats counter in hero
+        const statsSection = document.querySelector('.hero-stats');
+        if (statsSection) {
+          const statNums = statsSection.querySelectorAll('.stat-number');
+          const sIO = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                statNums.forEach((stat) => {
+                  const text = stat.textContent.trim();
+                  const isPercent = text.includes('%');
+                  const isPlus = text.includes('+');
+                  const isM = text.toUpperCase().includes('M');
+                  let numeric = parseInt(text.replace(/[^\d]/g,'') || 0, 10);
+                  if (isM) numeric = numeric * 100; // simple scale for animation
+                  let current = 0;
+                  const step = Math.max(1, Math.floor(numeric / 50));
+                  const timer = setInterval(() => {
+                    current += step;
+                    if (current >= numeric) {
+                      current = numeric;
+                      clearInterval(timer);
+                    }
+                    let display = current;
+                    if (isM) display = (current / 100).toFixed(1) + 'M+';
+                    else if (isPercent) display = current + '%';
+                    else if (isPlus) display = current + '+';
+                    stat.textContent = display;
+                  }, 20);
+                });
+                sIO.unobserve(entry.target);
+              }
+            });
+          }, {threshold: 0.5});
+          sIO.observe(statsSection);
+        }
+
+        // Simple lazy image loader fallback (images already have loading=lazy)
+        // No additional external lazy lib
+
+        // Accessibility: keyboard filter
+        filterButtons.forEach(b => b.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') b.click();
+        }));
+      }); // DOMContentLoaded
+    })();
+  </script>
+</body>
 </html>
