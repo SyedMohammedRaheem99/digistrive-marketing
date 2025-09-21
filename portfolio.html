@@ -316,7 +316,7 @@
         </div>
     </section>
 
-  <!-- Featured Case Studies Section - Exact Reference Match -->
+<!-- Featured Case Studies Section - Exact Reference Match -->
 <section class="case-studies">
     <div class="container">
         <div class="section-header">
@@ -987,6 +987,32 @@
     </style>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        if (filterBtns.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+                    
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    projectCards.forEach(card => {
+                        const categories = card.dataset.category || '';
+                        if (filter === 'all' || categories.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    });
+    </script>
+</section>
     document.addEventListener('DOMContentLoaded', function() {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
