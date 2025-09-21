@@ -1,4 +1,3 @@
-<!-- CHANGELOG: Removed duplicate project portfolios, consolidated footer content, cleaned malformed HTML fragments -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +7,9 @@
     <meta name="description" content="Explore DigiStrive Media's award-winning portfolio of digital marketing projects, case studies, and transformative client results in Bangalore and across India.">
     <meta name="keywords" content="digital marketing portfolio, case studies, successful projects, client results, bangalore digital agency, award-winning campaigns">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DHLZFSCFF"></script>
     <script>
@@ -19,913 +19,9 @@
     
       gtag('config', 'G-3DHLZFSCFF');
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #20B2AA;
-            --primary-dark: #1a9994;
-            --primary-light: #5CBDB8;
-            --secondary-color: #32CD32;
-            --accent-color: #87CEEB;
-            --success-color: #32CD32;
-            --warning-color: #FFD700;
-            --error-color: #FF6B6B;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --text-dark: #1e293b;
-            --text-gray: #64748b;
-            --text-light: #94a3b8;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --gradient-primary: linear-gradient(135deg, #20B2AA 0%, #32CD32 100%);
-            --gradient-secondary: linear-gradient(135deg, #87CEEB 0%, #20B2AA 100%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo {
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
-        }
-
-        .nav-logo h2 {
-            font-family: 'Sora', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .portfolio-hero {
-            padding: 180px 0 120px;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(32, 178, 170, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.08) 0%, transparent 50%),
-                var(--bg-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 25px 25px, rgba(32, 178, 170, 0.05) 2px, transparent 2px);
-            background-size: 50px 50px;
-            opacity: 0.3;
-        }
-
-        .portfolio-hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .portfolio-hero h1 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .portfolio-hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-gray);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        /* Stats Bar */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            padding: 2.5rem;
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .stat-number {
-            display: block;
-            font-family: 'Sora', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-gray);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-        }
-
-        /* Filter Section */
-        .portfolio-filter {
-            padding: 4rem 0;
-            text-align: center;
-            background: var(--bg-light);
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .filter-btn {
-            background: var(--bg-white);
-            color: var(--text-gray);
-            border: 1px solid var(--border-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Featured Case Studies */
-        .featured-cases {
-            padding: 6rem 0;
-            background: var(--bg-white);
-        }
-
-        .case-study {
-            margin-bottom: 4rem;
-        }
-
-        .case-study-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            background: var(--bg-white);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-        }
-
-        .case-study-content:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .case-study-content.reverse {
-            direction: rtl;
-        }
-
-        .case-study-content.reverse > * {
-            direction: ltr;
-        }
-
-        .case-badge {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .case-study h3 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            line-height: 1.3;
-        }
-
-        .case-description {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .case-challenge,
-        .case-solution {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .case-challenge h4,
-        .case-solution h4 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-        }
-
-        .case-challenge i {
-            color: var(--error-color);
-        }
-
-        .case-solution i {
-            color: var(--success-color);
-        }
-
-        .case-solution ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .case-solution li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        .case-solution li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: 600;
-        }
-
-        .case-results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .case-result {
-            text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(32, 178, 170, 0.05) 0%, rgba(50, 205, 50, 0.05) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(32, 178, 170, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .case-result:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .result-number {
-            display: block;
-            font-family: 'Sora', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .result-label {
-            color: var(--text-gray);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .case-study-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .case-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .case-study-content:hover .case-img {
-            transform: scale(1.05);
-        }
-
-        .project-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .project-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
-        }
-
-        /* Client Results */
-        .client-results {
-            padding: 6rem 0;
-            background: var(--bg-white);
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .result-card {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .result-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .result-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .result-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.3rem;
-            color: white;
-        }
-
-        .result-stat {
-            margin-bottom: 1rem;
-        }
-
-        .result-stat .stat-number {
-            font-size: 2.2rem;
-        }
-
-        .result-stat .stat-label {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: none;
-        }
-
-        .result-card p {
-            color: var(--text-gray);
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        /* Industries */
-        .industries {
-            padding: 6rem 0;
-            background: var(--bg-light);
-        }
-
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .industry-item {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .industry-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
-        }
-
-        .industry-item i {
-            font-size: 2.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .industry-item h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .industry-item p {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 6rem 0;
-            background: var(--bg-white);
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(32, 178, 170, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--text-dark);
-            color: var(--bg-light);
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-family: 'Sora', sans-serif;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--bg-white);
-            font-size: 1.1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo .logo {
-            width: 35px;
-            height: 35px;
-        }
-
-        .footer-logo h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
-
-        .footer-section p {
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .social-link:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .contact-info p {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .contact-info i {
-            color: var(--primary-color);
-            width: 16px;
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.2);
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .case-study-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .case-results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background-color: var(--bg-white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: var(--shadow-lg);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .portfolio-hero {
-                padding: 140px 0 80px;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 2rem;
-            }
-
-            .case-study-content {
-                padding: 2rem;
-            }
-
-            .case-results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        .loading {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .loading:nth-child(1) { animation-delay: 0.1s; }
-        .loading:nth-child(2) { animation-delay: 0.2s; }
-        .loading:nth-child(3) { animation-delay: 0.3s; }
-        .loading:nth-child(4) { animation-delay: 0.4s; }
-        .loading:nth-child(5) { animation-delay: 0.5s; }
-        .loading:nth-child(6) { animation-delay: 0.6s; }
-        .loading:nth-child(7) { animation-delay: 0.7s; }
-        .loading:nth-child(8) { animation-delay: 0.8s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Original from portfolio file -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -967,7 +63,7 @@
                 <h1>Our <span class="gradient-text">Success Stories</span></h1>
                 <p class="portfolio-hero-subtitle">Witness how we've transformed businesses across industries with data-driven strategies, cutting-edge technology, and creative excellence that delivers extraordinary results.</p>
                 
-                <!-- Stats -->
+                <!-- Enhanced Stats from first document -->
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-number">150+</span>
@@ -976,7 +72,7 @@
                     <div class="stat-item">
                         <span class="stat-number">450%</span>
                         <span class="stat-label">Average ROI</span>
-                        </div>
+                    </div>
                     <div class="stat-item">
                         <span class="stat-number">98%</span>
                         <span class="stat-label">Client Satisfaction</span>
@@ -1004,8 +100,8 @@
         </div>
     </section>
 
-    <!-- Featured Case Studies -->
-    <section class="featured-cases">
+    <!-- Featured Case Studies Section - Enhanced content -->
+    <section class="case-studies">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Case Studies</h2>
@@ -1013,10 +109,12 @@
             </div>
             
             <!-- Case Study 1: A4 Realty -->
-            <div class="case-study">
+            <div class="case-study featured-case">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <div class="case-badge">Real Estate · SEO · Lead Generation</div>
+                        <div class="case-badge">
+                            <span>Real Estate · SEO · Lead Generation</span>
+                        </div>
                         <h3>A4 Realty: 200% Organic Traffic Growth in Competitive Market</h3>
                         <p class="case-description">A4 Realty faced low visibility in Bangalore's competitive property market and lacked digital presence for their verified premium listings. They needed a comprehensive digital strategy to establish trust and generate quality leads.</p>
                         
@@ -1050,12 +148,6 @@
                                 <span class="result-label">Trust Score Improvement</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://www.a4realty.in/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="case-study-image">
                         <img src="finalized-images/a4realty.png" alt="A4 Realty Website Analytics Dashboard" class="case-img">
@@ -1070,7 +162,9 @@
                         <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee E-commerce Platform" class="case-img">
                     </div>
                     <div class="case-study-text">
-                        <div class="case-badge">E-commerce · Web Development</div>
+                        <div class="case-badge">
+                            <span>E-commerce · Web Development</span>
+                        </div>
                         <h3>Nalnad Coffee: 150% Growth in Online Coffee Sales</h3>
                         <p class="case-description">Nalnad Coffee struggled to reach a wider audience for their premium shade-grown coffee products beyond their regional market. They needed a modern e-commerce platform to expand their customer base and increase online sales.</p>
                         
@@ -1104,12 +198,6 @@
                                 <span class="result-label">Customer Satisfaction</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://nalnadcoffee.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1118,7 +206,9 @@
             <div class="case-study">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <div class="case-badge">Renewable Energy · Web Development · Lead Generation</div>
+                        <div class="case-badge">
+                            <span>Renewable Energy · Web Development · Lead Generation</span>
+                        </div>
                         <h3>Sunbee Synergy: 300% Increase in B2B Inquiries</h3>
                         <p class="case-description">Sunbee Synergy needed an online presence to showcase their solar and wind energy solutions for industrial clients. They required a platform that could effectively communicate their expertise and generate qualified B2B leads.</p>
                         
@@ -1152,12 +242,6 @@
                                 <span class="result-label">Lead Conversion Rate</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://www.sunbeesynergy.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="case-study-image">
                         <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy Renewable Energy Website" class="case-img">
@@ -1172,7 +256,9 @@
                         <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health Multi-location Website" class="case-img">
                     </div>
                     <div class="case-study-text">
-                        <div class="case-badge">Healthcare · Web Development · SEO</div>
+                        <div class="case-badge">
+                            <span>Healthcare · Web Development · SEO</span>
+                        </div>
                         <h3>NuLife Behavioral Health: 250% Increase in Consultation Requests</h3>
                         <p class="case-description">NuLife Behavioral Health required a comprehensive digital presence for their multiple clinic locations and specialized behavioral health programs, with focus on credibility and patient engagement across all facilities.</p>
                         
@@ -1206,12 +292,6 @@
                                 <span class="result-label">Healthcare Credibility Score</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1220,7 +300,9 @@
             <div class="case-study">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <div class="case-badge">IT Education · Web Development · SEO · Lead Generation</div>
+                        <div class="case-badge">
+                            <span>IT Education · Web Development · SEO · Lead Generation</span>
+                        </div>
                         <h3>MindForge Infotech: 300% Increase in Student Registrations</h3>
                         <p class="case-description">MindForge Infotech needed a powerful platform to showcase their multiple IT training courses and attract job-seeking students in the competitive education technology market with focus on placement assistance.</p>
                         
@@ -1254,12 +336,6 @@
                                 <span class="result-label">Job Seeker Conversion</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://mindforgeinfotech.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="case-study-image">
                         <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech IT Training Platform" class="case-img">
@@ -1274,7 +350,9 @@
                         <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery Premium Dessert Website" class="case-img">
                     </div>
                     <div class="case-study-text">
-                        <div class="case-badge">Food & Beverage · Web Development · Social Media</div>
+                        <div class="case-badge">
+                            <span>Food & Beverage · Web Development · Social Media</span>
+                        </div>
                         <h3>Tai Tai Creamery: Building Premium Dessert Brand with 200% Online Orders</h3>
                         <p class="case-description">Tai Tai Creamery, a new F&B brand, needed a platform to showcase their premium dessert products, multiple store locations, and drive online orders while establishing strong brand recall in the competitive dessert market.</p>
                         
@@ -1308,12 +386,6 @@
                                 <span class="result-label">Premium Brand Recall</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://www.taitaicreamery.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1322,7 +394,9 @@
             <div class="case-study">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <div class="case-badge">Corporate Services · Web Development</div>
+                        <div class="case-badge">
+                            <span>Corporate Services · Web Development</span>
+                        </div>
                         <h3>Mastrolee: Professional Corporate Identity with 180% Client Inquiries</h3>
                         <p class="case-description">Mastrolee required a sophisticated corporate website that would establish their professional credibility in the services sector and effectively communicate their expertise to potential clients while generating qualified leads.</p>
                         
@@ -1356,12 +430,6 @@
                                 <span class="result-label">Professional Credibility</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://mastrolee.in/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="case-study-image">
                         <img src="finalized-images/mastrolee.png" alt="Mastrolee Corporate Services Website" class="case-img">
@@ -1376,7 +444,9 @@
                         <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Consultancy Platform" class="case-img">
                     </div>
                     <div class="case-study-text">
-                        <div class="case-badge">Education Consultancy · Web Development · Lead Generation</div>
+                        <div class="case-badge">
+                            <span>Education Consultancy · Web Development · Lead Generation</span>
+                        </div>
                         <h3>Ashwa Education: 200+ Monthly Student Inquiries & 85% Conversion</h3>
                         <p class="case-description">Ashwa Education Consultancy needed a comprehensive platform to guide students through complex admission processes and capture inquiries for their consultancy services while establishing trust in the competitive education sector.</p>
                         
@@ -1410,19 +480,13 @@
                                 <span class="result-label">Student Satisfaction</span>
                             </div>
                         </div>
-                        
-                        <div style="margin-top: 2rem;">
-                            <a href="https://ashwaeducationconsultancy.com/" target="_blank" class="project-cta">
-                                View Live Project <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Client Results -->
+    <!-- Client Results Overview - Enhanced content -->
     <section class="client-results">
         <div class="container">
             <div class="section-header">
@@ -1478,7 +542,7 @@
         </div>
     </section>
 
-    <!-- Industries Served -->
+    <!-- Industries Served - Enhanced content -->
     <section class="industries">
         <div class="container">
             <div class="section-header">
@@ -1531,36 +595,29 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section - Enhanced content -->
     <section class="cta">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Become Our Next Success Story?</h2>
                 <p>Join 150+ successful businesses who have transformed their digital presence with our proven strategies. Let's discuss how we can deliver similar extraordinary results for your business.</p>
                 <div class="cta-buttons">
-                    <a href="contact.php" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Start Your Project
-                    </a>
-                    <a href="about.html" class="btn btn-secondary">
-                        <i class="fas fa-info-circle"></i>
-                        Learn More About Us
-                    </a>
+                    <a href="contact.php" class="btn btn-primary">Start Your Project</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Original from portfolio file -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
                         <img src="images/logo1.jpeg" alt="DigiStrive Media Logo" class="logo">
-                        <h3>DigiStrive Media</h3>
+                        <p>Transform your business with data-driven digital marketing strategies that deliver measurable results and sustainable growth.</p>
                     </div>
-                    <p>Transform your business with data-driven digital marketing strategies that deliver measurable results and sustainable growth.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61579805919375" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://x.com/DigistriveMedia" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -1569,7 +626,7 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Our Services</h3>
+                    <h3>Services</h3>
                     <ul>
                         <li><a href="services.html#seo">SEO Optimization</a></li>
                         <li><a href="services.html#web-dev">Web Development</a></li>
@@ -1587,12 +644,11 @@
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="https://digistrivemedia.com/blog">Blog</a></li>
                         <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#
-                                terms">Terms of Service</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Get In Touch</h3>
+                    <h3>Contact Info</h3>
                     <div class="contact-info">
                         <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
                         <p><i class="fas fa-phone"></i> +91 8147057346</p>
@@ -1607,158 +663,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on a link
-                document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }));
-            }
-
-            // Filter functionality
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card, .case-study, .portfolio-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const filterValue = button.getAttribute('data-filter');
-                    
-                    // Filter projects
-                    projectCards.forEach(card => {
-                        const cardCategories = card.getAttribute('data-category') || '';
-                        
-                        if (filterValue === 'all' || cardCategories.includes(filterValue)) {
-                            card.style.display = 'block';
-                            card.classList.remove('hidden');
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                card.classList.add('hidden');
-                            }, 300);
-                        }
-                    });
-                });
-            });
-
-            // Loading animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe loading elements
-            document.querySelectorAll('.loading, .case-study, .result-card, .industry-item').forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(el);
-            });
-
-            // Stats animation
-            const statsSection = document.querySelector('.hero-stats');
-            const statNumbers = document.querySelectorAll('.stat-number');
-            
-            const statsObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        statNumbers.forEach(stat => {
-                            const finalValue = stat.textContent;
-                            const isPercentage = finalValue.includes('%');
-                            const isPlus = finalValue.includes('+');
-                            const isMillion = finalValue.includes('M');
-                            let numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
-                            
-                            if (isMillion) {
-                                numericValue = numericValue * 100; // For animation purposes
-                            }
-                            
-                            let currentValue = 0;
-                            const increment = numericValue / 50;
-                            const timer = setInterval(() => {
-                                currentValue += increment;
-                                if (currentValue >= numericValue) {
-                                    clearInterval(timer);
-                                    currentValue = numericValue;
-                                }
-                                
-                                let displayValue = Math.floor(currentValue);
-                                if (isMillion) {
-                                    displayValue = (displayValue / 100).toFixed(1) + 'M+';
-                                } else if (isPercentage) {
-                                    displayValue += '%';
-                                } else if (isPlus) {
-                                    displayValue += '+';
-                                }
-                                
-                                stat.textContent = displayValue;
-                            }, 50);
-                        });
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            if (statsSection) {
-                statsObserver.observe(statsSection);
-            }
-
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-                } else {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-                }
-            });
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- JavaScript files - Original from portfolio file -->
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>
