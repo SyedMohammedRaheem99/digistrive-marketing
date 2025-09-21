@@ -19,6 +19,325 @@
     
       gtag('config', 'G-3DHLZFSCFF');
     </script>
+
+    <!-- Enhanced Case Study Styles -->
+    <style>
+        /* Premium Case Study Enhancements */
+        .featured-cases {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-cases::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(32, 178, 170, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.03) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .case-study {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .case-study:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .case-study:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        .case-study-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #20B2AA, #32CD32, #87CEEB);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .case-study-content:hover {
+            transform: translateY(-12px);
+            box-shadow: 
+                0 40px 80px -12px rgba(0, 0, 0, 0.12),
+                0 0 0 1px rgba(32, 178, 170, 0.1);
+        }
+
+        .case-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #20B2AA, #32CD32);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 8px 25px rgba(32, 178, 170, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .case-badge:hover::before {
+            left: 100%;
+        }
+
+        .case-study h3 {
+            background: linear-gradient(135deg, #1e293b, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .case-challenge, .case-solution {
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.05), rgba(50, 205, 50, 0.05));
+            border: 1px solid rgba(32, 178, 170, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-challenge::before, .case-solution::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #20B2AA, #32CD32);
+        }
+
+        .case-results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .case-result {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(32, 178, 170, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-result::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #20B2AA, #32CD32);
+        }
+
+        .case-result:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(32, 178, 170, 0.15);
+        }
+
+        .result-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #20B2AA, #32CD32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .case-study-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(32, 178, 170, 0.1), rgba(50, 205, 50, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .case-study-content:hover .case-study-image::before {
+            opacity: 1;
+        }
+
+        .case-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-study-content:hover .case-img {
+            transform: scale(1.08);
+        }
+
+        /* Enhanced CTA Buttons */
+        .case-study-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #20B2AA, #32CD32);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(32, 178, 170, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-cta:hover::before {
+            left: 100%;
+        }
+
+        .project-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(32, 178, 170, 0.4);
+        }
+
+        .case-details-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: #20B2AA;
+            border: 2px solid #20B2AA;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-details-btn:hover {
+            background: #20B2AA;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(32, 178, 170, 0.25);
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .case-badge {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .case-study-content {
+                padding: 2.5rem;
+            }
+            
+            .case-results-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .case-study-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation - Original from portfolio file -->
@@ -100,8 +419,8 @@
         </div>
     </section>
 
-    <!-- Featured Case Studies Section - Enhanced content -->
-    <section class="case-studies">
+    <!-- Featured Case Studies Section - Enhanced with Premium Effects -->
+    <section class="featured-cases">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Case Studies</h2>
@@ -147,6 +466,17 @@
                                 <span class="result-number">85%</span>
                                 <span class="result-label">Trust Score Improvement</span>
                             </div>
+                        </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://www.a4realty.in/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-chart-line"></i>
+                                View Analytics
+                            </a>
                         </div>
                     </div>
                     <div class="case-study-image">
@@ -198,6 +528,17 @@
                                 <span class="result-label">Customer Satisfaction</span>
                             </div>
                         </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://nalnadcoffee.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                E-commerce Metrics
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -241,6 +582,17 @@
                                 <span class="result-number">60%</span>
                                 <span class="result-label">Lead Conversion Rate</span>
                             </div>
+                        </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://www.sunbeesynergy.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-solar-panel"></i>
+                                B2B Performance
+                            </a>
                         </div>
                     </div>
                     <div class="case-study-image">
@@ -292,6 +644,17 @@
                                 <span class="result-label">Healthcare Credibility Score</span>
                             </div>
                         </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://nulifebehavioralhealth.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-heart"></i>
+                                Healthcare Impact
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -335,6 +698,17 @@
                                 <span class="result-number">75%</span>
                                 <span class="result-label">Job Seeker Conversion</span>
                             </div>
+                        </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://mindforgeinfotech.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-code"></i>
+                                Education Metrics
+                            </a>
                         </div>
                     </div>
                     <div class="case-study-image">
@@ -386,6 +760,17 @@
                                 <span class="result-label">Premium Brand Recall</span>
                             </div>
                         </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://www.taitaicreamery.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-ice-cream"></i>
+                                Brand Impact
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -429,6 +814,17 @@
                                 <span class="result-number">90%</span>
                                 <span class="result-label">Professional Credibility</span>
                             </div>
+                        </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://mastrolee.in/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-building"></i>
+                                Corporate Results
+                            </a>
                         </div>
                     </div>
                     <div class="case-study-image">
@@ -479,6 +875,17 @@
                                 <span class="result-number">95%</span>
                                 <span class="result-label">Student Satisfaction</span>
                             </div>
+                        </div>
+
+                        <div class="case-study-actions">
+                            <a href="https://ashwaeducationconsultancy.com/" target="_blank" class="project-cta">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Live Project
+                            </a>
+                            <a href="#case-study-details" class="case-details-btn">
+                                <i class="fas fa-graduation-cap"></i>
+                                Student Success
+                            </a>
                         </div>
                     </div>
                 </div>
