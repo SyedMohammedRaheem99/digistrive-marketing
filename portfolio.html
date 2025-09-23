@@ -1275,33 +1275,7 @@
     });
     </script>
 </section>
-    // Filter integration (works with existing filter buttons)
-    document.addEventListener('DOMContentLoaded', function() {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        if (filterBtns.length > 0) {
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.dataset.filter;
-                    
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    projectCards.forEach(card => {
-                        const categories = card.dataset.category || '';
-                        
-                        if (filter === 'all' || categories.includes(filter)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        }
-    });
+   
     </script>
 </section>
 
