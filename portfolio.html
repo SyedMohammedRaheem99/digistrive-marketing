@@ -316,7 +316,7 @@
         </div>
     </section>
 
-<!-- Featured Case Studies Section - Exact Reference Match -->
+<!-- Featured Case Studies Section - Fully Responsive Optimized Design -->
 <section class="case-studies">
     <div class="container">
         <div class="section-header">
@@ -376,7 +376,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/a4realty.png" alt="A4 Realty Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/a4realty.png" alt="A4 Realty Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -432,7 +434,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/nalnad-coffee.png" alt="Nalnad Coffee Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -488,7 +492,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/sunbee-synergy.png" alt="Sunbee Synergy Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -544,7 +550,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/mastrolee.png" alt="Mastrolee Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/mastrolee.png" alt="Mastrolee Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -600,7 +608,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/tai-tai-creamery.png" alt="Tai Tai Creamery Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -656,7 +666,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/nulifebehavioralhealth.png" alt="NuLife Behavioral Health Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -712,7 +724,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/mindforge-infotech.png" alt="MindForge Infotech Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -768,7 +782,9 @@
                         </a>
                     </div>
                     <div class="project-image">
-                        <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Website" class="project-img" loading="lazy">
+                        <div class="image-container">
+                            <img src="finalized-images/ashwa-education-consultancy.png" alt="Ashwa Education Website" class="project-img" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -776,7 +792,7 @@
     </div>
 
     <style>
-    /* Exact Reference Match with Proper Image Sizing */
+    /* Fully Responsive Design for Desktop & Mobile */
     .case-studies {
         padding: 6rem 0;
         background: #f8fafc;
@@ -785,7 +801,7 @@
     .projects-grid {
         display: grid;
         gap: 2.5rem;
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -819,7 +835,7 @@
 
     .project-layout {
         display: grid;
-        grid-template-columns: 1fr 360px;
+        grid-template-columns: 1fr 420px;
         gap: 2.5rem;
         align-items: start;
     }
@@ -955,23 +971,83 @@
         box-shadow: 0 8px 20px rgba(32, 178, 170, 0.35);
     }
 
+    /* Enhanced Image Container */
     .project-image {
-        border-radius: 12px;
+        align-self: center;
+        margin-top: 0.5rem;
+    }
+
+    .image-container {
+        position: relative;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        align-self: start;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        transition: all 0.3s ease;
+    }
+
+    .image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(32, 178, 170, 0.1), rgba(50, 205, 50, 0.05));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .project-card:hover .image-container {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card:hover .image-container::before {
+        opacity: 1;
     }
 
     .project-img {
         width: 100%;
-        height: 240px;
+        height: 280px;
         object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
+   .project-card:hover .project-img {
+        transform: scale(1.03);
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 1024px) {
         .projects-grid {
             max-width: 95%;
+        }
+        
+        .project-layout {
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        
+        .project-img {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .case-studies {
+            padding: 4rem 0;
+        }
+        
+        .projects-grid {
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .project-card {
+            padding: 1.5rem;
         }
         
         .project-layout {
@@ -979,8 +1055,22 @@
             gap: 1.5rem;
         }
         
-        .project-card {
-            padding: 2rem;
+        .project-title {
+            font-size: 1.25rem;
+        }
+        
+        .project-description {
+            font-size: 0.9rem;
+        }
+        
+        .detail-box {
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .detail-box p,
+        .detail-box li {
+            font-size: 0.8rem;
         }
         
         .project-metrics {
@@ -988,14 +1078,116 @@
             gap: 0.75rem;
         }
         
+        .metric-chip {
+            padding: 0.75rem;
+        }
+        
+        .metric-number {
+            font-size: 1.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.7rem;
+        }
+        
+        .project-cta {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.85rem;
+        }
+        
         .project-img {
             height: 200px;
         }
+        
+        .image-container {
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projects-grid {
+            padding: 0 0.5rem;
+        }
+        
+        .project-card {
+            padding: 1.25rem;
+        }
+        
+        .project-badge {
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+        }
+        
+        .project-title {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        
+        .project-description {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .detail-box {
+            padding: 0.6rem;
+        }
+        
+        .detail-header {
+            font-size: 0.8rem;
+        }
+        
+        .project-cta {
+            padding: 0.65rem 1.25rem;
+            font-size: 0.8rem;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .project-img {
+            height: 180px;
+        }
+        
+        .metric-number {
+            font-size: 1.25rem;
+        }
+    }
+
+    /* Enhanced Hover Effects for Desktop */
+    @media (min-width: 769px) {
+        .project-card:hover .project-title {
+            color: #20B2AA;
+            transition: color 0.3s ease;
+        }
+        
+        .project-card:hover .project-badge {
+            transform: translateX(3px);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    /* Smooth Animations */
+    .project-card,
+    .project-title,
+    .project-badge,
+    .image-container,
+    .project-img {
+        transition: all 0.3s ease;
+    }
+
+    /* Focus States for Accessibility */
+    .project-cta:focus {
+        outline: 2px solid #20B2AA;
+        outline-offset: 2px;
+    }
+
+    .project-card:focus-within {
+        box-shadow: 0 0 0 3px rgba(32, 178, 170, 0.1);
     }
     </style>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -1004,17 +1196,79 @@
                 btn.addEventListener('click', () => {
                     const filter = btn.dataset.filter;
                     
+                    // Update active button
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     
+                    // Filter projects with animation
                     projectCards.forEach(card => {
                         const categories = card.dataset.category || '';
+                        
                         if (filter === 'all' || categories.includes(filter)) {
                             card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
                         } else {
-                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
                         }
                     });
+                });
+            });
+        }
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('.project-img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+
+        // Card animations on scroll
+        const cards = document.querySelectorAll('.project-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Initialize cards with animation
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            cardObserver.observe(card);
+        });
+
+        // Touch events for mobile
+        if ('ontouchstart' in window) {
+            projectCards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('touch-active');
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('touch-active');
+                    }, 150);
                 });
             });
         }
