@@ -1,11 +1,11 @@
 <?php
 // Configuration - Hostinger Setup
-$admin_email = "info@digistrivemedia.com"; // Your email address
+$admin_email = "info@marketingmed.com"; // Your email address
 $smtp_host = "smtp.hostinger.com"; // Hostinger SMTP
-$smtp_username = "info@digistrivemedia.com"; // Your email username
+$smtp_username = "info@marketingmed.com"; // Your email username
 $smtp_password = "Nandanandu@94"; // Your email password
 $smtp_port = 587;
-$from_email = "info@digistrivemedia.com"; // From email address
+$from_email = "$smtp_username = "info@marketingmed.com"; // Your email username"; // From email address
 
 // Handle form submissions
 $message = "";
@@ -1235,8 +1235,8 @@ html {
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> info@digistrivemedia.com</p>
-                        <p><i class="fas fa-phone"></i> +91 8147057346</p>
+                        <p><i class="fas fa-envelope"></i> info@marketingmed.com</p>
+                        <p><i class="fas fa-phone"></i> +91 xxxx05734</p>
                         <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
                     </div>
                 </div>
